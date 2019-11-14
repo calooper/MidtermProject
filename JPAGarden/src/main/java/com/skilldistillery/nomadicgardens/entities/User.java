@@ -14,7 +14,10 @@ public class User {
 	private String username;
 	private String password;
 	private boolean active;
-
+//	private String fakeField;
+	
+	
+	
 	// CONSTRUCTORS
 	public User(int id, String username, String password, boolean active) {
 		super();
