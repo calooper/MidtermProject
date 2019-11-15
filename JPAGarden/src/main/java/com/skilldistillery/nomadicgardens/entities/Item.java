@@ -1,12 +1,16 @@
 package com.skilldistillery.nomadicgardens.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Item {
@@ -15,9 +19,6 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	@Column(name = "user_id")
-	private int userId;
 
 	private Integer quantity;
 	private String unit;
@@ -33,8 +34,16 @@ public class Item {
 	@Column(name = "img_url")
 	private String imgURL;
 
-	@Column(name = "produce_id")
-	private int produceId;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@ManyToOne
+	@JoinColumn(name = "produce_id")
+	private Produce produce;
+
+	@OneToMany(mappedBy = "item")
+	private List<CartItem> cartItems;
 
 	// CONSTRUCTORS
 
@@ -42,18 +51,19 @@ public class Item {
 		super();
 	}
 
-	public Item(int id, int userId, Integer quantity, String unit, LocalDate harvestDate, LocalDate useByDate, boolean available,
-			String imgURL, int produceId) {
+	public Item(int id, Integer quantity, String unit, LocalDate harvestDate, LocalDate useByDate, boolean available,
+			String imgURL, User user, Produce produce, List<CartItem> cartItems) {
 		super();
 		this.id = id;
-		this.userId = userId;
 		this.quantity = quantity;
 		this.unit = unit;
 		this.harvestDate = harvestDate;
 		this.useByDate = useByDate;
 		this.available = available;
 		this.imgURL = imgURL;
-		this.produceId = produceId;
+		this.user = user;
+		this.produce = produce;
+		this.cartItems = cartItems;
 	}
 
 	// GETTERS, SETTERS, TOSTRING, EQUALS
@@ -62,12 +72,8 @@ public class Item {
 		return id;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Integer getQuantity() {
@@ -102,7 +108,7 @@ public class Item {
 		this.useByDate = useByDate;
 	}
 
-	public boolean getAvailable() {
+	public boolean isAvailable() {
 		return available;
 	}
 
@@ -118,19 +124,35 @@ public class Item {
 		this.imgURL = imgURL;
 	}
 
-	public int getProduceId() {
-		return produceId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setProduceId(int produceId) {
-		this.produceId = produceId;
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Produce getProduce() {
+		return produce;
+	}
+
+	public void setProduce(Produce produce) {
+		this.produce = produce;
+	}
+
+	public List<CartItem> getCartItems() {
+		return cartItems;
+	}
+
+	public void setCartItems(List<CartItem> cartItems) {
+		this.cartItems = cartItems;
 	}
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", userId=" + userId + ", quantity=" + quantity + ", unit=" + unit + ", harvestDate="
-				+ harvestDate + ", useByDate=" + useByDate + ", available=" + available + ", imgURL=" + imgURL
-				+ ", produceId=" + produceId + "]";
+		return "Item [id=" + id + ", quantity=" + quantity + ", unit=" + unit + ", harvestDate=" + harvestDate
+				+ ", useByDate=" + useByDate + ", available=" + available + ", imgURL=" + imgURL + ", user=" + user
+				+ ", produce=" + produce + ", cartItems=" + cartItems + "]";
 	}
 
 	@Override
@@ -138,14 +160,15 @@ public class Item {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (available ? 1231 : 1237);
+		result = prime * result + ((cartItems == null) ? 0 : cartItems.hashCode());
 		result = prime * result + ((harvestDate == null) ? 0 : harvestDate.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((imgURL == null) ? 0 : imgURL.hashCode());
-		result = prime * result + produceId;
+		result = prime * result + ((produce == null) ? 0 : produce.hashCode());
 		result = prime * result + ((quantity == null) ? 0 : quantity.hashCode());
 		result = prime * result + ((unit == null) ? 0 : unit.hashCode());
 		result = prime * result + ((useByDate == null) ? 0 : useByDate.hashCode());
-		result = prime * result + userId;
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
@@ -160,6 +183,11 @@ public class Item {
 		Item other = (Item) obj;
 		if (available != other.available)
 			return false;
+		if (cartItems == null) {
+			if (other.cartItems != null)
+				return false;
+		} else if (!cartItems.equals(other.cartItems))
+			return false;
 		if (harvestDate == null) {
 			if (other.harvestDate != null)
 				return false;
@@ -172,7 +200,10 @@ public class Item {
 				return false;
 		} else if (!imgURL.equals(other.imgURL))
 			return false;
-		if (produceId != other.produceId)
+		if (produce == null) {
+			if (other.produce != null)
+				return false;
+		} else if (!produce.equals(other.produce))
 			return false;
 		if (quantity == null) {
 			if (other.quantity != null)
@@ -189,7 +220,10 @@ public class Item {
 				return false;
 		} else if (!useByDate.equals(other.useByDate))
 			return false;
-		if (userId != other.userId)
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
 			return false;
 		return true;
 	}

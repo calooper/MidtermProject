@@ -1,12 +1,16 @@
 package com.skilldistillery.nomadicgardens.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User {
@@ -21,8 +25,9 @@ public class User {
 
 	private boolean active;
 
-	@Column(name = "address_id")
-	private Integer addressId;
+	@OneToOne
+	@JoinColumn(name = "address_id")
+	private Address address;
 
 	@Column(name = "img_url")
 	private String imgURL;
@@ -41,18 +46,26 @@ public class User {
 	@Column(name = "create_date")
 	private LocalDate createDate;
 
+	@OneToMany(mappedBy = "user")
+	private List<Plot> plots;
+
+	@OneToMany(mappedBy = "user")
+	private List<CartItem> cartItems;
+
+	@OneToMany(mappedBy = "user")
+	private List<Item> items;
+
 	// CONSTRUCTORS
 	public User() {
 		super();
 	}
 
-	public User(String username, String password, boolean active, int addressId, String imgURL, String email,
-			String phoneNumber, String firstName, String lastName, LocalDate createDate) {
+	public User(String username, String password, boolean active, String imgURL, String email, String phoneNumber,
+			String firstName, String lastName, LocalDate createDate) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.active = active;
-		this.addressId = addressId;
 		this.imgURL = imgURL;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
@@ -62,6 +75,7 @@ public class User {
 	}
 
 	// GETTERS, SETTERS, TOSTRING, EQUALS
+
 	public int getId() {
 		return id;
 	}
@@ -86,7 +100,7 @@ public class User {
 		this.password = password;
 	}
 
-	public boolean getActive() {
+	public boolean isActive() {
 		return active;
 	}
 
@@ -94,12 +108,12 @@ public class User {
 		this.active = active;
 	}
 
-	public int getAddressId() {
-		return addressId;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public String getImgURL() {
@@ -150,15 +164,36 @@ public class User {
 		this.createDate = createDate;
 	}
 
+	public List<Plot> getPlots() {
+		return plots;
+	}
+
+	public void setPlots(List<Plot> plots) {
+		this.plots = plots;
+	}
+
+	public List<CartItem> getCartItems() {
+		return cartItems;
+	}
+
+	public void setCartItems(List<CartItem> cartItems) {
+		this.cartItems = cartItems;
+	}
+
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
+
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("User [id=").append(id).append(", username=").append(username).append(", password=")
-				.append(password).append(", active=").append(active).append(", imgURL=").append(imgURL)
-				.append(", email=").append(email).append(", phoneNumber=").append(phoneNumber).append(", firstName=")
-				.append(firstName).append(", lastName=").append(lastName).append(", createDate=").append(createDate)
-				.append("]");
-		return builder.toString();
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", active=" + active
+				+ ", address=" + address + ", imgURL=" + imgURL + ", email=" + email + ", phoneNumber=" + phoneNumber
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", createDate=" + createDate + ", plots="
+				+ plots + ", cartItems=" + cartItems + ", items=" + items + "]";
 	}
 
 	@Override
@@ -166,15 +201,18 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (active ? 1231 : 1237);
-		result = prime * result + addressId;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((cartItems == null) ? 0 : cartItems.hashCode());
 		result = prime * result + ((createDate == null) ? 0 : createDate.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((imgURL == null) ? 0 : imgURL.hashCode());
+		result = prime * result + ((items == null) ? 0 : items.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
+		result = prime * result + ((plots == null) ? 0 : plots.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -190,7 +228,15 @@ public class User {
 		User other = (User) obj;
 		if (active != other.active)
 			return false;
-		if (addressId != other.addressId)
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (cartItems == null) {
+			if (other.cartItems != null)
+				return false;
+		} else if (!cartItems.equals(other.cartItems))
 			return false;
 		if (createDate == null) {
 			if (other.createDate != null)
@@ -214,6 +260,11 @@ public class User {
 				return false;
 		} else if (!imgURL.equals(other.imgURL))
 			return false;
+		if (items == null) {
+			if (other.items != null)
+				return false;
+		} else if (!items.equals(other.items))
+			return false;
 		if (lastName == null) {
 			if (other.lastName != null)
 				return false;
@@ -228,6 +279,11 @@ public class User {
 			if (other.phoneNumber != null)
 				return false;
 		} else if (!phoneNumber.equals(other.phoneNumber))
+			return false;
+		if (plots == null) {
+			if (other.plots != null)
+				return false;
+		} else if (!plots.equals(other.plots))
 			return false;
 		if (username == null) {
 			if (other.username != null)

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Plot {
@@ -14,8 +16,9 @@ public class Plot {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "user_id")
-	private int userId;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
 
 	@Column(name = "plot_number")
 	private int plotNumber;
@@ -23,8 +26,9 @@ public class Plot {
 	@Column(name = "size_sqft")
 	private int sizeSqft;
 
-	@Column(name = "garden_id")
-	private int gardenId;
+	@ManyToOne
+	@JoinColumn(name = "garden_id")
+	private Garden garden;
 
 	// CONSTRUCTORS
 
@@ -32,27 +36,30 @@ public class Plot {
 		super();
 	}
 
-	public Plot(int id, int userId, int plotNumber, int sizeSqft, int gardenId) {
+	public Plot(User user, int plotNumber, int sizeSqft, Garden garden) {
 		super();
-		this.id = id;
-		this.userId = userId;
+		this.user = user;
 		this.plotNumber = plotNumber;
 		this.sizeSqft = sizeSqft;
-		this.gardenId = gardenId;
+		this.garden = garden;
 	}
+
+	// GETTERS, SETTERS, TOSTRING, EQUALS
 
 	public int getId() {
 		return id;
 	}
 
-	// GETTERS, SETTERS, TOSTRING, EQUALS
-
-	public int getUserId() {
-		return userId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public int getPlotNumber() {
@@ -71,23 +78,29 @@ public class Plot {
 		this.sizeSqft = sizeSqft;
 	}
 
-	public int getGardenId() {
-		return gardenId;
+	public Garden getGarden() {
+		return garden;
 	}
 
-	public void setGardenId(int gardenId) {
-		this.gardenId = gardenId;
+	public void setGarden(Garden garden) {
+		this.garden = garden;
+	}
+
+	@Override
+	public String toString() {
+		return "Plot [id=" + id + ", user=" + user + ", plotNumber=" + plotNumber + ", sizeSqft=" + sizeSqft
+				+ ", garden=" + garden + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + gardenId;
+		result = prime * result + ((garden == null) ? 0 : garden.hashCode());
 		result = prime * result + id;
 		result = prime * result + plotNumber;
 		result = prime * result + sizeSqft;
-		result = prime * result + userId;
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
@@ -100,7 +113,10 @@ public class Plot {
 		if (getClass() != obj.getClass())
 			return false;
 		Plot other = (Plot) obj;
-		if (gardenId != other.gardenId)
+		if (garden == null) {
+			if (other.garden != null)
+				return false;
+		} else if (!garden.equals(other.garden))
 			return false;
 		if (id != other.id)
 			return false;
@@ -108,15 +124,12 @@ public class Plot {
 			return false;
 		if (sizeSqft != other.sizeSqft)
 			return false;
-		if (userId != other.userId)
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Plot [id=" + id + ", userId=" + userId + ", plotNumber=" + plotNumber + ", sizeSqft=" + sizeSqft
-				+ ", gardenId=" + gardenId + "]";
 	}
 
 }

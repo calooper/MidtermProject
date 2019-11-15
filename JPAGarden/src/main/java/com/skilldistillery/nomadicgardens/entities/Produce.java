@@ -1,10 +1,13 @@
 package com.skilldistillery.nomadicgardens.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Produce {
@@ -19,7 +22,8 @@ public class Produce {
 	@Column(name = "img_url")
 	private String imgURL;
 
-
+	@OneToMany(mappedBy = "produce")
+	private List<Item> items;
 
 	// CONSTRUCTORS
 
@@ -33,11 +37,15 @@ public class Produce {
 		this.name = name;
 		this.imgURL = imgURL;
 	}
-	
+
 	// GETTERS, SETTERS, TOSTRING, EQUALS
 
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -56,9 +64,17 @@ public class Produce {
 		this.imgURL = imgURL;
 	}
 
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
+
 	@Override
 	public String toString() {
-		return "Produce [id=" + id + ", name=" + name + ", imgURL=" + imgURL + "]";
+		return "Produce [id=" + id + ", name=" + name + ", imgURL=" + imgURL + ", items=" + items + "]";
 	}
 
 	@Override
@@ -67,6 +83,7 @@ public class Produce {
 		int result = 1;
 		result = prime * result + id;
 		result = prime * result + ((imgURL == null) ? 0 : imgURL.hashCode());
+		result = prime * result + ((items == null) ? 0 : items.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -87,6 +104,11 @@ public class Produce {
 				return false;
 		} else if (!imgURL.equals(other.imgURL))
 			return false;
+		if (items == null) {
+			if (other.items != null)
+				return false;
+		} else if (!items.equals(other.items))
+			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -95,7 +117,6 @@ public class Produce {
 		return true;
 	}
 
-	
 	// METHODS
 
 }

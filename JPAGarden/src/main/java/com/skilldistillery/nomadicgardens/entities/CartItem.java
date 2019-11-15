@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,14 +19,16 @@ public class CartItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "user_id")
-	private int userId;
-
-	@Column(name = "item_id")
-	private int itemId;
-
 	@Column(name = "date_added")
 	private LocalDate dateAdded;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+	@ManyToOne
+	@JoinColumn(name = "item_id")
+	private Item item;
 
 	private boolean approved;
 
@@ -33,37 +37,22 @@ public class CartItem {
 		super();
 	}
 
-	public CartItem(int userId, int itemId, LocalDate dateAdded, boolean approved) {
+	public CartItem(LocalDate dateAdded, User user, Item item, boolean approved) {
 		super();
-		this.userId = userId;
-		this.itemId = itemId;
 		this.dateAdded = dateAdded;
+		this.user = user;
+		this.item = item;
 		this.approved = approved;
 	}
-
+	
 	// GETTERS, SETTERS, TOSTRING, EQUALS
+
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	public int getItemId() {
-		return itemId;
-	}
-
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
 	}
 
 	public LocalDate getDateAdded() {
@@ -74,12 +63,34 @@ public class CartItem {
 		this.dateAdded = dateAdded;
 	}
 
-	public boolean getApproved() {
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}
+
+	public boolean isApproved() {
 		return approved;
 	}
 
 	public void setApproved(boolean approved) {
 		this.approved = approved;
+	}
+
+	@Override
+	public String toString() {
+		return "CartItem [id=" + id + ", dateAdded=" + dateAdded + ", user=" + user + ", item=" + item + ", approved="
+				+ approved + "]";
 	}
 
 	@Override
@@ -89,8 +100,8 @@ public class CartItem {
 		result = prime * result + (approved ? 1231 : 1237);
 		result = prime * result + ((dateAdded == null) ? 0 : dateAdded.hashCode());
 		result = prime * result + id;
-		result = prime * result + itemId;
-		result = prime * result + userId;
+		result = prime * result + ((item == null) ? 0 : item.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
@@ -112,21 +123,24 @@ public class CartItem {
 			return false;
 		if (id != other.id)
 			return false;
-		if (itemId != other.itemId)
+		if (item == null) {
+			if (other.item != null)
+				return false;
+		} else if (!item.equals(other.item))
 			return false;
-		if (userId != other.userId)
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("CartItem [id=").append(id).append(", userId=").append(userId).append(", itemId=").append(itemId)
-				.append(", dateAdded=").append(dateAdded).append(", approved=").append(approved).append("]");
-		return builder.toString();
-	}
 	
+	
+
+	
+	
+
 	// METHODS
 
 }

@@ -1,10 +1,15 @@
 package com.skilldistillery.nomadicgardens.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Garden {
@@ -14,8 +19,9 @@ public class Garden {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "address_id")
-	private int addressId;
+	@OneToOne
+	@JoinColumn(name = "address_id")
+	private Address address;
 
 	@Column(name = "size_sqft")
 	private int sizeSqft;
@@ -24,31 +30,41 @@ public class Garden {
 
 	private String name;
 
-	// CONSTRUCTORS
+	@OneToMany(mappedBy = "garden")
+	private List<Plot> plots;
 
-	public Garden(int id, int addressId, int sizeSqft, String description, String name) {
-		super();
-		this.id = id;
-		this.addressId = addressId;
-		this.sizeSqft = sizeSqft;
-		this.description = description;
-		this.name = name;
-	}
+	// CONSTRUCTORS
 
 	public Garden() {
 		super();
 	}
 
+	public Garden(int id, Address address, int sizeSqft, String description, String name, List<Plot> plots) {
+		super();
+		this.id = id;
+		this.address = address;
+		this.sizeSqft = sizeSqft;
+		this.description = description;
+		this.name = name;
+		this.plots = plots;
+	}
+
+	// GETTERS, SETTERS, TOSTRING, EQUALS
+
 	public int getId() {
 		return id;
 	}
 
-	public int getAddressId() {
-		return addressId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public void setAddressId(int addressId) {
-		this.addressId = addressId;
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public int getSizeSqft() {
@@ -75,14 +91,29 @@ public class Garden {
 		this.name = name;
 	}
 
+	public List<Plot> getPlots() {
+		return plots;
+	}
+
+	public void setPlots(List<Plot> plots) {
+		this.plots = plots;
+	}
+
+	@Override
+	public String toString() {
+		return "Garden [id=" + id + ", address=" + address + ", sizeSqft=" + sizeSqft + ", description=" + description
+				+ ", name=" + name + ", plots=" + plots + "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + addressId;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((plots == null) ? 0 : plots.hashCode());
 		result = prime * result + sizeSqft;
 		return result;
 	}
@@ -96,7 +127,10 @@ public class Garden {
 		if (getClass() != obj.getClass())
 			return false;
 		Garden other = (Garden) obj;
-		if (addressId != other.addressId)
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
 			return false;
 		if (description == null) {
 			if (other.description != null)
@@ -110,15 +144,14 @@ public class Garden {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (plots == null) {
+			if (other.plots != null)
+				return false;
+		} else if (!plots.equals(other.plots))
+			return false;
 		if (sizeSqft != other.sizeSqft)
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Garden [id=" + id + ", addressId=" + addressId + ", sizeSqft=" + sizeSqft + ", description="
-				+ description + ", name=" + name + "]";
 	}
 
 }

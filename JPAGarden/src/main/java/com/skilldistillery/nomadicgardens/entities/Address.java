@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Address {
@@ -21,6 +22,12 @@ public class Address {
 
 	private String zip;
 
+	@OneToOne(mappedBy = "address")
+	private Garden garden;
+
+	@OneToOne(mappedBy = "address")
+	private User user;
+
 	// CONSTRUCTORS
 
 	public Address() {
@@ -37,6 +44,15 @@ public class Address {
 	}
 
 	// GETTERS, SETTERS, TOSTRING, HASCODE, EQUALS
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getStreet() {
 		return street;
 	}
@@ -69,18 +85,38 @@ public class Address {
 		this.zip = zip;
 	}
 
-	public int getId() {
-		return id;
+	public Garden getGarden() {
+		return garden;
 	}
-	
+
+	public void setGarden(Garden garden) {
+		this.garden = garden;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", street=" + street + ", city=" + city + ", state=" + state + ", zip=" + zip
+				+ ", garden=" + garden + ", user=" + user + "]";
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
+		result = prime * result + ((garden == null) ? 0 : garden.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((state == null) ? 0 : state.hashCode());
 		result = prime * result + ((street == null) ? 0 : street.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		result = prime * result + ((zip == null) ? 0 : zip.hashCode());
 		return result;
 	}
@@ -99,6 +135,11 @@ public class Address {
 				return false;
 		} else if (!city.equals(other.city))
 			return false;
+		if (garden == null) {
+			if (other.garden != null)
+				return false;
+		} else if (!garden.equals(other.garden))
+			return false;
 		if (id != other.id)
 			return false;
 		if (state == null) {
@@ -111,6 +152,11 @@ public class Address {
 				return false;
 		} else if (!street.equals(other.street))
 			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
+			return false;
 		if (zip == null) {
 			if (other.zip != null)
 				return false;
@@ -119,24 +165,6 @@ public class Address {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Address [id=");
-		builder.append(id);
-		builder.append(", street=");
-		builder.append(street);
-		builder.append(", city=");
-		builder.append(city);
-		builder.append(", state=");
-		builder.append(state);
-		builder.append(", zip=");
-		builder.append(zip);
-		builder.append("]");
-		return builder.toString();
-	}
-
-	
 	// METHODS
 
 }
