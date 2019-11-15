@@ -18,7 +18,6 @@ class GardenTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private Garden garden;
-	
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -49,4 +48,20 @@ class GardenTest {
 		assertEquals("Syracuse Community Garden", garden.getName());
 	}
 
+	// SQL Statement 
+	// SELECT address.street FROM address JOIN garden ON address.id = address_id WHERE garden.id = 1;
+	@Test
+	@DisplayName("testing gardens mapping to address")
+	void test2() {
+		assertEquals("4333 South Syracuse Street", garden.getAddress().getStreet());
+	}
+	
+	// SQL Statement
+	// SELECT plot_number FROM plot JOIN garden ON garden.id = garden_id WHERE plot.id = 1;
+	@Test
+	@DisplayName("testing gardens mapping to plot")
+	void test3() {
+		assertEquals(1, garden.getPlots().get(0).getPlotNumber());
+	}
+	
 }

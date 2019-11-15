@@ -17,7 +17,6 @@ class AddressTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private Address address;
-	
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
