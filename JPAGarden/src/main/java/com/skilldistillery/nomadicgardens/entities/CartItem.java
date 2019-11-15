@@ -79,7 +79,7 @@ public class CartItem {
 		this.item = item;
 	}
 
-	public boolean isApproved() {
+	public boolean getApproved() {
 		return approved;
 	}
 

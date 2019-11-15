@@ -108,7 +108,7 @@ public class Item {
 		this.useByDate = useByDate;
 	}
 
-	public boolean isAvailable() {
+	public boolean getAvailable() {
 		return available;
 	}
 

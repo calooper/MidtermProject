@@ -98,28 +98,6 @@ public class User {
 		}
 	}
 	
-	
-	public void addItem(Item item) { 
-		if (items == null) {
-			items = new ArrayList<Item>();
-		}
-		
-		if (!items.contains(item)) {
-			items.add(item);
-			if (item.getUser() != null) {
-				item.getUser().getItems().remove(item);
-			}
-			item.setUser(this);
-		}
-	}
-	
-	public void removeItem(Item item) {
-		item.setUser(null);
-		if (items != null) {
-			items.remove(item);
-		}
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -144,7 +122,7 @@ public class User {
 		this.password = password;
 	}
 
-	public boolean isActive() {
+	public boolean getActive() {
 		return active;
 	}
 
@@ -338,5 +316,26 @@ public class User {
 	}
 
 	// METHODS
+	
+	public void addItem(Item item) { 
+		if (items == null) {
+			items = new ArrayList<Item>();
+		}
+		
+		if (!items.contains(item)) {
+			items.add(item);
+			if (item.getUser() != null) {
+				item.getUser().getItems().remove(item);
+			}
+			item.setUser(this);
+		}
+	}
+	
+	public void removeItem(Item item) {
+		item.setUser(null);
+		if (items != null) {
+			items.remove(item);
+		}
+	}
 
 }
