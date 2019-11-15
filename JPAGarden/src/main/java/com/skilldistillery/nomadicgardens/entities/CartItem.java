@@ -136,11 +136,6 @@ public class CartItem {
 		return true;
 	}
 	
-	
-
-	
-	
-
 	// METHODS
 
 }
