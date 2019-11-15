@@ -193,7 +193,7 @@ public class User {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", active=" + active
 				+ ", address=" + address + ", imgURL=" + imgURL + ", email=" + email + ", phoneNumber=" + phoneNumber
 				+ ", firstName=" + firstName + ", lastName=" + lastName + ", createDate=" + createDate + ", plots="
-				+ plots + ", cartItems=" + cartItems + ", items=" + items + "]";
+				+ plots + ", items=" + items + "]";
 	}
 
 	@Override

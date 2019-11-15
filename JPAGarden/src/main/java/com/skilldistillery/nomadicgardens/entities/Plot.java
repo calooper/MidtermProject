@@ -88,7 +88,7 @@ public class Plot {
 
 	@Override
 	public String toString() {
-		return "Plot [id=" + id + ", user=" + user + ", plotNumber=" + plotNumber + ", sizeSqft=" + sizeSqft
+		return "Plot [id=" + id + ", plotNumber=" + plotNumber + ", sizeSqft=" + sizeSqft
 				+ ", garden=" + garden + "]";
 	}
 

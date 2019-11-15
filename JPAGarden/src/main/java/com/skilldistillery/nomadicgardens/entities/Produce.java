@@ -74,7 +74,7 @@ public class Produce {
 
 	@Override
 	public String toString() {
-		return "Produce [id=" + id + ", name=" + name + ", imgURL=" + imgURL + ", items=" + items + "]";
+		return "Produce [id=" + id + ", name=" + name + ", imgURL=" + imgURL + "]";
 	}
 
 	@Override

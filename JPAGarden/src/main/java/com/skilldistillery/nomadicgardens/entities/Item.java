@@ -151,8 +151,8 @@ public class Item {
 	@Override
 	public String toString() {
 		return "Item [id=" + id + ", quantity=" + quantity + ", unit=" + unit + ", harvestDate=" + harvestDate
-				+ ", useByDate=" + useByDate + ", available=" + available + ", imgURL=" + imgURL + ", user=" + user
-				+ ", produce=" + produce + ", cartItems=" + cartItems + "]";
+				+ ", useByDate=" + useByDate + ", available=" + available + ", imgURL=" + imgURL 
+				+ ", produce=" + produce + "]";
 	}
 
 	@Override

@@ -101,10 +101,14 @@ public class Address {
 		this.user = user;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", street=" + street + ", city=" + city + ", state=" + state + ", zip=" + zip
-				+ ", garden=" + garden + ", user=" + user + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Address [id=").append(id).append(", street=").append(street).append(", city=").append(city)
+				.append(", state=").append(state).append(", zip=").append(zip).append("]");
+		return builder.toString();
 	}
 
 	@Override

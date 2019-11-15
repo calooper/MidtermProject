@@ -61,7 +61,7 @@ class GardenTest {
 	@Test
 	@DisplayName("testing gardens mapping to plot")
 	void test3() {
-		assertEquals(1, garden.getPlots().get(0).getUser());
+		assertEquals(1, garden.getPlots().get(0).getPlotNumber());
 	}
 	
 }

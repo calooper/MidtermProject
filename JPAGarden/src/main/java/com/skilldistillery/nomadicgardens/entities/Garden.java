@@ -102,7 +102,7 @@ public class Garden {
 	@Override
 	public String toString() {
 		return "Garden [id=" + id + ", address=" + address + ", sizeSqft=" + sizeSqft + ", description=" + description
-				+ ", name=" + name + ", plots=" + plots + "]";
+				+ ", name=" + name + "]";
 	}
 
 	@Override
