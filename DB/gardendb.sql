@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   `unit` VARCHAR(45) NULL,
   `harvest_date` DATE NULL,
   `use_by_date` DATE NULL,
-  `avialable` TINYINT NULL DEFAULT 1,
+  `available` TINYINT NULL DEFAULT 1,
   `img_url` VARCHAR(45) NULL,
   `produce_id` INT NULL,
   PRIMARY KEY (`id`),
@@ -278,10 +278,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `nomadicGardensDB`;
-INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `avialable`, `img_url`, `produce_id`) VALUES (1, 1, 1, '10lb bag(s)', '2019-11-15', '2020-01-15', 1, NULL, 1);
-INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `avialable`, `img_url`, `produce_id`) VALUES (2, 2, 1, 'dozen ear(s)', '2019-11-15', '2019-12-30', 1, NULL, 2);
-INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `avialable`, `img_url`, `produce_id`) VALUES (3, 3, 1, 'basket(s)', '2019-11-15', '2019-11-18', 1, NULL, 3);
-INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `avialable`, `img_url`, `produce_id`) VALUES (4, 2, 1, 'head(s)', '2019-11-15', '2019-11-20', 1, NULL, 4);
+INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `available`, `img_url`, `produce_id`) VALUES (1, 1, 1, '10lb bag(s)', '2019-11-15', '2020-01-15', 1, NULL, 1);
+INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `available`, `img_url`, `produce_id`) VALUES (2, 2, 1, 'dozen ear(s)', '2019-11-15', '2019-12-30', 1, NULL, 2);
+INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `available`, `img_url`, `produce_id`) VALUES (3, 3, 1, 'basket(s)', '2019-11-15', '2019-11-18', 1, NULL, 3);
+INSERT INTO `item` (`id`, `user_id`, `quantity`, `unit`, `harvest_date`, `use_by_date`, `available`, `img_url`, `produce_id`) VALUES (4, 2, 1, 'head(s)', '2019-11-15', '2019-11-20', 1, NULL, 4);
 
 COMMIT;
 
