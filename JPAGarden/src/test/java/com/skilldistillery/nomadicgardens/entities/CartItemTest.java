@@ -1,6 +1,9 @@
 package com.skilldistillery.nomadicgardens.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.time.LocalDate;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,10 +16,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
+class CartItemTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
+	private CartItem ci;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,22 +35,21 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 1);
+		ci = em.find(CartItem.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		user = null;
+		ci = null;
 	}
 
 	@Test
-	@DisplayName("testing user entity mappings")
+	@DisplayName("testing cart item entity mappings")
 	void test1() {
-		assertNotNull(user);
-		assertEquals("gardner", user.getUsername());
+		assertNotNull(ci);
+		assertEquals(LocalDate.of(2019, 11, 15), ci.getDateAdded());
 	}
 	
-
 
 }

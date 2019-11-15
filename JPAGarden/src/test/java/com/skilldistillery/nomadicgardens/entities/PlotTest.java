@@ -13,10 +13,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
+class PlotTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
+	private Plot plot;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -31,22 +31,19 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 1);
+		plot = em.find(Plot.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		user = null;
+		plot = null;
 	}
 
 	@Test
-	@DisplayName("testing user entity mappings")
+	@DisplayName("testing plot entity mappings")
 	void test1() {
-		assertNotNull(user);
-		assertEquals("gardner", user.getUsername());
+		assertNotNull(plot);
+		assertEquals(100, plot.getSizeSqft());
 	}
-	
-
-
 }
