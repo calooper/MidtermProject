@@ -36,7 +36,7 @@ public class Address {
 		this.zip = zip;
 	}
 
-	// GETTERS, SETTERS, TOSTRING, EQUALS
+	// GETTERS, SETTERS, TOSTRING, HASCODE, EQUALS
 	public String getStreet() {
 		return street;
 	}
@@ -69,10 +69,10 @@ public class Address {
 		this.zip = zip;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public int getId() {
+		return id;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -135,6 +135,7 @@ public class Address {
 		builder.append("]");
 		return builder.toString();
 	}
+
 	
 	// METHODS
 
