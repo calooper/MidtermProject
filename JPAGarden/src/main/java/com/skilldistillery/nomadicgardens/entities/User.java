@@ -1,6 +1,7 @@
 package com.skilldistillery.nomadicgardens.entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -75,6 +76,49 @@ public class User {
 	}
 
 	// GETTERS, SETTERS, TOSTRING, EQUALS
+	
+	public void addCartItem(CartItem cartItem) { 
+		if (cartItems == null) {
+			cartItems = new ArrayList<CartItem>();
+		}
+		
+		if (!cartItems.contains(cartItem)) {
+			cartItems.add(cartItem);
+			if (cartItem.getUser() != null) {
+				cartItem.getUser().getCartItems().remove(cartItem);
+			}
+			cartItem.setUser(this);
+		}
+	}
+	
+	public void removeCartItem(CartItem cartItem) {
+		cartItem.setUser(null);
+		if (cartItems != null) {
+			cartItems.remove(cartItem);
+		}
+	}
+	
+	
+	public void addItem(Item item) { 
+		if (items == null) {
+			items = new ArrayList<Item>();
+		}
+		
+		if (!items.contains(item)) {
+			items.add(item);
+			if (item.getUser() != null) {
+				item.getUser().getItems().remove(item);
+			}
+			item.setUser(this);
+		}
+	}
+	
+	public void removeItem(Item item) {
+		item.setUser(null);
+		if (items != null) {
+			items.remove(item);
+		}
+	}
 
 	public int getId() {
 		return id;
