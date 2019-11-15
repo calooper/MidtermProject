@@ -18,7 +18,7 @@ class ProduceTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
 	private Produce produce;
-	
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("GardenPU");
@@ -47,4 +47,23 @@ class ProduceTest {
 		assertNotNull(produce);
 		assertEquals("potato", produce.getName());
 	}
+
+	// SQL Statement
+	// SELECT item.user_id FROM item JOIN produce ON produce_id = produce.id 
+	// WHERE produce.id = 1;
+	@Test
+	@DisplayName("testing produce entity mapping with item")
+	void test2() {
+		assertNotNull(produce);
+		assertEquals(1, produce.getItems().get(0).getUser().getId());
+	}
+	
+	@Test
+	@DisplayName("testing produce entity mapping with cart_item")
+	void test3() {
+		assertNotNull(produce);
+		assertEquals(1, produce.getItems().get(0).getUser().getCartItems().get(0).getId());
+	}
+	
+	
 }
