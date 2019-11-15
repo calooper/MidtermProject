@@ -51,5 +51,25 @@ class CartItemTest {
 		assertEquals(LocalDate.of(2019, 11, 15), ci.getDateAdded());
 	}
 	
+	@Test
+	@DisplayName("testing cart item mapping to User MTO")
+	void test2() {
+//		select i.user_id, u.first_name FROM cart_item i
+	//		JOIN user u ON
+	//	    u.id = i.user_id
+	//	    WHERE i.user_id = 1;
+		
+		assertEquals("test", ci.getUser().getFirstName());
+	}
+	
+	@Test
+	@DisplayName("testing cart item mapping to User & Item MTO")
+	void test3() {
+//		select i.item_id, item.id, item.use_by_date FROM cart_item i
+//		JOIN item item ON
+//	    i.item_id = item.id;
+		
+		assertEquals(LocalDate.of(2019, 11, 15), ci.getItem().getHarvestDate());
+	}
 
 }
