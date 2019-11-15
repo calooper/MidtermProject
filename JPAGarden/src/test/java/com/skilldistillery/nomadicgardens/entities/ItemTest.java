@@ -13,11 +13,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
+class ItemTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private User user;
+	private Item item;
 	
+
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("GardenPU");
@@ -31,22 +33,20 @@ class UserTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		user = em.find(User.class, 1);
+		item = em.find(Item.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		user = null;
+		item = null;
 	}
 
 	@Test
-	@DisplayName("testing user entity mappings")
+	@DisplayName("testing item entity mappings")
 	void test1() {
-		assertNotNull(user);
-		assertEquals("gardner", user.getUsername());
+		assertNotNull(item);
+		assertEquals("10lb bag(s)", item.getUnit());
 	}
-	
-
 
 }

@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "cart_item")
 public class CartItem {
 	// FIELDS
 	@Id
@@ -72,7 +74,7 @@ public class CartItem {
 		this.dateAdded = dateAdded;
 	}
 
-	public boolean isApproved() {
+	public boolean getApproved() {
 		return approved;
 	}
 
