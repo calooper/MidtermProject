@@ -46,4 +46,10 @@ class PlotTest {
 		assertNotNull(plot);
 		assertEquals(100, plot.getSizeSqft());
 	}
+	
+	@Test
+	@DisplayName("testing plot entity mapping to User")
+	void test2() {
+		assertEquals("Syracuse Community Garden", plot.getGarden().getName());
+	}
 }
