@@ -21,7 +21,7 @@ public class LoginController {
 	@RequestMapping(path="login", method=RequestMethod.GET)
 	public ModelAndView login() {
 		User u = new User();
-		ModelAndView mv = new ModelAndView("WEB-INF/login.jsp", "user", u);
+		ModelAndView mv = new ModelAndView("home", "user", u);
 		return mv;
 	}
 	
@@ -31,12 +31,12 @@ public class LoginController {
 		
 		User loggedInUser = authDao.getUserByUsername(user.getUsername());
 		// If the Username was not found, use the Errors object to reject the email, 
-		// with the message "Email not found"
+		// with the message "Username not found"
 		if(loggedInUser == null) {
 		  errors.rejectValue("userName", "error.userName", "Username not found");
 		}
 		else {
-    		// TODO: Else if the user is not valid (isValidUser), use the Errors object to reject 
+    	   // Else if the user is not valid (isValidUser), use the Errors object to reject 
   		  // the password with the message "Incorrect password"
 		  boolean isValidUser = authDao.isValidUser(user);
 		  if(!isValidUser) {
@@ -44,11 +44,11 @@ public class LoginController {
 		  }
 		}
 		if (errors.getErrorCount() != 0) {
-			mv.setViewName("WEB-INF/login.jsp");
+			mv.setViewName("home");
 			return mv;
 		}
 		mv.addObject("user", loggedInUser);
-		mv.setViewName("WEB-INF/profile.jsp");
+		mv.setViewName("profile");
 		return mv;
 	}
 }
