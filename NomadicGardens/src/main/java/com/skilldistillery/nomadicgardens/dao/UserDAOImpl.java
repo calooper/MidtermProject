@@ -17,7 +17,6 @@ public class UserDAOImpl implements UserDAO {
 	@PersistenceContext
 	private EntityManager em;
 
-	// CONSTRUCTORS
 	// METHODS
 	@Override
 	public User findById(int id) {

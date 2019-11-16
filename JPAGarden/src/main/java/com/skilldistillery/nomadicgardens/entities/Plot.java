@@ -24,7 +24,7 @@ public class Plot {
 	private int plotNumber;
 
 	@Column(name = "size_sqft")
-	private int sizeSqft;
+	private Integer sizeSqft;
 
 	@ManyToOne
 	@JoinColumn(name = "garden_id")
