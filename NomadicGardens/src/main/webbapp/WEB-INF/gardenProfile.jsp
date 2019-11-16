@@ -7,6 +7,7 @@
 <title>Community Garden Profile</title>
 </head>
 <body>
+<jsp:include="navbar.jsp"/>
 
 </body>
 </html>
