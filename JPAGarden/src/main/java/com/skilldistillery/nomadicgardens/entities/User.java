@@ -75,7 +75,25 @@ public class User {
 		this.createDate = createDate;
 	}
 
+	public User(String username, String password, String email, String firstName, String lastName) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+	
+	public User(String username, String password, String email) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+
 	// GETTERS, SETTERS, TOSTRING, EQUALS
+
 
 	public int getId() {
 		return id;
