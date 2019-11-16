@@ -48,13 +48,6 @@ public class UserController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "goToCreateUser.do")
-//	public ModelAndView goToCreateUser() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("createUser");
-//		return mv;
-//	}
-//
 	@RequestMapping(path = "createUser.do", method = RequestMethod.POST)
 	public ModelAndView addUser(User user) {
 		ModelAndView mv = new ModelAndView();
