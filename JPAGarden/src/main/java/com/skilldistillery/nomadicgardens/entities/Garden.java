@@ -24,7 +24,7 @@ public class Garden {
 	private Address address;
 
 	@Column(name = "size_sqft")
-	private int sizeSqft;
+	private Integer sizeSqft;
 
 	private String description;
 
