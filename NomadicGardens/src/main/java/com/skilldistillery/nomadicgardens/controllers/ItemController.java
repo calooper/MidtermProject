@@ -18,13 +18,13 @@ public class ItemController {
 	@Autowired
 	private ItemDAO dao;
 
-	@RequestMapping(path = "home.do")
-	public ModelAndView index() {
-		ModelAndView mv = new ModelAndView();
-
-		mv.setViewName("home");
-		return mv;
-	}
+//	@RequestMapping(path = "home.do")
+//	public ModelAndView index() {
+//		ModelAndView mv = new ModelAndView();
+//
+//		mv.setViewName("home");
+//		return mv;
+//	}
 
 	@RequestMapping(path = "findItemById.do")
 	public ModelAndView findItemById(@RequestParam("itemId") int itemId) {
