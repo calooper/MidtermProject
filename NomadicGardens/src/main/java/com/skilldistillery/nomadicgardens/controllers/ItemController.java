@@ -49,7 +49,7 @@ public class ItemController {
 	}
 
 	@RequestMapping(path = "createItem.do", method = RequestMethod.POST)
-	public ModelAndView addUser(Item item) {
+	public ModelAndView addItem(Item item) {
 		ModelAndView mv = new ModelAndView();
 
 		item = dao.create(item);
@@ -60,7 +60,7 @@ public class ItemController {
 	}
 
 	@RequestMapping(path = "updateItem.do", method = RequestMethod.POST)
-	public ModelAndView updateUser(@RequestParam("oldItemId") int oldId, Item item) {
+	public ModelAndView updateItem(@RequestParam("oldItemId") int oldId, Item item) {
 		ModelAndView mv = new ModelAndView();
 
 		item = dao.update(oldId, item);
@@ -71,7 +71,7 @@ public class ItemController {
 	}
 
 	@RequestMapping(path = "destroyItem.do", method = RequestMethod.POST)
-	public ModelAndView destroyUser(@RequestParam("itemId") int id) {
+	public ModelAndView destroyItem(@RequestParam("itemId") int id) {
 		ModelAndView mv = new ModelAndView();
 		dao.destroy(id);
 		mv.setViewName("redirect:home.do");
