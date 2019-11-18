@@ -21,15 +21,15 @@ public class AuthenticationDAOImpl implements AuthenticationDAO {
 	}
 
 	@Override
-	public boolean isUsernameUnique(String userName) {
+	public boolean isUsernameUnique(String username) {
 
-		return !users.containsKey(userName);
+		return !users.containsKey(username);
 	}
 
 	@Override
-	public User getUserByUsername(String userName) {
-		if (users.containsKey(userName)) {
-			return users.get(userName);
+	public User getUserByUsername(String username) {
+		if (users.containsKey(username)) {
+			return users.get(username);
 		}
 		return null;
 	}
