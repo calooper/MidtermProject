@@ -42,7 +42,7 @@ public class LoginController {
 		// If the Username was not found, use the Errors object to reject the email, 
 		// with the message "Username not found"
 		if(loggedInUser == null) {
-		  errors.rejectValue("userName", "error.userName", "Username not found");
+		  errors.rejectValue("username", "error.username", "Username not found");
 		}
 		else {
     	   // Else if the user is not valid (isValidUser), use the Errors object to reject 
