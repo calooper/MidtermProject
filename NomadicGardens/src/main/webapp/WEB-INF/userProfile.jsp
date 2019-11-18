@@ -101,12 +101,12 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach items="${ user.plots}" var="campsite">
+													<c:forEach items="${ itemsList}" var="item">
 
 
 														<c:choose>
-															<c:when test="${user.plots == null }">
-																<strong style="padding-left: 35em; color: red"></strong>
+															<c:when test="${empty itemsList}">
+																<strong style="padding-left: 35em; color: red">No items from this users garden</strong>
 																<br>
 																<br>
 																<br>
@@ -117,11 +117,11 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td id="f1">${user.username }</td>
-																	<td id="f1">${ user.lastName}</td>
-																	<td id="l1">${ user.lastName}</td>
-																	<td id="m1">${ user.lastName}</td>
-																	<td id="m2">${ user.lastName}</td>
+																	<td id="f1">${ item.id }</td>
+																	<td id="f1">${ item.id}</td>
+																	<td id="l1">${item.quantity}</td>
+																	<td id="m1">${ item.unit}</td> 
+																	<td id="m2">${ item.produce.name}</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
@@ -159,6 +159,145 @@
 															</c:otherwise>
 														</c:choose>
 													</c:forEach>
+													
+													<tr id="d2">
+     
+          <td><input type="hidden" id="f2"></td>
+          <td><input type="hidden" id="f2"></td>
+          <td><input type="hidden" id="f2"></td>
+          <td><input type="hidden" id="l2"></td>
+          <td><input type="hidden" id="m1"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+          <td><input type="hidden" id="m2"></td>
+           <td><input type="hidden" id="m2"></td>
+     
+
+
+
+          <td>
+          <td><strong>Add</strong></td>
+          <td><button type="submit" data-toggle="modal" data-target="#edit" data-uid="2" class="add btn btn-primary btn-sm">
+              <span class="glyphicon glyphicon-plus" value="Submit Button"></span>
+            </button></td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  
+  
+  <!--  ADD A  SITE POP_UP MENU-->
+  <div id="edit" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"></button>
+          <h4 class="modal-title">Add an Item </h4>
+        </div>
+
+
+        <form action="addCampsite.do" method="POST">
+          <div class="modal-body">
+            <input type="text" class="form-control" name="description" placeholder="Description" required>
+
+            <input type="text" class="form-control" name="state" placeholder="State">
+
+            <input type="text" class="form-control" name="mountainRange" placeholder="Moutain Range" required>
+
+            <input type="number" step="0.000001" class="form-control" name="latitude" placeholder="Latitude in Decimal Degrees" required>
+
+            <input type="number" step="0.000001" class="form-control" name="longitude" placeholder="Longitude in Decimal Degrees" required>
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-warning" class="form-control">Update</button>
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit a site pop-up menu  -->
+
+  <div id="edit2" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"></button>
+          <h4 class="modal-title">Edit an Item</h4>
+        </div>
+
+
+        <form action="editCampsite.do" method="GET">
+          <div class="modal-body">
+            <input type="number" class="form-control" name="id" placeholder="Id" required>
+
+            <input type="text" class="form-control" name="description" placeholder="Description" required>
+
+            <input type="text" class="form-control" name="state" placeholder="State">
+
+            <input type="text" class="form-control" name="mountainRange" placeholder="Moutain Range" required>
+
+         
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-warning" class="form-control">Update</button>
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<!-- DELETE POP UP -->
+ 
+  <div id="delete" class="modal fade" role="dialog">
+  	<div class="modal-dialog">
+  		<div class="modal-content">
+  			<div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal"></button>
+  				<h4 class="modal-title">Delete Data</h4>
+  			</div>
+  			<div class="modal-body">
+  				<strong>Are you sure you want to delete this data?</strong>
+  			</div>
+  		<form action="deleteCampsite.do" method="GET" name="id" value=${ campsite.id}>
+  			<div class="modal-footer">
+  				<button type="submit" id="del" class="btn btn-danger "
+  					data-dismiss="modal" value=${ campsite.id}>Delete</button>
+  				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  			</div>
+  			  </form>
+  		</div>
+  	</div>
+  </div>
+    
+  
+  
+  
+  
+  
+  
+  
+  
 										</div>
 									</div>
 								</div>

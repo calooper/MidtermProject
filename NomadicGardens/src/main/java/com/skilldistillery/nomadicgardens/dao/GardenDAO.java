@@ -10,4 +10,6 @@ public interface GardenDAO {
 	public Garden create(Garden garden);
 	public Garden update(int id, Garden garden);
 	public boolean destroy(int id);
+	public Garden findGardenByKeyword(String keyword);
+	
 }
