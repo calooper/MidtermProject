@@ -1,8 +1,6 @@
 package com.skilldistillery.nomadicgardens.dao;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -20,6 +18,7 @@ public class UserDAOImpl implements UserDAO {
 	private EntityManager em;
 
 	// METHODS
+
 	@Override
 	public User findById(int id) {
 		return em.find(User.class, id);
@@ -32,22 +31,13 @@ public class UserDAOImpl implements UserDAO {
 		return allUsers;
 	}
 	
-	@Override
-	public Map<String, User> populateMap(){
-		Map<String, User> mapOfUsers = new HashMap<>();
-		
-		List<User>listOfUsers = findAll();
-		for (User user : listOfUsers) {
-			mapOfUsers.put(user.getUsername(), user);
-		}
-		
-		return mapOfUsers;
-	}
 
 	@Override
 	public User create(User user) {
-		em.persist(user);
-		em.flush();
+		if (isUsernameUnique(user.getUsername(), findAll())) {
+			em.persist(user);
+			em.flush();
+		}
 		return user;
 	}
 
@@ -82,6 +72,41 @@ public class UserDAOImpl implements UserDAO {
 		em.remove(us);
 		em.flush();
 		return successful;
+	}
+	
+	//ADDITIONS
+
+	@Override
+	public boolean isUsernameUnique(String username, List<User> users) {
+		boolean isUnique = true;
+		for (User user : users) {
+			if(username.equals(user.getUsername())) {
+				isUnique = false;
+			}
+		}
+		return isUnique;
+	}
+
+	@Override
+	public User getUserByUsername(String username) {
+		String query = "SELECT us FROM User us WHERE us.username = :username";
+		User user = em.createQuery(query, User.class)
+				.setParameter("username", username)
+				.getResultList().get(0);
+
+		return user;
+	}
+
+	@Override
+	public boolean isValidUser(User u) {
+		if (getUserByUsername(u.getUsername()) == null) {
+			return false;
+		}
+		
+		if(getUserByUsername(u.getUsername()).getPassword().equals(u.getPassword())) {
+			return true;
+		}
+		return false;
 	}
 
 }
