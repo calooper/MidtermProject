@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.skilldistillery.nomadicgardens.entities.User;
 
+
 @Repository
 public class AuthenticationDAOImpl implements AuthenticationDAO {
 	private UserDAOImpl userDAO = null;
