@@ -7,7 +7,13 @@
 <title>User Profile</title>
 </head>
 <body>
-<jsp:include="navbar.jsp"/>
+
+
+
+<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
+
+<%-- <jsp:include="navbar.jsp"/> --%>
+
 
 </body>
 </html>
