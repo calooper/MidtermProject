@@ -22,6 +22,12 @@ public class GardenDAOImpl implements GardenDAO {
 	public Garden findById(int id) {
 		return em.find(Garden.class, id);
 	}
+	
+	public List<Garden> findGardenByKeyword(String keyword){
+		String query = "SELECT grd FROM Garden grd WHERE grd.name LIKE '%:keyword%'";
+		List<Garden> gardens = em.createQuery(query, Garden.class).setParameter("keyword", keyword).getResultList();
+		return gardens;
+	}
 
 	@Override
 	public List<Garden> findAll() {

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +29,10 @@
 		border-color: #33cabb;
 		box-shadow: 0 0 8px rgba(0,0,0,0.1);
 	}
+  .logout {
+    margin-top: 8px;
+	}
+
 	.navbar-header.col {
 		padding: 0 !important;
 	}
@@ -268,7 +274,7 @@
 			<span class="icon-bar"></span>
 		</button>
 	</div>
-	<!-- Collection of nav links, forms, and other content for toggling -->
+	<%-- <!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<ul class="nav navbar-nav">
 			<li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
@@ -278,7 +284,7 @@
 					<li><a href="#" class="dropdown-item">Profile</a></li>
 				</ul>
 			</li>
-		</ul>
+		</ul> --%>
 
 
 		<form class="navbar-form form-inline" action="findUserById.do" method="GET" >
@@ -289,6 +295,40 @@
 		</form>
 
 		<ul class="nav navbar-nav navbar-right ml-auto">
+
+<%--
+  <c:if test="${sessionScope.user != null }"><a href="account.do">Account</a></c:if>
+	<c:if test="${sessionScope.user != null }"><a href="logout.do">Logout</a></c:if>
+	<c:if test="${sessionScope.sessionUser == null }"> </c:if>
+ --%>
+
+      <c:if test="${sessionScope.sessionUser != null }">
+        <!-- Collection of nav links, forms, and other content for toggling -->
+      	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+      		<ul class="nav navbar-nav">
+      			<li class="nav-item dropdown">
+      				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">User <b class="caret"></b></a>
+      				<ul class="dropdown-menu">
+      					<li><a href="#" class="dropdown-item">Profile</a></li>
+                <li><a href="#" class="dropdown-item">Cart</a></li>
+      				</ul>
+      			</li>
+            <%-- <li class="nav-item"><a href="#" class="nav-link">Cart</a></li> --%>
+            <li>
+              <form action="logout.do" method="post" >
+                <input type="submit" class="btn btn-primary btn-block logout" value="Logout">
+              </form>
+            </li>
+      		</ul>
+        </div>
+
+          <%-- <form action="logout.do" method="post" >
+            <input type="submit" class="btn btn-primary btn-block logout" value="Logout">
+          </form> --%>
+
+      </c:if>
+
+      <c:if test="${sessionScope.sessionUser == null }"> <%-- if no user is logged in --%>
 			<li class="nav-item">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
 				<ul class="dropdown-menu form-wrapper">
@@ -318,7 +358,7 @@
 				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1">Sign up</a>
 				<ul class="dropdown-menu form-wrapper">
 					<li>
-						<form action="/examples/actions/confirmation.php" method="post">
+						<form action="register.do" method="post">
 							<p class="hint-text">Fill in this form to create Nomadic Garden account!</p>
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Username" required="required">
@@ -337,6 +377,7 @@
 					</li>
 				</ul>
 			</li>
+      </c:if>
 		</ul>
 	</div>
 </nav>
