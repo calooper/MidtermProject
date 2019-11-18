@@ -101,11 +101,11 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach items="${ user.items}" var="item">
+													<c:forEach items="${ itemsList}" var="item">
 
 
 														<c:choose>
-															<c:when test="${empty user.items}">
+															<c:when test="${empty itemsList}">
 																<strong style="padding-left: 35em; color: red">No items from this users garden</strong>
 																<br>
 																<br>
@@ -117,11 +117,11 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td id="f1">${ items.name }</td>
-																	<td id="f1">${ user.lastName}</td>
-																	<td id="l1">${ item}</td>
-																	<td id="m1">${ user.items}</td>
-																	<td id="m2">${ item.unit}</td>
+																	<td id="f1">${ item.id }</td>
+																	<td id="f1">${ item.id}</td>
+																	<td id="l1">${item.quantity}</td>
+																	<td id="m1">${ item.unit}</td> 
+																	<td id="m2">${ item.produce.name}</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
