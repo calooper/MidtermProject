@@ -1,6 +1,8 @@
 package com.skilldistillery.nomadicgardens.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,6 +30,18 @@ public class UserDAOImpl implements UserDAO {
 		String query = "SELECT us FROM User us";
 		List<User> allUsers = em.createQuery(query, User.class).getResultList();
 		return allUsers;
+	}
+	
+	@Override
+	public Map<String, User> populateMap(){
+		Map<String, User> mapOfUsers = new HashMap<>();
+		
+		List<User>listOfUsers = findAll();
+		for (User user : listOfUsers) {
+			mapOfUsers.put(user.getUsername(), user);
+		}
+		
+		return mapOfUsers;
 	}
 
 	@Override

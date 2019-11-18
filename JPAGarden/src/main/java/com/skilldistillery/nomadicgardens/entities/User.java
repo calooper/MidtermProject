@@ -13,16 +13,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-
 @Entity
 public class User {
 	// FIELDS
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String username;
-	
+
 	private String password;
 
 	private boolean active;
@@ -33,7 +32,7 @@ public class User {
 
 	@Column(name = "img_url")
 	private String imgURL;
-	
+
 	private String email;
 
 	@Column(name = "phone_number")
@@ -84,8 +83,7 @@ public class User {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	
-	
+
 	public User(String username, String password, String email) {
 		super();
 		this.username = username;
@@ -94,7 +92,6 @@ public class User {
 	}
 
 	// GETTERS, SETTERS, TOSTRING, EQUALS
-
 
 	public int getId() {
 		return id;
