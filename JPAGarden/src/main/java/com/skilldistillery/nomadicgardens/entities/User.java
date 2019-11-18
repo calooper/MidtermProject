@@ -25,7 +25,7 @@ public class User {
 
 	private String password;
 	
-	private String passwordConfirm;
+//	private String passwordConfirm;
 
 	private boolean active;
 
@@ -208,14 +208,14 @@ public class User {
 		this.items = items;
 	}
 	
-	@Transient
-	public String getPasswordConfirm() {
-		return passwordConfirm;
-	}
-
-	public void setPasswordConfirm(String passwordConfirm) {
-		this.passwordConfirm = passwordConfirm;
-	}
+//	@Transient
+//	public String getPasswordConfirm() {
+//		return passwordConfirm;
+//	}
+//
+//	public void setPasswordConfirm(String passwordConfirm) {
+//		this.passwordConfirm = passwordConfirm;
+//	}
 
 	@Override
 	public String toString() {
