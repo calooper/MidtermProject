@@ -8,8 +8,8 @@ import com.skilldistillery.nomadicgardens.entities.User;
 
 @Repository
 public class AuthenticationDAOImpl implements AuthenticationDAO {
-	private UserDAOImpl userDAO = new UserDAOImpl();
-	private Map<String, User> users = userDAO.populateMap();
+	private UserDAOImpl userDAO = null;
+	private Map<String, User> users = null;
 
 	@Override
 	public User create(User user) {
@@ -22,12 +22,17 @@ public class AuthenticationDAOImpl implements AuthenticationDAO {
 
 	@Override
 	public boolean isUsernameUnique(String username) {
+		userDAO = new UserDAOImpl();
+		users = userDAO.populateMap();
 
 		return !users.containsKey(username);
 	}
 
 	@Override
 	public User getUserByUsername(String username) {
+		userDAO = new UserDAOImpl();
+		users = userDAO.populateMap();
+		
 		if (users.containsKey(username)) {
 			return users.get(username);
 		}
