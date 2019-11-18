@@ -1,5 +1,6 @@
 package com.skilldistillery.nomadicgardens.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,14 +35,14 @@ public class LoginController {
 	}
 	
 	@RequestMapping(path="login.do", method=RequestMethod.POST)
-	public ModelAndView doLogin(@Valid User user, Errors errors) {
+	public ModelAndView doLogin(@Valid User user, Errors errors, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		
 		User loggedInUser = authDao.getUserByUsername(user.getUsername());
 		// If the Username was not found, use the Errors object to reject the email, 
 		// with the message "Username not found"
 		if(loggedInUser == null) {
-		  errors.rejectValue("userName", "error.userName", "Username not found");
+		  errors.rejectValue("username", "error.username", "Username not found");
 		}
 		else {
     	   // Else if the user is not valid (isValidUser), use the Errors object to reject 
@@ -55,8 +56,21 @@ public class LoginController {
 			mv.setViewName("home");
 			return mv;
 		}
+		session.setAttribute("sessionUser", loggedInUser);
 		mv.addObject("user", loggedInUser);
 		mv.setViewName("profile");
 		return mv;
+	}
+	@RequestMapping(path="logout.do", method=RequestMethod.POST)
+	public ModelAndView doLogout(@Valid User user, Errors errors, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		
+		User loggedInUser = null;
+		session.setAttribute("sessionUser", loggedInUser);
+		
+		mv.addObject("user", loggedInUser);
+		mv.setViewName("home");
+		return mv;
+
 	}
 }

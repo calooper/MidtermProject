@@ -1,6 +1,5 @@
 package com.skilldistillery.nomadicgardens.dao;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Repository;
@@ -9,7 +8,8 @@ import com.skilldistillery.nomadicgardens.entities.User;
 
 @Repository
 public class AuthenticationDAOImpl implements AuthenticationDAO {
-	private Map<String, User> users = new HashMap<>();
+	private UserDAOImpl userDAO = new UserDAOImpl();
+	private Map<String, User> users = userDAO.populateMap();
 
 	@Override
 	public User create(User user) {
