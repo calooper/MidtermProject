@@ -68,8 +68,7 @@ public class LoginController {
 		User loggedInUser = null;
 		session.setAttribute("sessionUser", loggedInUser);
 		
-		mv.addObject("user", loggedInUser);
-		mv.setViewName("home");
+		mv.setViewName("redirect:home.do");
 		return mv;
 
 	}
