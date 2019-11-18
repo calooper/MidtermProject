@@ -48,6 +48,7 @@
   var marker4 = new google.maps.Marker({position: FirstPlymouthChurchCommunityGarden, map: map});
   var marker5 = new google.maps.Marker({position: EnglewoodCommunityGarden, map: map});
   var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map});
+
   
   marker.addListener('click', function() {
 		/* window.location.href = 'gardenProfile.jsp' */
@@ -55,7 +56,7 @@
 	  	window.location.replace("findGardenById.do?gardenId=1");
 	})
 };
- 
+
 
     </script>
 	<!--Load the API from the specified URL

@@ -260,7 +260,7 @@
 <body>
 <nav class="navbar navbar-default navbar-expand-lg  navbar-fixed-top navbar-light">
 	<div class="navbar-header d-flex col">
-		<a class="navbar-brand" href="home.jsp">Nomadic<b>Gardens</b></a>  		
+		<a class="navbar-brand" href="home">Nomadic<b>Gardens</b></a>  		
 		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 			<span class="navbar-toggler-icon"></span>
 			<span class="icon-bar"></span>
