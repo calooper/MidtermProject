@@ -18,6 +18,14 @@ public class LoginController {
 	@Autowired
 	private AuthenticationDAOImpl authDao;
 	
+	@RequestMapping(path = "/")
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("home");
+		return mv;
+	}
+	
 	@RequestMapping(path="login", method=RequestMethod.GET)
 	public ModelAndView login() {
 		User u = new User();

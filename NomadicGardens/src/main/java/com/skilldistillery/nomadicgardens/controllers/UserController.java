@@ -18,13 +18,6 @@ public class UserController {
 	@Autowired
 	private UserDAO dao;
 
-	@RequestMapping(path = "home.do")
-	public ModelAndView index() {
-		ModelAndView mv = new ModelAndView();
-
-		mv.setViewName("home");
-		return mv;
-	}
 
 	@RequestMapping(path = "findUserById.do")
 	public ModelAndView findUserById(@RequestParam("userId") int id) {
@@ -48,13 +41,6 @@ public class UserController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "goToCreateUser.do")
-//	public ModelAndView goToCreateUser() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("createUser");
-//		return mv;
-//	}
-//
 	@RequestMapping(path = "createUser.do", method = RequestMethod.POST)
 	public ModelAndView addUser(User user) {
 		ModelAndView mv = new ModelAndView();
