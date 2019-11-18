@@ -7,7 +7,7 @@
 <title>User Profile</title>
 </head>
 <body>
-<jsp:include="navbar.jsp"/>
+<%-- <jsp:include="navbar.jsp"/> --%>
 
 </body>
 </html>
