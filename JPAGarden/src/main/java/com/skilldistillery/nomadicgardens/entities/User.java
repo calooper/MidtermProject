@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class User {
@@ -23,6 +24,8 @@ public class User {
 	private String username;
 
 	private String password;
+	
+	private String passwordConfirm;
 
 	private boolean active;
 
@@ -204,6 +207,15 @@ public class User {
 	public void setItems(List<Item> items) {
 		this.items = items;
 	}
+	
+	@Transient
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
+
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
+	}
 
 	@Override
 	public String toString() {
@@ -353,5 +365,7 @@ public class User {
 			cartItems.remove(cartItem);
 		}
 	}
+
+
 
 }
