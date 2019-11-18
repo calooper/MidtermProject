@@ -19,7 +19,7 @@ public class LoginController {
 	@Autowired
 	private UserDAO authDao;
 	
-	@RequestMapping(path = "/")
+	@RequestMapping(path = {"/","home.do"})
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		
