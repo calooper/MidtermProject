@@ -18,10 +18,10 @@ public class LoginController {
 	@Autowired
 	private AuthenticationDAOImpl authDao;
 	
-	@RequestMapping(path = "home.do")
+	@RequestMapping(path = "/")
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
-
+		
 		mv.setViewName("home");
 		return mv;
 	}
