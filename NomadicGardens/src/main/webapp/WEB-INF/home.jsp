@@ -8,7 +8,8 @@
 <title>Nomadic Gardens</title>
 </head>
 <body>
-<jsp:include="navbar.jsp"/>
+
+<%-- <jsp:include="navbar.jsp"/> --%>
 
 </body>
 </html>

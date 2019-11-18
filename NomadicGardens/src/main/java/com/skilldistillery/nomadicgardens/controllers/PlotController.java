@@ -60,7 +60,7 @@ public class PlotController {
 		return mv;
 	}
 
-	@RequestMapping(path = "updateItem.do", method = RequestMethod.POST)
+	@RequestMapping(path = "updatePlot.do", method = RequestMethod.POST)
 	public ModelAndView updatePlot(@RequestParam("oldPlotId") int oldId, Plot plot) {
 		ModelAndView mv = new ModelAndView();
 

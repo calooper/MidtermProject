@@ -18,13 +18,6 @@ public class UserController {
 	@Autowired
 	private UserDAO dao;
 
-	@RequestMapping(path = "home.do")
-	public ModelAndView index() {
-		ModelAndView mv = new ModelAndView();
-
-		mv.setViewName("home");
-		return mv;
-	}
 
 	@RequestMapping(path = "findUserById.do")
 	public ModelAndView findUserById(@RequestParam("userId") int id) {
