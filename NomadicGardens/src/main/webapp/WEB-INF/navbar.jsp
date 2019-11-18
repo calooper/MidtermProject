@@ -16,10 +16,10 @@
 <style type="text/css">
 	body{
 		font-family: 'Varela Round', sans-serif;
-		
+
 	}
 	.form-control {
-		box-shadow: none;		
+		box-shadow: none;
 		font-weight: normal;
 		font-size: 13px;
 	}
@@ -29,15 +29,15 @@
 	}
 	.navbar-header.col {
 		padding: 0 !important;
-	}	
+	}
 	.navbar {
 		background: #fff;
 		padding-left: 16px;
 		padding-right: 16px;
 		border-bottom: 1px solid #dfe3e8;
 		border-radius: 0;
-	
-		
+
+
 	}
 	.nav-link img {
 		border-radius: 50%;
@@ -54,7 +54,7 @@
 	}
 	.navbar .navbar-brand b {
 		font-weight: bold;
-		color: #33cabb;		
+		color: #33cabb;
 	}
 	.navbar .form-inline {
         display: inline-block;
@@ -67,7 +67,7 @@
 	}
 	.search-box {
         position: relative;
-    }	
+    }
     .search-box input {
         padding-right: 35px;
 		border-color: #dfe3e8;
@@ -95,8 +95,8 @@
 		padding-bottom: 6px;
 		vertical-align: middle;
 		border: none;
-	}	
-	.navbar .nav .btn-primary:hover, .navbar .nav .btn-primary:focus {		
+	}
+	.navbar .nav .btn-primary:hover, .navbar .nav .btn-primary:focus {
 		color: #fff;
 		outline: none;
 		background: #31bfb1;
@@ -113,7 +113,7 @@
 	}
 	.navbar ul.nav li.active a, .navbar ul.nav li.open > a {
 		background: transparent !important;
-	}	
+	}
 	.navbar .nav .get-started-btn {
 		min-width: 120px;
 		margin-top: 8px;
@@ -146,7 +146,7 @@
 		right: 0;
         font-size: 14px;
 	}
-	.navbar .dropdown-menu.form-wrapper a {		
+	.navbar .dropdown-menu.form-wrapper a {
 		color: #33cabb;
 		padding: 0 !important;
 	}
@@ -169,7 +169,7 @@
 		line-height: 34px;
 		width: 47%;
 		text-decoration: none;
-    }	
+    }
 	.navbar .social-btn .btn-primary {
 		background: #507cc0;
 	}
@@ -256,11 +256,11 @@
 		e.stopPropagation();
 	});
 </script>
-</head> 
+</head>
 <body>
 <nav class="navbar navbar-default navbar-expand-lg  navbar-fixed-top navbar-light">
 	<div class="navbar-header d-flex col">
-		<a class="navbar-brand" href="/">Nomadic<b>Gardens</b></a>  		
+		<a class="navbar-brand" href="home.do">Nomadic<b>Gardens</b></a>
 		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 			<span class="navbar-toggler-icon"></span>
 			<span class="icon-bar"></span>
@@ -271,27 +271,27 @@
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 		<ul class="nav navbar-nav">
-			<li class="nav-item"><a href="#" class="nav-link">Cart</a></li>			
+			<li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
 			<li class="nav-item dropdown">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">User <b class="caret"></b></a>
-				<ul class="dropdown-menu">					
+				<ul class="dropdown-menu">
 					<li><a href="#" class="dropdown-item">Profile</a></li>
 				</ul>
 			</li>
 		</ul>
-	
-	
+
+
 		<form class="navbar-form form-inline" action="findUserById.do" method="GET" >
-			<div class="input-group search-box">								
+			<div class="input-group search-box">
 				<input type="number" id="search"  placeholder="Search by Id.." class="form-control" name ="userId" placeholder="Search here...">
 				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 			</div>
 		</form>
-		
-		<ul class="nav navbar-nav navbar-right ml-auto">			
+
+		<ul class="nav navbar-nav navbar-right ml-auto">
 			<li class="nav-item">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
-				<ul class="dropdown-menu form-wrapper">					
+				<ul class="dropdown-menu form-wrapper">
 					<li>
 						<form action="login.do" method="post" >
 							<!-- <p class="hint-text">Sign in with your social media account</p>
@@ -316,7 +316,7 @@
 			</li>
 			<li class="nav-item">
 				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1">Sign up</a>
-				<ul class="dropdown-menu form-wrapper">					
+				<ul class="dropdown-menu form-wrapper">
 					<li>
 						<form action="/examples/actions/confirmation.php" method="post">
 							<p class="hint-text">Fill in this form to create Nomadic Garden account!</p>
@@ -326,9 +326,9 @@
 							<div class="form-group">
 								<input type="password" class="form-control" placeholder="Password" required="required">
 							</div>
-							<div class="form-group">
+							<%-- <div class="form-group">
 								<input type="password" class="form-control" placeholder="Confirm Password" required="required">
-							</div>
+							</div> --%>
 							<div class="form-group">
 								<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms &amp; Conditions</a></label>
 							</div>
@@ -341,7 +341,7 @@
 	</div>
 </nav>
 </body>
-</html>                                                                                    
+</html>
 
 
 
