@@ -10,6 +10,6 @@ public interface GardenDAO {
 	public Garden create(Garden garden);
 	public Garden update(int id, Garden garden);
 	public boolean destroy(int id);
-	public List<Garden> findGardenByKeyword(String keyword);
+	public Garden findGardenByKeyword(String keyword);
 	
 }

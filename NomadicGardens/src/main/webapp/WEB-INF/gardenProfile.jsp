@@ -20,7 +20,7 @@
 	
 	<c:if test="${not empty garden.plots}">
 		<ul>
-			<c:forEach var="film" items="${garden.plots}">
+			<c:forEach var="garden" items="${garden.plots}">
 				<li>${garden.plots}</li>
 			</c:forEach>
 		</ul>
