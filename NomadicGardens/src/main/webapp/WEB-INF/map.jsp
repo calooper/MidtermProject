@@ -50,11 +50,26 @@
   var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map});
 
   
-  marker.addListener('click', function() {
+  	marker.addListener('click', function() {
 		/* window.location.href = 'gardenProfile.jsp' */
 	  	/* window.location.replace("http://stackoverflow.com"); */
 	  	window.location.replace("findGardenById.do?gardenId=1");
 	  	/* document.location.href = "findGardenById.do?gardenId=1"; */
+	})
+	  marker2.addListener('click', function() {
+	  	window.location.replace("findGardenById.do?gardenId=2");
+	})
+	  marker3.addListener('click', function() {
+	  	window.location.replace("findGardenById.do?gardenId=3");
+	})
+	  marker4.addListener('click', function() {
+	  	window.location.replace("findGardenById.do?gardenId=4");
+	})
+	  marker5.addListener('click', function() {
+	  	window.location.replace("findGardenById.do?gardenId=5");
+	})
+	  marker6.addListener('click', function() {
+	  	window.location.replace("findGardenById.do?gardenId=6");
 	})
 };
 
