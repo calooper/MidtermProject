@@ -21,9 +21,9 @@
 <body>
 
 
-    <!--The div element for the map -->
-    <div id="map"></div>
-    <script>
+	<!--The div element for the map -->
+	<div id="map"></div>
+	<script>
 // Initialize and add the map
   function initMap() {
   // The location of Uluru
@@ -48,14 +48,17 @@
   var marker4 = new google.maps.Marker({position: FirstPlymouthChurchCommunityGarden, map: map});
   var marker5 = new google.maps.Marker({position: EnglewoodCommunityGarden, map: map});
   var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map});
-}
-
-  /* 	marker.addListener('click', function() {
-	window.location.href = 'www.google.com' */
-
+  
+  marker.addListener('click', function() {
+		/* window.location.href = 'gardenProfile.jsp' */
+	  	/* window.location.replace("http://stackoverflow.com"); */
+	  	window.location.replace("findGardenById.do?gardenId=1");
+	})
+};
+ 
 
     </script>
-    <!--Load the API from the specified URL
+	<!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
@@ -63,19 +66,21 @@
 
 
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVCwGbMgmWv3cUI_ti8ANIkCsPaSsF7oE&callback=initMap">
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVCwGbMgmWv3cUI_ti8ANIkCsPaSsF7oE&callback=initMap">
     </script>
-    
- 
- 
-   <script google.maps.event.addListener(SyracuseCommunityGarden, 'click', function() {
-    window.location.href = 'www.google.com'>
-    </script> 
-    
-    
-    
-    
-    
+
+
+
+	<script
+		google.maps.event.addListener(SyracuseCommunityGarden, 'click', function() {
+    window.location.href='www.google.com'>
+    </script>
+
+
+
+
+
 
 
 

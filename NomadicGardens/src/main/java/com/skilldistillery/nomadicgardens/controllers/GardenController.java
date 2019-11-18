@@ -32,6 +32,8 @@ public class GardenController {
 		mv.addObject("garden", garden);
 		mv.setViewName("gardenProfile");
 		
+		System.out.println("***************** in find garden");
+		
 		return mv;
 	}
 
