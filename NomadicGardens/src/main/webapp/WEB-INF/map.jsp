@@ -54,6 +54,7 @@
 		/* window.location.href = 'gardenProfile.jsp' */
 	  	/* window.location.replace("http://stackoverflow.com"); */
 	  	window.location.replace("findGardenById.do?gardenId=1");
+	  	/* document.location.href = "findGardenById.do?gardenId=1"; */
 	})
 };
 
