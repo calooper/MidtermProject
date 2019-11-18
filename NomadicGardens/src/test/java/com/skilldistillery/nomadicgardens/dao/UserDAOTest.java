@@ -1,4 +1,4 @@
-package com.skilldistillery.nomadicgardens;
+package com.skilldistillery.nomadicgardens.dao;
 
 class UserDAOTest {
 //	
