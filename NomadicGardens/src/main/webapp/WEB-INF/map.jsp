@@ -49,8 +49,8 @@
   var marker5 = new google.maps.Marker({position: EnglewoodCommunityGarden, map: map});
   var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map});
 }
-
-  /* 	marker.addListener('click', function() {
+/* 
+  marker.addListener(marker, 'click', function() {
 	window.location.href = 'www.google.com' */
 
 
