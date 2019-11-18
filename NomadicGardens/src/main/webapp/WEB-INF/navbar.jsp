@@ -309,7 +309,7 @@
       			<li class="nav-item dropdown">
       				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">User <b class="caret"></b></a>
       				<ul class="dropdown-menu">
-      					<li><a href="#" class="dropdown-item">Profile</a></li>
+      					<li><a href="findUserById.do?userId=${sessionUser.id }" class="dropdown-item">Profile</a></li>
                 <li><a href="#" class="dropdown-item">Cart</a></li>
       				</ul>
       			</li>
@@ -361,10 +361,13 @@
 						<form action="register.do" method="post">
 							<p class="hint-text">Fill in this form to create Nomadic Garden account!</p>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Username" required="required">
+								<input type="text" name="email" class="form-control" placeholder="Email" required="required">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password" required="required">
+								<input type="text" name="username" class="form-control" placeholder="Username" required="required">
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" class="form-control" placeholder="Password" required="required">
 							</div>
 							<%-- <div class="form-group">
 								<input type="password" class="form-control" placeholder="Confirm Password" required="required">
