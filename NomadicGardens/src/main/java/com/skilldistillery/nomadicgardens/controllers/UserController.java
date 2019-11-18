@@ -22,7 +22,7 @@ public class UserController {
 	@RequestMapping(path = "findUserById.do")
 	public ModelAndView findUserById(@RequestParam("userId") int id) {
 		ModelAndView mv = new ModelAndView();
-		
+		System.out.println("***************** in user controller");
 		User us = dao.findById(id);
 		mv.addObject("user", us);
 		mv.setViewName("userProfile");
