@@ -56,11 +56,11 @@
   </div>
 
   
-
+	<br>
 	
 	  <jsp:include page="map.jsp" /> 
 
-
+	<br>
 
 	<!-- Footer -->
 <footer class="footer-container">
@@ -92,9 +92,9 @@
             <div class="col-md-5 offset-md-1 footer-right">
                 <h3>Follow us</h3>
                 <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="userProfile"><i class="fab fa-facebook-f"></i></a>
+                    <a href="gardenProfile.jsp"><i class="fab fa-dribbble"></i></a>
+                    <a href="home.jsp"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-pinterest"></i></a>
                 </div>
@@ -108,10 +108,15 @@
     </div>
  
 </footer>
+
+ <form action="findItemById.do" method="GET">
+      <input type="number"   placeholder="Search by Id.." name="itemId">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
 	
 	
 
-
+ 
 
 
 
