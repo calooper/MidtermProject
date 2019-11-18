@@ -30,7 +30,7 @@ public class GardenController {
 		
 		Garden garden = dao.findById(gardenId);
 		mv.addObject("garden", garden);
-		mv.setViewName("userProfile");
+		mv.setViewName("gardenProfile");
 		
 		return mv;
 	}
