@@ -42,12 +42,12 @@
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 12, center: DUBridgeCommunityGarden});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: SyracuseCommunityGarden, url: 'www.google.com', map: map});
-  var marker2 = new google.maps.Marker({position: SamuelCommunityGarden, map: map});
-  var marker3 = new google.maps.Marker({position: MooseMeadowsCommunityGarden, map: map});
-  var marker4 = new google.maps.Marker({position: FirstPlymouthChurchCommunityGarden, map: map});
-  var marker5 = new google.maps.Marker({position: EnglewoodCommunityGarden, map: map});
-  var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map});
+  var marker = new google.maps.Marker({position: SyracuseCommunityGarden, map: map, label: "Syracuse"});
+  var marker2 = new google.maps.Marker({position: SamuelCommunityGarden, map: map, label: "Samuel"});
+  var marker3 = new google.maps.Marker({position: MooseMeadowsCommunityGarden, map: map, label: "Moose Meadows"});
+  var marker4 = new google.maps.Marker({position: FirstPlymouthChurchCommunityGarden, map: map, label: "Plymouth Church"});
+  var marker5 = new google.maps.Marker({position: EnglewoodCommunityGarden, map: map, label: "Englewood"});
+  var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map, label: "DU Bridge"});
 
   
   	marker.addListener('click', function() {
