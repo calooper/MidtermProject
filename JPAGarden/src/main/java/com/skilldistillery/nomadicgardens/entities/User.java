@@ -21,7 +21,7 @@ public class User {
 	private int id;
 
 	private String username;
-
+	
 	private String password;
 
 	private boolean active;
@@ -32,7 +32,7 @@ public class User {
 
 	@Column(name = "img_url")
 	private String imgURL;
-
+	
 	private String email;
 
 	@Column(name = "phone_number")
