@@ -10,6 +10,7 @@ import com.skilldistillery.nomadicgardens.entities.User;
 @Repository
 public class AuthenticationDAOImpl implements AuthenticationDAO {
 	private Map<String, User> users = new HashMap<>();
+	//need method to populate map with users
 
 	@Override
 	public User create(User user) {

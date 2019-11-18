@@ -1,5 +1,6 @@
 package com.skilldistillery.nomadicgardens.controllers;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(path="login.do", method=RequestMethod.POST)
-	public ModelAndView doLogin(@Valid User user, Errors errors) {
+	public ModelAndView doLogin(@Valid User user, Errors errors, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		
 		User loggedInUser = authDao.getUserByUsername(user.getUsername());
@@ -55,8 +56,21 @@ public class LoginController {
 			mv.setViewName("home");
 			return mv;
 		}
+		session.setAttribute("sessionUser", loggedInUser);
 		mv.addObject("user", loggedInUser);
 		mv.setViewName("profile");
 		return mv;
+	}
+	@RequestMapping(path="logout.do", method=RequestMethod.POST)
+	public ModelAndView doLogout(@Valid User user, Errors errors, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		
+		User loggedInUser = null;
+		session.setAttribute("sessionUser", loggedInUser);
+		
+		mv.addObject("user", loggedInUser);
+		mv.setViewName("home");
+		return mv;
+
 	}
 }
