@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.skilldistillery.nomadicgardens.dao.AuthenticationDAO;
+import com.skilldistillery.nomadicgardens.dao.UserDAO;
 import com.skilldistillery.nomadicgardens.entities.User;
 
 @Controller
 public class RegistrationController {
 
 	@Autowired
-	private AuthenticationDAO authDao;
+	private UserDAO authDao;
 
 	@RequestMapping(path = "register.do", method = RequestMethod.GET)
 	public ModelAndView register() {
@@ -33,7 +33,7 @@ public class RegistrationController {
 		if (errors.hasErrors()) {
 			return "home";
 		}
-		if (!authDao.isUsernameUnique(user.getUsername())) {
+		if (!authDao.isUsernameUnique(user.getUsername(), authDao.findAll())) {
 			errors.rejectValue("username", "error.username", "Username already in use");
 			return "home";
 		}

@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.skilldistillery.nomadicgardens.dao.AuthenticationDAOImpl;
+import com.skilldistillery.nomadicgardens.dao.UserDAO;
 import com.skilldistillery.nomadicgardens.entities.User;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
-	private AuthenticationDAOImpl authDao;
+	private UserDAO authDao;
 	
 	@RequestMapping(path = "/")
 	public ModelAndView index() {
@@ -57,8 +57,8 @@ public class LoginController {
 			return mv;
 		}
 		session.setAttribute("sessionUser", loggedInUser);
-		mv.addObject("user", loggedInUser);
-		mv.setViewName("profile");
+//		mv.addObject("user", loggedInUser);
+		mv.setViewName("home");
 		return mv;
 	}
 	@RequestMapping(path="logout.do", method=RequestMethod.POST)
