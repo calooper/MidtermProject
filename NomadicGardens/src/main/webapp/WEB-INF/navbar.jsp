@@ -366,6 +366,7 @@
 							<div class="form-group">
 								<input type="password" class="form-control" placeholder="Password" required="required">
 							</div>
+
 							<%-- <div class="form-group">
 								<input type="password" class="form-control" placeholder="Confirm Password" required="required">
 							</div> --%>
