@@ -17,6 +17,8 @@
 		
 	<p> ${user.username } </p>
 	
+	<!-- hello -->
+	
 	<div>
 		<h1>${user.firstName} ${user.lastName}</h1>
 	</div>
