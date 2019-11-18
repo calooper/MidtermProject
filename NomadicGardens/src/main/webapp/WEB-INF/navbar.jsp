@@ -16,6 +16,7 @@
 <style type="text/css">
 	body{
 		font-family: 'Varela Round', sans-serif;
+		
 	}
 	.form-control {
 		box-shadow: none;		
@@ -35,6 +36,8 @@
 		padding-right: 16px;
 		border-bottom: 1px solid #dfe3e8;
 		border-radius: 0;
+	
+		
 	}
 	.nav-link img {
 		border-radius: 50%;
@@ -255,7 +258,7 @@
 </script>
 </head> 
 <body>
-<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+<nav class="navbar navbar-default navbar-expand-lg  navbar-fixed-top navbar-light">
 	<div class="navbar-header d-flex col">
 		<a class="navbar-brand" href="home.jsp">Nomadic<b>Gardens</b></a>  		
 		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
@@ -276,12 +279,15 @@
 				</ul>
 			</li>
 		</ul>
-		<form class="navbar-form form-inline">
+	
+	
+		<form class="navbar-form form-inline" action="findUserById.do" method="GET" >
 			<div class="input-group search-box">								
-				<input type="text" id="search" class="form-control" placeholder="Search here...">
+				<input type="number" id="search"  placeholder="Search by Id.." class="form-control" name ="userId" placeholder="Search here...">
 				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 			</div>
 		</form>
+		
 		<ul class="nav navbar-nav navbar-right ml-auto">			
 			<li class="nav-item">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
