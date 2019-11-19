@@ -124,8 +124,8 @@
 							</div>
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
-								<p>Email</p>
-								<span>${user.email} </span>
+								<p>Email User</p>
+								<a href="mailto:${user.email}" target="_blank" class="btn btn-info">${user.email}</a>
 							</div>
 						</div>
 					</div>
