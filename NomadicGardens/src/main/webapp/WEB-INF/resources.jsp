@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style><%@include file="/WEB-INF/resourcesStyle.css"%></style>
-
+    <link rel="stylesheet" href="WEB-INF/resourcesStyle.css">
 <title>Community Garden Resources</title>
 </head>
 <body>
@@ -12,7 +11,7 @@
   <div class="row ml-0 mr-0">
       <div class="col-md-6 pr-0">
           <div class="card">
-              <img class="card-img" src="communitygarden1.jpg" alt="">
+              <img class="card-img" src="images/communitygarden1.jpg" alt="Community Garden" style="width:600px;height:400px;">
               <div class="card-img-overlay d-flex align-items-center justify-content-center flex-column">
                   <p>COMMUNITY GARDENS</p>
                   <hr />
@@ -23,7 +22,7 @@
       </div>
       <div class="col-md-6 pl-0">
           <div class="card">
-              <img class="card-img" src="assets/images/right-img.jpg" alt="">
+              <img class="card-img" src="images/soil.jpeg" alt="Grow" style="width:600px;height:400px;">
               <div class="card-img-overlay d-flex align-items-center justify-content-center flex-column">
                   <p>GROW</p>
                   <hr />
@@ -35,7 +34,7 @@
 
       <div class="col-md-3 pr-0 first">
           <div class="card">
-              <img class="card-img" src="thrivegarden.jpeg" alt="">
+              <img class="card-img" src="images/thrivegarden.jpeg" alt="" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h5>Thrive</h5>
                   <a href="https://learn.eartheasy.com/articles/15-ways-to-help-your-community-garden-thrive/" class="btn">READ MORE</a>
@@ -45,7 +44,7 @@
 
       <div class="col-md-3 pl-0 pr-0">
           <div class="card">
-              <img class="card-img" src="freshfruitcopy.jpeg" alt="">
+              <img class="card-img" src="images/freshfruit.jpeg" alt="Fresh Fruit" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h5>Keep it Fresh</h5>
                     <a href="http://www.eatbydate.com/vegetables/fresh-vegetables/" class="btn">READ MORE</a>
@@ -55,7 +54,7 @@
 
       <div class="col-md-3 pl-0 pr-0">
           <div class="card">
-              <img class="card-img" src="rottenlemons.jpeg" alt="">
+              <img class="card-img" src="images/rottenlemons.jpg" alt="Check Spoil" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h5>Spoil Check</h5>
                     <a href="https://www.wikihow.com/Check-if-Vegetables-Are-Spoiled" class="btn">READ MORE</a>
@@ -65,10 +64,10 @@
 
       <div class="col-md-3 pl-0 last">
           <div class="card">
-              <img class="card-img" src="fruittraycopy.jpeg" alt="">
+              <img class="card-img" src="images/fruittray.jpg" alt="Calender" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h5>Calendar</h5>
-                  <a href="https://www.growinggardens.org/assets/colorado%20local%20planting%20calendar.doc" class="btn">READ MORE</a>
+                  <a href="https://www.growinggardens.org/assets/colorado%20local%20planting%20calendar.doc" class="btn" >READ MORE</a>
               </div>
           </div>
       </div>
@@ -106,6 +105,6 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/jquery.yu2fvl.js"></script>
-    <script src="assets/js/main.js"></script> 
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
