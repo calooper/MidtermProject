@@ -42,7 +42,7 @@
 						</div>
 						<div class="col-md-12">
 							<div class="row">
-								<div class="col-md-8  profile-tag-section text-center">
+								<div class="col-md-10  profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white" >
 											<table class="table table-hover table-responsive">
@@ -66,8 +66,8 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th>Edit</th>
-														<th>Delete</th>
+														<th></th>
+														<th></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -99,28 +99,30 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
+                                  <td></td>
+																	<td></td>
 
 
 																	<td>
+<!--
 																		<button type="submit" data-toggle="modal"
 																			value=${ user.id} name="campsite"
 																			data-target="#edit2" data-uid="2"
 																			class="update btn btn-info btn-sm">
 																			<span class="glyphicon glyphicon-pencil"></span>
 																		</button>
+-->
 																	</td>
 																	<td>
 																		<!-- DELETE BUTTON -->
-
+<!--
 																		<button data-target="#delete" value=${ user.id}
 																			type="submit" data-toggle="modal" data-uid="1"
 																			class="delete btn btn-danger btn-sm" name="id"
 																			value=${ user.id}>
-
 																			<span class="glyphicon glyphicon-trash"></span>
-
 																		</button>
-
+-->
 																	</td>
 
 
@@ -150,13 +152,15 @@
 
 
 
-
+<!--
           <td>
+
           <td><strong>Add</strong></td>
           <td><button type="submit" data-toggle="modal" data-target="#edit" data-uid="2" class="add btn btn-primary btn-sm">
               <span class="glyphicon glyphicon-plus" value="Submit Button"></span>
             </button></td>
           </td>
+-->
         </tr>
       </tbody>
     </table>
