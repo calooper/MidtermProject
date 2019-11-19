@@ -39,9 +39,8 @@
       </div>
       <br>
       <div class="row">
-        <h1></h1>
-        <br>
-        <h3></h3>
+        <h1>Nomadic Gardens</h1>
+        <h3>Community. Food. Health.</h3>
         <br>
 
 
@@ -71,10 +70,10 @@
             <div class="col-md-6 footer-left">
                 <h3>Contact us</h3>
                 <div class="contact-form">
-                    <form role="form" action="assets/contact.php" method="post">
+                    <form role="form"  method="post">
                         <div class="form-group">
                             <label class="sr-only" for="contact-email">Email</label>
-                            <input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
+                            <input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email" required>
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="contact-subject">Subject</label>
@@ -84,7 +83,7 @@
                             <label class="sr-only" for="contact-message">Message</label>
                             <textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send message</button>
+                        <button type="submit" href="mailto: colt.a.looper-1@ou.edu" class="btn btn-primary">Send message</button>
                     </form>
                 </div>
             </div>
@@ -92,11 +91,11 @@
             <div class="col-md-5 offset-md-1 footer-right">
                 <h3>Follow us</h3>
                 <div class="footer-social">
-                    <a href="userProfile"><i class="fab fa-facebook-f"></i></a>
-                    <a href="gardenProfile.jsp"><i class="fab fa-dribbble"></i></a>
-                    <a href="home.jsp"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="resources"><i class="fab fa-pinterest"></i></a>
+                    <a href="home.do"><i class="fab fa-facebook-f"></i></a>
+                    <a href="home.do"><i class="fab fa-dribbble"></i></a>
+                    <a href="home.do"><i class="fab fa-twitter"></i></a>
+                    <a href="home.do"><i class="fab fa-instagram"></i></a>
+                    <a href="home.do"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
 
@@ -104,7 +103,7 @@
     </div>
 
     <div class="footer-bottom">
-        <a class="scroll-link" href="#top-content"><i class="fas fa-chevron-up"></i></a>
+        <a class="scroll-link" href="home.do"><i class="fas fa-chevron-up"></i></a>
     </div>
 
 </footer>

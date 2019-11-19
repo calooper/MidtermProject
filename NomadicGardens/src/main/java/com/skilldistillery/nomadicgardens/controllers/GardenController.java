@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nomadicgardens.dao.GardenDAO;
 import com.skilldistillery.nomadicgardens.entities.Garden;
+import com.skilldistillery.nomadicgardens.entities.Plot;
 
 @Controller
 public class GardenController {
@@ -31,6 +32,8 @@ public class GardenController {
 		ModelAndView mv = new ModelAndView();
 		
 		Garden garden = dao.findById(gardenId);
+		List<Plot> plots = garden.getPlots();
+		mv.addObject("plots", plots);
 		mv.addObject("garden", garden);
 		mv.setViewName("gardenProfile");
 		
