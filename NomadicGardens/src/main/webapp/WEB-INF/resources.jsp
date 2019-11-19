@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
 <title>Community Garden Resources</title>
 </head>
 <body>
@@ -66,14 +71,12 @@
           <div class="card">
               <img class="card-img" src="fruittraycopy.jpeg" alt="">
               <div class="card-img-overlay">
-                  <h5>Calender</h5>
+                  <h5>Calendar</h5>
                   <a href="https://www.growinggardens.org/assets/colorado%20local%20planting%20calendar.doc" class="btn">READ MORE</a>
               </div>
           </div>
       </div>
   </div>
-
-</header>
 
 <div class="container-fluid video-player">
   <div class="container">
@@ -100,5 +103,13 @@
 
           </div>
       </div>
+       </div>
+     </div>
+		 <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/jquery-1.12.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.yu2fvl.js"></script>
+    <script src="assets/js/main.js"></script> 
 </body>
 </html>

@@ -18,7 +18,14 @@ public class UserController {
 
 	@Autowired
 	private UserDAO dao;
-
+	
+	@RequestMapping(path = {"resources.do"})
+	public ModelAndView resrouces() {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("resources");
+		return mv;
+	}
 
 	@RequestMapping(path = "findUserById.do")
 	public ModelAndView findUserById(@RequestParam("userId") int id) {

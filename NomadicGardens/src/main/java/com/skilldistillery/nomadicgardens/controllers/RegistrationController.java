@@ -18,15 +18,6 @@ public class RegistrationController {
 	@Autowired
 	private UserDAO authDao;
 
-//	@RequestMapping(path = "register.do", method = RequestMethod.GET)
-//	public ModelAndView register() {
-//		ModelAndView mv = new ModelAndView();
-//		User u = new User();
-//		mv.addObject("user", u);
-//		mv.setViewName("home");
-//		return mv;
-//	}
-
 	@RequestMapping(path = "register.do", method = RequestMethod.POST)
 	public String create(@Valid User user, Errors errors, HttpSession session) {
 		// If there are any errors, return the view 'home'

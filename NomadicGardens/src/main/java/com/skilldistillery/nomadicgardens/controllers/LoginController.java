@@ -27,13 +27,6 @@ public class LoginController {
 		return mv;
 	}
 	
-//	@RequestMapping(path="login", method=RequestMethod.GET)
-//	public ModelAndView login() {
-//		User u = new User();
-//		ModelAndView mv = new ModelAndView("home", "user", u);
-//		return mv;
-//	}
-	
 	@RequestMapping(path="login.do", method=RequestMethod.POST)
 	public ModelAndView doLogin(@Valid User user, Errors errors, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
