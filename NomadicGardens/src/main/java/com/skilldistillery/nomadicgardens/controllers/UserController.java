@@ -85,8 +85,19 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 
 		user = dao.update(oldId, user);
+		
+		
+		int userId = user.getId();
+		List<Item> itemsList = user.getItems();
+		
 		mv.addObject("user", user);
-		mv.setViewName("userProfile");
+		mv.addObject("userId", userId);
+		mv.addObject("itemsList", itemsList);
+		mv.setViewName("redirect:findUserById.do");
+		
+		
+//		mv.addObject("user", user);
+//		mv.setViewName("userProfile");
 		
 		return mv;
 	}
