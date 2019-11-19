@@ -65,8 +65,16 @@ public class ItemController {
 		ModelAndView mv = new ModelAndView();
 
 		item = dao.create(item);
+		
+		User user = item.getUser();
+		int userId = item.getUser().getId();
+		List<Item> itemsList = user.getItems();
+		
+		mv.addObject("user", user);
+		mv.addObject("itemsList", itemsList);
 		mv.addObject("item", item);
-		mv.setViewName("userProfile");
+		mv.addObject("userId", userId);
+		mv.setViewName("redirect:findUserById.do");
 		
 		return mv;
 	}
@@ -92,8 +100,20 @@ public class ItemController {
 	@RequestMapping(path = "destroyItem.do", method = RequestMethod.POST)
 	public ModelAndView destroyUser(@RequestParam("itemId") int id) {
 		ModelAndView mv = new ModelAndView();
+		
+		
+		Item item = dao.findById(id);
+		User user = item.getUser();
+		int userId = item.getUser().getId();
+		
 		dao.destroy(id);
-		mv.setViewName("redirect:home.do");
+		
+		List<Item> itemsList = user.getItems();
+		
+		mv.addObject("user", user);
+		mv.addObject("userId", userId);
+		mv.addObject("itemsList", itemsList);
+		mv.setViewName("redirect:findUserById.do");
 		
 		return mv;
 	}
