@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style><%@include file="/WEB-INF/resourcesStyle.css"%></style>
 <meta charset="UTF-8">
 <title>Community Garden Resources</title>
 </head>
