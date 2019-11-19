@@ -51,10 +51,7 @@
 			
 							</button>
 								
-								
-								
-								
-								
+
 								<!--  Edit Profile Modal Pop-Up-->
 																		<div id="editProfile" class="modal fade" role="dialog">
 																			<div class="modal-dialog">
