@@ -48,8 +48,14 @@
 							</div>
 							<div class="col-md-12 col-sm-12 user-detail-section2 pull-right">
 								<div class="border"></div>
-								<p>Garden</p>
-								<span>Name of Garden</span>
+								<p>Gardens</p>
+
+								<c:forEach var="g" items="${gardens}">
+								<span>${g.name}</span>
+								</c:forEach>
+
+
+
 							</div>
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
@@ -74,7 +80,7 @@
 						</div>
 						<div class="col-md-12">
 							<div class="row">
-								<div class="col-md-8  profile-tag-section text-center">
+								<div class="col-md-10  profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white" >
 											<table class="table table-hover table-responsive">
@@ -86,11 +92,11 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th>ID</th>
-														<th>Garden</th>
-														<th>Name</th>
-														<th>Quantity</th>
-														<th>Unit</th>
+														<th></th>
+														<th> Item ID</th>
+														<th> Name</th>
+														<th> Quantity</th>
+														<th> Unit</th>
 														<th></th>
 														<th></th>
 														<th></th>
@@ -118,7 +124,7 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td id="f1">${i.id}</td>
+																	<td></td>
 																	<td id="f1">${i.id}</td>
 																	<td id="l1">${i.produce.name}</td>
 																	<td id="m1">${i.quantity}</td>
@@ -138,7 +144,47 @@
 																			data-target="#edit2" data-uid="2"
 																			class="update btn btn-info btn-sm">
 																			<span class="glyphicon glyphicon-pencil"></span>
+
+
 																		</button>
+																		<div id="edit2" class="modal fade" role="dialog">
+																			<div class="modal-dialog">
+																				<div class="modal-content">
+
+																					<div class="modal-header">
+																						<button type="button" class="close" data-dismiss="modal"></button>
+																						<h4 class="modal-title">Edit an Item</h4>
+																					</div>
+
+
+																					<form action="updateItem.do" method="POST">
+																						<div class="modal-body">
+
+																							<input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
+
+																							<input type="hidden" class="form-control" name="oldItemId" value="${i.id}" placeholder="Item Id" required>
+
+																							<input type="text" class="form-control" name="quantity" value="${i.quantity}" placeholder="Quantity" required>
+
+																							<input type="text" class="form-control" name="unit" value="${i.unit}" placeholder="Unit">
+
+																							 <input type="radio" name="available" value="true"> Available<br>
+																					 <input type="radio" name="available" value="false"> Not Available<br>
+
+
+																						</div>
+
+
+																						<div class="modal-footer">
+																							<button type="submit" class="btn btn-warning" class="form-control">Update</button>
+
+																							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																						</div>
+
+																					</form>
+																				</div>
+																			</div>
+																		</div>
 																	</td>
 																	<td>
 																		<!-- DELETE BUTTON -->
@@ -152,11 +198,11 @@
   																		</form>
 																	</td>
 																</tr>
-																
-																
-																
-																
-																
+
+
+
+
+
 <!-- DELETE POP UP -->
 
   <div id="delete" class="modal fade" role="dialog">
@@ -175,9 +221,9 @@
   				<button type="submit" id="del" class="btn btn-danger "data-dismiss="modal" value=${ i.id}>Delete</button>
   					</form>
   				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  				
+
   			</div>
-  			
+
   		</div>
   	</div>
   </div>
@@ -257,44 +303,7 @@
 
   <!-- Edit a site pop-up menu  -->
 
-  <div id="edit2" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
 
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"></button>
-          <h4 class="modal-title">Edit an Item</h4>
-        </div>
-
-
-        <form action="updateItem.do" method="POST">
-          <div class="modal-body">
-          
-          	<input type="number" class="form-control" name="user.id" required>
-          
-            <input type="number" class="form-control" name="oldItemId" placeholder="Item Id" required>
-
-            <input type="text" class="form-control" name="quantity" placeholder="Quantity" required>
-
-            <input type="text" class="form-control" name="unit" placeholder="Unit">
-
-             <input type="radio" name="available" value="true"> Available<br>
-  			 <input type="radio" name="available" value="false"> Not Available<br>
-
-
-          </div>
-
-
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-warning" class="form-control">Update</button>
-
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-
-        </form>
-      </div>
-    </div>
-  </div>
 
 
 

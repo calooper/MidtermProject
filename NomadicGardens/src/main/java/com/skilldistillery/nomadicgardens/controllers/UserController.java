@@ -1,5 +1,6 @@
 package com.skilldistillery.nomadicgardens.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nomadicgardens.dao.UserDAO;
+import com.skilldistillery.nomadicgardens.entities.Garden;
 import com.skilldistillery.nomadicgardens.entities.Item;
+import com.skilldistillery.nomadicgardens.entities.Plot;
 import com.skilldistillery.nomadicgardens.entities.User;
 
 @Controller
@@ -32,11 +35,22 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("***************** in user controller");
 		User us = dao.findById(id);
-		
 		List<Item> itemsList = us.getItems();
+		
+		List<Plot> plots = us.getPlots();
+		List<Garden> gardens = new ArrayList<>();
+		for (Plot plot : plots) {
+			if(!gardens.contains(plot.getGarden())) {
+				gardens.add(plot.getGarden());
+				
+			}
+			
+		}
+		
 		
 		System.out.println("***** items size" + itemsList.size());
 		
+		mv.addObject("gardens", gardens);
 		mv.addObject("itemsList", itemsList);
 		mv.addObject("user", us);
 		mv.setViewName("userProfile");
