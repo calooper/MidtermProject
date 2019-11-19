@@ -39,6 +39,7 @@
       </div>
       <br>
       <div class="row">
+      <br>
         <h1>Nomadic Gardens</h1>
         <h3>Community. Food. Health.</h3>
         <br>
