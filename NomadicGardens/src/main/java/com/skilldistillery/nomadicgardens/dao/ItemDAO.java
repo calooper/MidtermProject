@@ -7,6 +7,7 @@ import com.skilldistillery.nomadicgardens.entities.Item;
 public interface ItemDAO {
 	public Item findById(int id);
 	public List<Item> findAll();
+	public List<Item> findByKeyword(String key);
 	public Item create(Item item);
 	public Item update(int id, Item item);
 	public boolean destroy(int id);
