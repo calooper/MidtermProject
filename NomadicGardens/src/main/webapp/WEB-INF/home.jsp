@@ -96,7 +96,7 @@
                     <a href="gardenProfile.jsp"><i class="fab fa-dribbble"></i></a>
                     <a href="home.jsp"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="resources"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
 

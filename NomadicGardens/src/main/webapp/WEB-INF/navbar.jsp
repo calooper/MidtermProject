@@ -289,7 +289,7 @@
 
 		<form class="navbar-form form-inline" action="findGardenByKeyword.do" method="GET" >
 			<div class="input-group search-box">
-				<input type="text" id="search"  placeholder="Search Garden by keyword" class="form-control" name ="gardenKeyword" placeholder="Search here...">
+				<input type="text" id="search"  placeholder="Search Garden by keyword" class="form-control" name="gardenKeyword" placeholder="Search here...">
 				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 			</div>
 		</form>
