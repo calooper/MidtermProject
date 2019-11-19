@@ -89,7 +89,8 @@
 																	<td id="f1">${i.produce.name}</td>
 																	<td id="f1">${i.quantity}</td>
 																	<td id="l1">${i.unit}</td>
-																	<td id="m1">${i.user.username}</td>
+																	<td id="m1">
+																	<a class="button" href="findUserById.do?userId=${i.user.id }">${i.user.username}</a></td>
 																	<td id="m2">${i.harvestDate}</td>
 																	<td></td>
 																	<td></td>
