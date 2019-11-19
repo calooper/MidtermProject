@@ -60,7 +60,7 @@
 	  <jsp:include page="map.jsp" />
 
 	<br>
-	<br>
+    <div class="container">
 	<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-8  profile-tag-section text-center">
@@ -77,14 +77,11 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th></th>
-														<th></th>
-														<th></th>
-														<th></th>
 														<th>Garden ID</th>
-														<th>Garden Name</th>
-														<th>Size (Square Feet)</th>
 														<th></th>
+														<th>Garden Name</th>
+														<th></th>
+														<th>Size (Square Feet)</th>
 														<th></th>
 														<th></th>
 														<th></th>
@@ -113,15 +110,12 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td></td>
-																	<td></td>
-																	<td></td>
-																	<td></td>
 																	<td id="f1">${g.id}</td>
+																	<td></td>
 																	<td id="f2">
 																	<a class="button" href="findGardenById.do?gardenId=${g.id}">${g.name}</a></td>
-																	<td id="l1">${g.sizeSqft}</td>
 																	<td></td>
+																	<td id="l1">${g.sizeSqft}</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
@@ -140,6 +134,7 @@
 
 								</div>
 							</div>
+						</div>
 						</div>
 
 	<!-- Footer -->
