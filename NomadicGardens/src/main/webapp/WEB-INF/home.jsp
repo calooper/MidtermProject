@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!DOCTYPE html>
@@ -10,7 +11,6 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 <!-- Local Style sheets -->
 <style><%@include file="/WEB-INF/homeStyle.css"%></style>
@@ -43,31 +43,31 @@
         <br>
         <h3></h3>
         <br>
-        
+
 
         <br>
         <div class="col-lg-6 col-lg-offset-3">
-  
-        
+
+
         </div>
       </div>
     </div>
     <!-- /container -->
   </div>
 
-  
+
 	<br>
-	
-	  <jsp:include page="map.jsp" /> 
+
+	  <jsp:include page="map.jsp" />
 
 	<br>
 
 	<!-- Footer -->
 <footer class="footer-container">
- 
+
     <div class="container">
         <div class="row">
- 
+
             <div class="col-md-6 footer-left">
                 <h3>Contact us</h3>
                 <div class="contact-form">
@@ -88,7 +88,7 @@
                     </form>
                 </div>
             </div>
- 
+
             <div class="col-md-5 offset-md-1 footer-right">
                 <h3>Follow us</h3>
                 <div class="footer-social">
@@ -99,24 +99,24 @@
                     <a href="#"><i class="fab fa-pinterest"></i></a>
                 </div>
             </div>
- 
+
         </div>
     </div>
- 
+
     <div class="footer-bottom">
         <a class="scroll-link" href="#top-content"><i class="fas fa-chevron-up"></i></a>
     </div>
- 
+
 </footer>
 
- <form action="findItemById.do" method="GET">
-      <input type="number"   placeholder="Search by Id.." name="itemId">
+ <form action="findUserById.do" method="GET">
+      <input type="number"   placeholder="Search by ID..." name="userId">
       <button type="submit"><i class="fa fa-search"></i></button>
     </form>
-	
-	
 
- 
+
+
+
 
 
 
