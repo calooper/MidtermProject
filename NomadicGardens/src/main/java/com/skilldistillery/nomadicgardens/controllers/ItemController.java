@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nomadicgardens.dao.ItemDAO;
 import com.skilldistillery.nomadicgardens.entities.Item;
+import com.skilldistillery.nomadicgardens.entities.User;
 
 @Controller
 public class ItemController {
@@ -75,8 +76,15 @@ public class ItemController {
 		ModelAndView mv = new ModelAndView();
 
 		item = dao.update(oldId, item);
-		mv.addObject("item", item);
-		mv.setViewName("userProfile");
+		
+		User user = item.getUser();
+		int userId = item.getUser().getId();
+		List<Item> itemsList = user.getItems();
+		
+		mv.addObject("user", user);
+		mv.addObject("userId", userId);
+		mv.addObject("itemsList", itemsList);
+		mv.setViewName("redirect:findUserById.do");
 		
 		return mv;
 	}
