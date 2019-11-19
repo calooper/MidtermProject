@@ -36,6 +36,17 @@ public class ItemController {
 		
 		return mv;
 	}
+	
+	@RequestMapping(path = "findItemByKeyword.do")
+	public ModelAndView findProduceByKeyword(@RequestParam("keyword") String key) {
+		ModelAndView mv = new ModelAndView();
+		
+		List<Item> keywordItems = dao.findByKeyword(key);
+		mv.addObject("itemList", keywordItems);
+		mv.setViewName("itemSearch");
+		
+		return mv;
+	}
 
 	@RequestMapping(path = "findAllItems.do")
 	public ModelAndView findAllItems() {

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nomadicgardens.dao.ProduceDAO;
-import com.skilldistillery.nomadicgardens.entities.Item;
 import com.skilldistillery.nomadicgardens.entities.Produce;
 
 @Controller
@@ -37,6 +36,7 @@ public class ProduceController {
 		
 		return mv;
 	}
+
 
 	@RequestMapping(path = "findAllProduce.do")
 	public ModelAndView findAllProduce() {
