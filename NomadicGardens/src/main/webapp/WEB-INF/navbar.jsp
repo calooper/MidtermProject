@@ -287,9 +287,9 @@
 		</ul> --%>
 
 
-		<form class="navbar-form form-inline" action="findUserById.do" method="GET" >
+		<form class="navbar-form form-inline" action="findGardenByKeyword.do" method="GET" >
 			<div class="input-group search-box">
-				<input type="number" id="search"  placeholder="Search by Id.." class="form-control" name ="userId" placeholder="Search here...">
+				<input type="text" id="search"  placeholder="Search Garden by keyword" class="form-control" name ="gardenKeyword" placeholder="Search here...">
 				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 			</div>
 		</form>
@@ -369,6 +369,7 @@
 							<div class="form-group">
 								<input type="password" name="password" class="form-control" placeholder="Password" required="required">
 							</div>
+
 							<%-- <div class="form-group">
 								<input type="password" class="form-control" placeholder="Confirm Password" required="required">
 							</div> --%>

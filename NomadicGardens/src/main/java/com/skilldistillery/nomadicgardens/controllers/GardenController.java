@@ -36,6 +36,17 @@ public class GardenController {
 		
 		return mv;
 	}
+	
+	@RequestMapping(path = "findGardenByKeyword.do")
+	public ModelAndView findGardenByKeyword(@RequestParam("gardenKeyword") String gardenKeyword) {
+		ModelAndView mv = new ModelAndView();
+		
+		Garden garden = dao.findGardenByKeyword(gardenKeyword);
+		mv.addObject("gardens", garden);
+		mv.setViewName("gardenProfile");
+		
+		return mv;
+	}
 
 	@RequestMapping(path = "findAllGardens.do")
 	public ModelAndView findAllGardens() {

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,10 +35,10 @@
 						</div>
 						<div
 							class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
-							
-							
+
+
 								<h1 >${user.username }</h1>
-							
+
 						</div>
 						<div class="row user-detail-row">
 							<div class="col-md-12 col-sm-12 user-detail-section2 pull-left">
@@ -61,12 +63,12 @@
 					class="col-md-9 col-sm-9 col-xs-12 pull-right profile-right-section">
 					<div class="row profile-right-section-row">
 					<h1></h1>
-						
+
 						<div class="col-md-12 profile-header">
 							<div class="row">
 								<div
 									class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
-									
+
 								</div>
 							</div>
 						</div>
@@ -101,11 +103,10 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach items="${ user.items}" var="item">
-
+													<c:forEach var="i" items="${itemsList}">
 
 														<c:choose>
-															<c:when test="${empty user.items}">
+															<c:when test="${empty itemsList}">
 																<strong style="padding-left: 35em; color: red">No items from this users garden</strong>
 																<br>
 																<br>
@@ -117,11 +118,11 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td id="f1">${ items.name }</td>
-																	<td id="f1">${ user.lastName}</td>
-																	<td id="l1">${ item}</td>
-																	<td id="m1">${ user.items}</td>
-																	<td id="m2">${ item.unit}</td>
+																	<td id="f1">${i.id}</td>
+																	<td id="f1">${i.id}</td>
+																	<td id="l1">${i.produce.name}</td>
+																	<td id="m1">${i.quantity}</td>
+																	<td id="m2">${i.unit}</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
@@ -159,9 +160,9 @@
 															</c:otherwise>
 														</c:choose>
 													</c:forEach>
-													
+
 													<tr id="d2">
-     
+
           <td><input type="hidden" id="f2"></td>
           <td><input type="hidden" id="f2"></td>
           <td><input type="hidden" id="f2"></td>
@@ -176,8 +177,8 @@
           <td><input type="hidden" id="m2"></td>
           <td><input type="hidden" id="m2"></td>
           <td><input type="hidden" id="m2"></td>
-           <td><input type="hidden" id="m2"></td>
-     
+          <td><input type="hidden" id="m2"></td>
+
 
 
 
@@ -192,8 +193,8 @@
     </table>
   </div>
   </div>
-  
-  
+
+
   <!--  ADD A  SITE POP_UP MENU-->
   <div id="edit" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -251,7 +252,7 @@
 
             <input type="text" class="form-control" name="mountainRange" placeholder="Moutain Range" required>
 
-         
+
           </div>
 
 
@@ -268,7 +269,7 @@
 
 
 <!-- DELETE POP UP -->
- 
+
   <div id="delete" class="modal fade" role="dialog">
   	<div class="modal-dialog">
   		<div class="modal-content">
@@ -289,15 +290,15 @@
   		</div>
   	</div>
   </div>
-    
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
 										</div>
 									</div>
 								</div>
