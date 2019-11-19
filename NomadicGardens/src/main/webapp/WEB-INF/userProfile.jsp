@@ -49,7 +49,13 @@
 							<div class="col-md-12 col-sm-12 user-detail-section2 pull-right">
 								<div class="border"></div>
 								<p>Garden</p>
-								<span>Name of Garden</span>
+								<c:forEach items="${user.plots}" var="plot">
+    							<span>${plot.garden.name}</span>
+								</c:forEach>
+
+
+
+
 							</div>
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
