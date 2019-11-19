@@ -94,7 +94,7 @@
 														<th></th>
 														<th></th>
 														<th> Item ID</th>
-														<th> Name</th>
+														<th> Produce</th>
 														<th> Quantity</th>
 														<th> Unit</th>
 														<th></th>
@@ -266,7 +266,7 @@
   </div>
 
 
-  <!--  ADD A  SITE POP_UP MENU-->
+  <!--  ADD A  ITEM POP_UP MENU-->
   <div id="edit" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -276,17 +276,36 @@
         </div>
 
 
-        <form action="addCampsite.do" method="POST">
+        <form action="createItem.do" method="POST">
           <div class="modal-body">
-            <input type="text" class="form-control" name="description" placeholder="Description" required>
-
-            <input type="text" class="form-control" name="state" placeholder="State">
-
-            <input type="text" class="form-control" name="mountainRange" placeholder="Moutain Range" required>
-
-            <input type="number" step="0.000001" class="form-control" name="latitude" placeholder="Latitude in Decimal Degrees" required>
-
-            <input type="number" step="0.000001" class="form-control" name="longitude" placeholder="Longitude in Decimal Degrees" required>
+            
+            <input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
+            
+            <input type="number" placeholder="Quantity" class="form-control" name="quantity" >
+            
+            <input type="text" placeholder="Unit" class="form-control" name="unit" >
+            
+            Select Produce Type:
+            <select name="produce.id">
+			  <option value="1">Potato</option>
+			  <option value="2">Corn</option>
+			  <option value="3">Strawberry</option>
+			  <option value="4">Broccoli</option>
+			  <option value="5">Tomato</option>
+			  <option value="6">Cucumber</option>
+			  <option value="7">Pear</option>
+			  <option value="8">Orange</option>
+			  <option value="9">Bell Pepper</option>
+			  <option value="10">Garlic</option>
+			  <option value="11">Apple</option>
+			  <option value="12">Radish</option>
+			  <option value="13">Grape</option>
+			  <option value="14">Banana</option>
+			  <option value="15">Cabbage</option>
+			  <option value="16">Onion</option>
+			  <option value="17">Carrot</option>
+			</select> 
+            
           </div>
 
 
