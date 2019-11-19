@@ -132,10 +132,7 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-
-
 																</tr>
-
 															</c:otherwise>
 														</c:choose>
 													</c:forEach>
@@ -143,7 +140,6 @@
 											</table>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>

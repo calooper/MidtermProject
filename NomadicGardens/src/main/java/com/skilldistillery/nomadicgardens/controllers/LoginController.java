@@ -1,5 +1,8 @@
 package com.skilldistillery.nomadicgardens.controllers;
 
+
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -10,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.skilldistillery.nomadicgardens.dao.GardenDAO;
 import com.skilldistillery.nomadicgardens.dao.UserDAO;
+import com.skilldistillery.nomadicgardens.entities.Garden;
 import com.skilldistillery.nomadicgardens.entities.User;
 
 @Controller
@@ -18,11 +23,14 @@ public class LoginController {
 	
 	@Autowired
 	private UserDAO authDao;
+	@Autowired
+	private GardenDAO gardDao;
 	
 	@RequestMapping(path = {"/","home.do"})
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
-		
+		List<Garden> allGardens = gardDao.findAll();
+		mv.addObject("allGardens", allGardens);
 		mv.setViewName("home");
 		return mv;
 	}
