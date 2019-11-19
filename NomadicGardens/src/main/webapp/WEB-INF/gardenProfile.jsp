@@ -22,15 +22,13 @@
 	<div class="container main-section">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12 image-section">
-				<img src="https://i.imgur.com/gDgAFWN.jpg">
+				<img src="https://i.imgur.com/d24Ut4Q.jpg">
 			</div>
 			<div class="row user-left-part">
 				<div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
 					<div class="row ">
 						<div
 							class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-							<img
-								src="http://nicesnippets.com/demo/1499344631_malecostume.png">
 						</div>
 						<div
 							class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
@@ -53,7 +51,7 @@
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
 								<p>Address</p>
-								<span>${garden.address.street}</span> <span>${garden.address.city},${garden.address.state}
+								<span>${garden.address.street}</span> <span>${garden.address.city}, ${garden.address.state}
 									${garden.address.zip}</span>
 							</div>
 						</div>
@@ -119,7 +117,13 @@
 																	<td id="f1">${p.id}</td>
 																	<td id="f2">${p.plotNumber}</td>
 																	<td id="l1">${p.sizeSqft}</td>
-																	<td id="m1">${p.user.username}</td>
+																	<td id="m1">
+																	<c:if test="${empty p.user.username}">
+																	(Plot Available)</c:if>
+																	<c:if test="${not empty p.user.username}">
+																	<a class="button" href="findUserById.do?userId=${p.id }">
+																	${p.user.username}</a>
+																	</c:if></td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
