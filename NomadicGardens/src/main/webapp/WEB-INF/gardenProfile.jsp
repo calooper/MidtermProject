@@ -21,8 +21,7 @@
 	<div class="container main-section">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12 image-section">
-				<img src="img_girl.jpg" alt="Garden Picture"
-		style="width: 200px; height: 300px;">
+				<img src="https://i.imgur.com/gDgAFWN.jpg">
 			</div>
 			<div class="row user-left-part">
 				<div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
@@ -48,7 +47,7 @@
 							<div class="col-md-12 col-sm-12 user-detail-section2 pull-right">
 								<div class="border"></div>
 								<p>Size</p>
-								<span>${garden.size_sqft}</span>
+								<span>${garden.sizeSqft}</span>
 							</div>
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
@@ -103,10 +102,10 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach var="p" items="${plotsList}">
+													<c:forEach var="p" items="${plots}">
 
 														<c:choose>
-															<c:when test="${empty plotsList}">
+															<c:when test="${empty plots}">
 																<strong style="padding-left: 35em; color: red">No plots in this garden</strong>
 																<br>
 																<br>
