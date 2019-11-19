@@ -31,6 +31,16 @@ public class ItemDAOImpl implements ItemDAO {
 	}
 
 	@Override
+	public List<Item> findByKeyword(String key){
+		//SELECT * FROM item it JOIN produce pr WHERE pr.name LIKE '%corn%';
+		
+		String query = "SELECT it FROM Item it WHERE it.produce.name LIKE :keyword";
+		List<Item> keywordItems = em.createQuery(query, Item.class).setParameter("keyword", "%" + key+ "%").getResultList();
+		return keywordItems;
+	}
+
+	
+	@Override
 	public Item create(Item item) {
 		em.persist(item);
 		em.flush();
