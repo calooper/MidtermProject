@@ -121,7 +121,7 @@
 																	<c:if test="${empty p.user.username}">
 																	(Plot Available)</c:if>
 																	<c:if test="${not empty p.user.username}">
-																	<a class="button" href="findUserById.do?userId=${p.id }">
+																	<a class="button" href="findUserById.do?userId=${p.user.id }">
 																	${p.user.username}</a>
 																	</c:if></td>
 																	<td></td>
@@ -132,10 +132,7 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-
-
 																</tr>
-
 															</c:otherwise>
 														</c:choose>
 													</c:forEach>
@@ -143,7 +140,6 @@
 											</table>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>

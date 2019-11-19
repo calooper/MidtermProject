@@ -292,15 +292,18 @@
 				<input type="text" id="search"  placeholder="Search for Produce" class="form-control" name="keyword" placeholder="Search here...">
 				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 			</div>
+			<br>
+				
 		</form>
 
 		<ul class="nav navbar-nav navbar-right ml-auto">
-
+		<li><a href="resources.do" class="button">Resources</a></li>
 <%--
   <c:if test="${sessionScope.user != null }"><a href="account.do">Account</a></c:if>
 	<c:if test="${sessionScope.user != null }"><a href="logout.do">Logout</a></c:if>
 	<c:if test="${sessionScope.sessionUser == null }"> </c:if>
  --%>
+ 	
 
       <c:if test="${sessionScope.sessionUser != null }">
         <!-- Collection of nav links, forms, and other content for toggling -->
