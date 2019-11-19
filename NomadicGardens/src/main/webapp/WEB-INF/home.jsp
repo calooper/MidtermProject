@@ -61,12 +61,12 @@
 
 	<br>
     <div class="container">
-	<div class="col-md-12">
+	<div class="col-md-12"> 
 							<div class="row">
-								<div class="col-md-8  profile-tag-section text-center">
+								<div class="col-md-8 profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white">
-											<table class="table table-hover table-responsive">
+											<table class="center-table table table-hover table-responsive">
 												<thead>
 													<tr>
 														<th></th>
@@ -135,7 +135,7 @@
 								</div>
 							</div>
 						</div>
-						</div>
+					</div>
 
 	<!-- Footer -->
 <footer class="footer-container">
