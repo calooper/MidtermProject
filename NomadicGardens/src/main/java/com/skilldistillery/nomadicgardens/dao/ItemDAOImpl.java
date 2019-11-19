@@ -40,6 +40,9 @@ public class ItemDAOImpl implements ItemDAO {
 	@Override
 	public Item update(int id, Item item) {
 		Item it = em.find(Item.class, id);
+		
+		System.out.println("*********  inside update DAO *************" + it);
+		System.out.println("++++++++++++++++++++++++++++++" + item);
 
 		it.setQuantity(item.getQuantity());
 		it.setUnit(item.getUnit());
@@ -49,7 +52,9 @@ public class ItemDAOImpl implements ItemDAO {
 		it.setImgURL(item.getImgURL());
 		it.setUser(item.getUser());
 		it.setProduce(item.getProduce());
-		it.setCartItems(it.getCartItems());
+		it.setCartItems(item.getCartItems());
+		
+		System.out.println(it);
 		em.flush();
 		return it;
 	}
@@ -58,10 +63,11 @@ public class ItemDAOImpl implements ItemDAO {
 	public boolean destroy(int id) {
 		boolean successful = true;
 		Item it = em.find(Item.class, id);
-
-		em.getTransaction().begin();
+		System.out.println("**************** IN DESTROY ITEM DAO **********************");
+//		em.getTransaction().begin();
 		em.remove(it);
-		em.flush();
+		System.out.println(" ************ IN DESTROY ITE DAO AFTER REMOVE");
+//		em.flush();
 		return successful;
 	}
 

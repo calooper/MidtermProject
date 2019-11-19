@@ -131,10 +131,10 @@
 																	<td></td>
 																	<td></td>
 
-
+																	<!-- EDIT BUTTON -->
 																	<td>
 																		<button type="submit" data-toggle="modal"
-																			value=${ user.id} name="campsite"
+																			value=${ i.id} name="itemId"
 																			data-target="#edit2" data-uid="2"
 																			class="update btn btn-info btn-sm">
 																			<span class="glyphicon glyphicon-pencil"></span>
@@ -142,20 +142,45 @@
 																	</td>
 																	<td>
 																		<!-- DELETE BUTTON -->
-
-																		<button data-target="#delete" value=${ user.id}
-																			type="submit" data-toggle="modal" data-uid="1"
-																			class="delete btn btn-danger btn-sm" name="id"
-																			value=${ user.id}>
-
+ 																		<form action="destroyItem.do" method="POST" name="itemId" value=${ i.id}>
+																			<button data-target="#delet" value=${ i.id}
+																				type="submit" data-toggle="modal" data-uid="1"
+																				class="delete btn btn-danger btn-sm" name="itemId"
+																				value=${ i.id}>
 																			<span class="glyphicon glyphicon-trash"></span>
-
 																		</button>
-
+  																		</form>
 																	</td>
-
-
 																</tr>
+																
+																
+																
+																
+																
+<!-- DELETE POP UP -->
+
+  <div id="delete" class="modal fade" role="dialog">
+  	<div class="modal-dialog">
+  		<div class="modal-content">
+  			<div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal"></button>
+  				<h4 class="modal-title">Delete Item</h4>
+  			</div>
+  			<div class="modal-body">
+  				<strong>Are you sure you want to delete this item?</strong>
+  			</div>
+
+  			<div class="modal-footer">
+  			  		<form action="destroyItem.do" method="POST" name="itemId" value=${ i.id}>
+  				<button type="submit" id="del" class="btn btn-danger "data-dismiss="modal" value=${ i.id}>Delete</button>
+  					</form>
+  				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  				
+  			</div>
+  			
+  		</div>
+  	</div>
+  </div>
 
 															</c:otherwise>
 														</c:choose>
@@ -242,15 +267,19 @@
         </div>
 
 
-        <form action="editCampsite.do" method="GET">
+        <form action="updateItem.do" method="POST">
           <div class="modal-body">
-            <input type="number" class="form-control" name="id" placeholder="Id" required>
+          
+          	<input type="number" class="form-control" name="user.id" required>
+          
+            <input type="number" class="form-control" name="oldItemId" placeholder="Item Id" required>
 
-            <input type="text" class="form-control" name="description" placeholder="Description" required>
+            <input type="text" class="form-control" name="quantity" placeholder="Quantity" required>
 
-            <input type="text" class="form-control" name="state" placeholder="State">
+            <input type="text" class="form-control" name="unit" placeholder="Unit">
 
-            <input type="text" class="form-control" name="mountainRange" placeholder="Moutain Range" required>
+             <input type="radio" name="available" value="true"> Available<br>
+  			 <input type="radio" name="available" value="false"> Not Available<br>
 
 
           </div>
@@ -268,28 +297,6 @@
   </div>
 
 
-<!-- DELETE POP UP -->
-
-  <div id="delete" class="modal fade" role="dialog">
-  	<div class="modal-dialog">
-  		<div class="modal-content">
-  			<div class="modal-header">
-  				<button type="button" class="close" data-dismiss="modal"></button>
-  				<h4 class="modal-title">Delete Data</h4>
-  			</div>
-  			<div class="modal-body">
-  				<strong>Are you sure you want to delete this data?</strong>
-  			</div>
-  		<form action="deleteCampsite.do" method="GET" name="id" value=${ campsite.id}>
-  			<div class="modal-footer">
-  				<button type="submit" id="del" class="btn btn-danger "
-  					data-dismiss="modal" value=${ campsite.id}>Delete</button>
-  				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  			</div>
-  			  </form>
-  		</div>
-  	</div>
-  </div>
 
 
 
