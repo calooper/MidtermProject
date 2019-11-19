@@ -41,12 +41,13 @@
 								
 								
 						<!--  Edit Profiel Button-->
-						<p>Edit Profile </p>
+					
 							<button type="submit" data-toggle="modal"
 								value=${ i.id} name="itemId"
 								data-target="#editProfile" data-uid="2"
 								class="update btn btn-success btn-sm">
-								<span class="glyphicon glyphicon-pencil"></span>
+								Edit Profile
+								<span class="glyphicon glyphicon-edit" ></span>
 			
 							</button>
 								
@@ -71,6 +72,8 @@
 																							<input type="hidden" class="form-control" name="oldUserId" value="${user.id}"  required>
 																							
 																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
+																							
+																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
 																							
 																							<input type="text" class="form-control" name="email"  placeholder="${user.email}" required>
 
