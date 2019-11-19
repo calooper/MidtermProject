@@ -31,15 +31,15 @@ public class ItemDAOImpl implements ItemDAO {
 	}
 
 	@Override
-	public List<Item> findByKeyword(String key){
-		//SELECT * FROM item it JOIN produce pr WHERE pr.name LIKE '%corn%';
-		
+	public List<Item> findByKeyword(String key) {
+		// SELECT * FROM item it JOIN produce pr WHERE pr.name LIKE '%corn%';
+
 		String query = "SELECT it FROM Item it WHERE it.produce.name LIKE :keyword";
-		List<Item> keywordItems = em.createQuery(query, Item.class).setParameter("keyword", "%" + key+ "%").getResultList();
+		List<Item> keywordItems = em.createQuery(query, Item.class).setParameter("keyword", "%" + key + "%")
+				.getResultList();
 		return keywordItems;
 	}
 
-	
 	@Override
 	public Item create(Item item) {
 		em.persist(item);
@@ -50,20 +50,37 @@ public class ItemDAOImpl implements ItemDAO {
 	@Override
 	public Item update(int id, Item item) {
 		Item it = em.find(Item.class, id);
-		
+
 		System.out.println("*********  inside update DAO *************" + it);
 		System.out.println("++++++++++++++++++++++++++++++" + item);
 
-		it.setQuantity(item.getQuantity());
-		it.setUnit(item.getUnit());
-		it.setHarvestDate(item.getHarvestDate());
-		it.setUseByDate(item.getUseByDate());
+		if (item.getQuantity() != null) {
+			it.setQuantity(item.getQuantity());
+		}
+		if (item.getUnit() != null) {
+			it.setUnit(item.getUnit());
+		}
+		if (item.getHarvestDate() != null) {
+			it.setHarvestDate(item.getHarvestDate());
+		}
+		if (item.getUseByDate() != null) {
+			it.setUseByDate(item.getUseByDate());
+		}
+		if (item.getImgURL() != null) {
+			it.setImgURL(item.getImgURL());
+		}
+		if (item.getUser() != null) {
+			it.setUser(item.getUser());
+		}
+		if (item.getProduce() != null) {
+			it.setProduce(item.getProduce());
+		}
+		if (item.getCartItems() != null) {
+			it.setCartItems(item.getCartItems());
+		}
+
 		it.setAvailable(item.getAvailable());
-		it.setImgURL(item.getImgURL());
-		it.setUser(item.getUser());
-		it.setProduce(item.getProduce());
-		it.setCartItems(item.getCartItems());
-		
+
 		System.out.println(it);
 		em.flush();
 		return it;
