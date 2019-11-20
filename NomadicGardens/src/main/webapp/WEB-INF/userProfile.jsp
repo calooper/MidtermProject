@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
 <!-- Local Style sheets -->
 <style><%@include file="/WEB-INF/userProfileStyle.css"%></style>
@@ -203,32 +204,39 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
+																	
+																	
+																	
+																	
 
 																	<!-- EDIT BUTTON -->
 																	<td>
-																		<button type="submit" data-toggle="modal"
-																			value=${ i.id} name="itemId"
-																			data-target="#edit2" data-uid="2"
+																		<button type="button" data-toggle="collapse"
+																			value=${ i.id} name="itemId" aria-expanded="false" aria-controls="collapseExample" data-target="#collapseExample"" 
 																			class="update btn btn-info btn-sm">
 																			<span class="glyphicon glyphicon-pencil"></span>
 																		</button>
-																		<div id="edit2" class="modal fade" role="dialog">
-																			<div class="modal-dialog">
-																				<div class="modal-content">
-
-																					<div class="modal-header">
-																						<button type="button" class="close" data-dismiss="modal"></button>
-																						<h4 class="modal-title">Edit an Item</h4>
-																					</div>
-
-
+			
+			
+																
+																	<!-- / Collapse buttons -->
+																	
+																	<!-- Collapsible element -->
+																	<div class="collapse" id="collapseExample">
+																	  <div class="mt-3">
+		
 																					<form action="updateItem.do" method="POST">
-																						<div class="modal-body">
-
-																							<input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
-
+																					
+																						<div style="float:left;">
+																								
+																							<div class="col-md-6">
+																								<input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
+																							</div>
+																							
+																							<div class="col-md-6">
 																							<input type="hidden" class="form-control" name="oldItemId" value="${i.id}" placeholder="Item Id" >
-
+																							</div>
+																							
 																							<input type="text" class="form-control" name="quantity" value="${i.quantity}" placeholder="Quantity" >
 
 																							<input type="text" class="form-control" name="unit" value="${i.unit}" placeholder="Unit">
@@ -236,24 +244,47 @@
 																							<input type="date" class="form-control" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date">
 																							
 																							<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date"> 
+																							
+																							
+																							<input id="abc" type="checkbox" checked data-toggle="toggle"  name="available" data-on="Available" data-off="Not Available"  data-width="100%" data-onstyle="success" data-offstyle="danger">
+																							
+																							
+																							<script>
+																							$('#abc').prop('checked')
+																							
+																							
+																							$('.toggle').bootstrapToggle({
+																							    on: 'Y',
+																							    off: 'N',
+																							
+																							});
+																							</script>
+																							<!-- <input type="radio" name="available" value="true"> Available<br>
+																					 		<input type="radio" name="available" value="false"> Not Available<br> -->
 
-																							 <input type="radio" name="available" value="true"> Available<br>
-																					 		<input type="radio" name="available" value="false"> Not Available<br>
 
-
+																						</div>
+																						<div>
+																						&nbsp
 																						</div>
 
 
 																						<div class="modal-footer">
-																							<button type="submit" class="btn btn-warning" class="form-control">Update</button>
+																						<br>
+																							<button type="submit"  class="btn btn-warning btn-block" class="form-control">Update</button>
 
-																							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+																							
 																						</div>
 
-																					</form>
-																				</div>
-																			</div>
-																		</div>
+																					</form> 
+		
+
+																	  	</div>
+																	  </div>
+
+
+											
+																		
 																	</td>
 																	<td>
 																		<!-- DELETE BUTTON -->
@@ -350,9 +381,9 @@
 
             <input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
 
-            <input type="number" placeholder="Quantity" class="form-control" name="quantity" >
+            <input type="number" placeholder="Quantity" class="form-control" name="quantity" required>
 
-            <input type="text" placeholder="Unit" class="form-control" name="unit" >
+            <input type="text" placeholder="Unit" class="form-control" name="unit" required>
 
             
             <input type="date" class="form-control" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date" required>
@@ -417,5 +448,55 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="editform" class="collapse">
+                    <form action="updateGame.do" method="POST" modelAttribute="game">
+                        <div class="form-group">
+                              <input type="hidden" name="oldGameId" value="${game.id }">
+                                <label >Title: </label><input type="text" name="title"value="${game.title }" required> <br />
+                                <label>Developer: </label> <input type="text" name="developer" value="${game.developer }"> <br />
+                                <label>Publisher: </label> <input type="text" name="publisher" value="${game.publisher }"> <br />
+                                <label>Description: </label> <input type="text" size="60" name="description" value="${game.description }"> <br />
+                                <label>Select ESRB Rating:</label>
+                                <select name="esrbRating">
+                                    <option value="RP">RP</option>
+                                    <option value="eC">eC</option>
+                                    <option value="E">E10+</option>
+                                    <option value="T">T</option>
+                                    <option value="M">M</option>
+                                    <option value="AO">AO</option>
+                                </select> <br />
+                                <label>Metacritic Score: </label> <input type="text" name="metacriticScore" value="${game.metacriticScore }"pattern="^[1-9][0-9]?$|^100$" required> <br />
+                                <label>Release Date: </label> <input type="text" name="releaseDate" value="${game.releaseDate }"pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required> <br />
+                                <label>Cover Art URL: </label> <input type="text" name="boxartURL" value="${game.boxartURL }"> <br />
+                                <input type="submit" value="Update Game Info">
+                                </div>
+                            </form>
+                    </div>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
+		
+		
+		
 </body>
 </html>
