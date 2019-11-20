@@ -44,7 +44,6 @@
 											<th></th>
 											<th></th>
 											<th></th>
-											<th>Edit</th>
 											<th>Delete</th>
 										</tr>
 									</thead>
@@ -78,66 +77,7 @@
 														<td></td>
 														<td></td>
 
-														<!-- EDIT BUTTON -->
-														<td>
-															<button type="submit" data-toggle="modal" value=${ i.id}
-																name="itemId" data-target="#edit2" data-uid="2"
-																class="update btn btn-info btn-sm">
-																<span class="glyphicon glyphicon-pencil"></span>
-															</button>
-															<div id="edit2" class="modal fade" role="dialog">
-																<div class="modal-dialog">
-																	<div class="modal-content">
-
-																		<div class="modal-header">
-																			<button type="button" class="close"
-																				data-dismiss="modal"></button>
-																			<h4 class="modal-title">Edit an Item</h4>
-																		</div>
-
-
-																		<form action="updateItem.do" method="POST">
-																			<div class="modal-body">
-
-																				<input type="hidden" class="form-control"
-																					name="user.id" value="${c.user.id}" required>
-
-																				<input type="hidden" class="form-control"
-																					name="oldItemId" value="${c.item.id}"
-																					placeholder="Item Id"> <input type="text"
-																					class="form-control" name="quantity"
-																					value="${c.item.quantity}" placeholder="Quantity">
-
-																				<input type="text" class="form-control" name="unit"
-																					value="${c.item.unit}" placeholder="Unit"> <input
-																					type="date" class="form-control"
-																					name="harvestDateString" value="${c.item.harvestDate}"
-																					placeholder="Harvest Date"> <input
-																					type="date" class="form-control"
-																					name="useByDateString" value="${c.item.useByDate}"
-																					placeholder="Use by Date"> <input
-																					type="radio" name="available" value="true">
-																				Available<br> <input type="radio"
-																					name="available" value="false"> Not
-																				Available<br>
-
-
-																			</div>
-
-
-																			<div class="modal-footer">
-																				<button type="submit" class="btn btn-warning"
-																					class="form-control">Update</button>
-
-																				<button type="button" class="btn btn-default"
-																					data-dismiss="modal">Close</button>
-																			</div>
-
-																		</form>
-																	</div>
-																</div>
-															</div>
-														</td>
+														
 														<td>
 															<!-- DELETE BUTTON -->
 															<form action="destroyItem.do" method="POST" name="itemId"
@@ -203,17 +143,6 @@
 											<td><input type="hidden" id="m2"></td>
 											<td><input type="hidden" id="m2"></td>
 											<td><input type="hidden" id="m2"></td>
-
-
-
-
-											<td>
-											<td><strong>Add</strong></td>
-											<td><button type="submit" data-toggle="modal"
-													data-target="#edit" data-uid="2"
-													class="add btn btn-primary btn-sm">
-													<span class="glyphicon glyphicon-plus" value="Submit Button"></span>
-												</button></td>
 										</tr>
 									</tbody>
 								</table>

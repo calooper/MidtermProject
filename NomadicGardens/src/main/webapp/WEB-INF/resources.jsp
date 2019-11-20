@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="resourcesStyle.css">
+<link rel="stylesheet" href="resourcesStyle.css">
+<style><%@include file="/WEB-INF/resourcesStyle.css"%></style>
 <title>Community Garden Resources</title>
 </head>
 
