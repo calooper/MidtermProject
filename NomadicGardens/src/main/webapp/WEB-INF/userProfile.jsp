@@ -57,7 +57,7 @@
 
 
 						<!--  Edit Profile Button-->
-					
+					<c:if test="${user.id == sessionUser.id}">
 							<button type="submit" data-toggle="modal"
 								value=${ i.id} name="itemId"
 								data-target="#editProfile" data-uid="2"
@@ -67,6 +67,8 @@
 								<span class="glyphicon glyphicon-edit" ></span>
 			
 							</button>
+					
+					</c:if>
 
 
 								<!--  Edit Profile Modal Pop-Up-->
