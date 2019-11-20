@@ -14,14 +14,16 @@
 	<div class="container main-section">
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12 image-section">
-				<img src="https://i.imgur.com/gDgAFWN.jpg">
+				<!-- <img src="https://i.imgur.com/gDgAFWN.jpg"> -->
 			</div>
+			<br><br>
 
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-10  profile-tag-section text-center">
 						<div class="row">
 							<div style="background-color: white">
+								<h2><b>Cart</b></h2>
 								<table class="table table-hover table-responsive">
 
 									<thead>
@@ -30,7 +32,6 @@
 											<th></th>
 											<th></th>
 											<th></th>
-
 											<th>Cart ID#</th>
 											<th>Produce</th>	
 											<th>Unit</th>
@@ -48,9 +49,9 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="c" items="${sessionUser.cartItems}">
+										<c:forEach var="c" items="${allCartItems}">
 											<c:choose>
-												<c:when test="${empty sessionUser.cartItems}">
+												<c:when test="${empty allCartItems}">
 													<strong style="padding-left: 35em; color: red">No
 														items in cart</strong>
 													<br>
@@ -70,7 +71,7 @@
 														<td id="m1">${c.item.harvestDate}</td>
 														<td id="m2">${c.item.useByDate}</td>
 														<td id="m2">${c.item.available}</td>
-														<td id="m2">${c.item.user.name}</td>
+														<td id="m2"><a class="button" href="findUserById.do?userId=${c.item.user.id }">${c.item.user.username}</a></td>
 														<td></td>
 														<td></td>
 														<td></td>

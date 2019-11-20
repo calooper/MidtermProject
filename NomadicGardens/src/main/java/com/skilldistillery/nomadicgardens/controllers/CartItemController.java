@@ -26,13 +26,12 @@ public class CartItemController {
 	@Autowired
 	private UserDAO userDAO;
 
-//	@RequestMapping(path = "home.do")
-//	public ModelAndView index() {
-//		ModelAndView mv = new ModelAndView();
-//
-//		mv.setViewName("home");
-//		return mv;
-//	}
+	@RequestMapping(path = "cart.do")
+	public ModelAndView goToCart() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("cart");
+		return mv;
+	}
 
 	@RequestMapping(path = "findCartItemById.do")
 	public ModelAndView findCartItemById(@RequestParam("itemId") int itemId) {
@@ -52,6 +51,17 @@ public class CartItemController {
 		List<CartItem> allItems = cartItemDAO.findAll();
 		mv.addObject("allItems", allItems);
 		mv.setViewName("home");
+		
+		return mv;
+	}
+	
+	@RequestMapping(path = "findAllCartItemsById.do")
+	public ModelAndView findAllCartItemsById(@RequestParam("userId") int id) {
+		ModelAndView mv = new ModelAndView();
+		
+		List<CartItem> allItems = cartItemDAO.findAllCartItemsById(id);
+		mv.addObject("allCartItems", allItems);
+		mv.setViewName("cart");
 		
 		return mv;
 	}
