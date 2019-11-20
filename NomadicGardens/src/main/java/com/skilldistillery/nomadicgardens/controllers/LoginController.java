@@ -59,7 +59,7 @@ public class LoginController {
 		}
 		session.setAttribute("sessionUser", loggedInUser);
 //		mv.addObject("user", loggedInUser);
-		mv.setViewName("home");
+		mv.setViewName("redirect:home.do");
 		return mv;
 	}
 	@RequestMapping(path="logout.do", method=RequestMethod.POST)

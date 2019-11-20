@@ -60,13 +60,13 @@
 	  <jsp:include page="map.jsp" />
 
 	<br>
-	<br>
-	<div class="col-md-12">
+    <div class="container">
+	<div class="col-md-12"> 
 							<div class="row">
-								<div class="col-md-8  profile-tag-section text-center">
+								<div class="col-md-8 profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white">
-											<table class="table table-hover table-responsive">
+											<table class="center-table table table-hover table-responsive">
 												<thead>
 													<tr>
 														<th></th>
@@ -77,14 +77,11 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th></th>
-														<th></th>
-														<th></th>
-														<th></th>
 														<th>Garden ID</th>
-														<th>Garden Name</th>
-														<th>Size (Square Feet)</th>
 														<th></th>
+														<th>Garden Name</th>
+														<th></th>
+														<th>Size (Square Feet)</th>
 														<th></th>
 														<th></th>
 														<th></th>
@@ -113,13 +110,11 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td></td>
-																	<td></td>
-																	<td></td>
-																	<td></td>
 																	<td id="f1">${g.id}</td>
+																	<td></td>
 																	<td id="f2">
 																	<a class="button" href="findGardenById.do?gardenId=${g.id}">${g.name}</a></td>
+																	<td></td>
 																	<td id="l1">${g.sizeSqft}</td>
 																	<td></td>
 																	<td></td>
@@ -127,9 +122,7 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td></td>
 																</tr>
-
 															</c:otherwise>
 														</c:choose>
 													</c:forEach>
@@ -141,6 +134,7 @@
 								</div>
 							</div>
 						</div>
+					</div>
 
 	<!-- Footer -->
 <footer class="footer-container">

@@ -37,20 +37,21 @@
 							class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
 
 
-								<h1 >${user.username }</h1>										
-								
-								
+								<h1 >${user.username }</h1>
+
+
 						<!--  Edit Profiel Button-->
 					
 							<button type="submit" data-toggle="modal"
 								value=${ i.id} name="itemId"
 								data-target="#editProfile" data-uid="2"
 								class="update btn btn-success btn-sm">
+
 								Edit Profile
 								<span class="glyphicon glyphicon-edit" ></span>
 			
 							</button>
-								
+
 
 								<!--  Edit Profile Modal Pop-Up-->
 																		<div id="editProfile" class="modal fade" role="dialog">
@@ -67,18 +68,16 @@
 																						<div class="modal-body">
 
 																							<input type="hidden" class="form-control" name="oldUserId" value="${user.id}"  required>
-																							
+
 																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
 																							
 																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
-																							
+
 																							<input type="text" class="form-control" name="email"  placeholder="${user.email}" required>
 
 																							 <input type="text" class="form-control" name="firstName"  placeholder="${user.firstName}">
 																							
 																							 <input type="text" class="form-control" name="lastName"  placeholder="${user.lastName}">
-
-																																	
 
 
 																						</div>
@@ -94,15 +93,15 @@
 																				</div>
 																			</div>
 																		</div>
-									
-								
-								
-								
-								
-								
-								
-								
-								
+
+
+
+
+
+
+
+
+
 
 						</div>
 						<div class="row user-detail-row">
@@ -124,8 +123,8 @@
 							</div>
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
-								<p>Email</p>
-								<span>${user.email} </span>
+								<p>Email User</p>
+								<a href="mailto:${user.email}" target="_blank" class="btn btn-info">${user.email}</a>
 							</div>
 						</div>
 					</div>
@@ -212,8 +211,6 @@
 																			data-target="#edit2" data-uid="2"
 																			class="update btn btn-info btn-sm">
 																			<span class="glyphicon glyphicon-pencil"></span>
-
-
 																		</button>
 																		<div id="edit2" class="modal fade" role="dialog">
 																			<div class="modal-dialog">
@@ -350,17 +347,18 @@
 
         <form action="createItem.do" method="POST">
           <div class="modal-body">
-            
+
             <input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
-            
+
             <input type="number" placeholder="Quantity" class="form-control" name="quantity" >
-            
+
             <input type="text" placeholder="Unit" class="form-control" name="unit" >
+
             
             <input type="date" class="form-control" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date" required>
 																							
 			<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
-            
+
             Select Produce Type:
             <select name="produce.id">
 			  <option value="1">Potato</option>
@@ -380,8 +378,8 @@
 			  <option value="15">Cabbage</option>
 			  <option value="16">Onion</option>
 			  <option value="17">Carrot</option>
-			</select> 
-            
+			</select>
+
           </div>
 
 
