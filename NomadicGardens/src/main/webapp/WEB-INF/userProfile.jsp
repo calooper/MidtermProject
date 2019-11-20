@@ -418,14 +418,18 @@
 
             <input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
 
-            <input type="number" placeholder="Quantity" class="form-control" name="quantity" required>
-
-            <input type="text" placeholder="Unit" class="form-control" name="unit" required>
-
-            
-            <input type="date" class="form-control" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date" required>
-																							
-			<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
+            <label for="quantity">Quantity:</label>
+            <input type="number" class="form-control" id="quantity" name="quantity" required>
+			<br>
+            <label for="unit">Unit:</label>
+            <input type="text" class="form-control" id="unit" name="unit" required>
+			<br>
+            <label for="harvestDateString">Harvest Date:</label>
+            <input type="date" class="form-control" id ="harvestDateString" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date" required>
+			<br>
+			<label for="useByDateString">Use By Date:</label>															
+			<input type="date" class="form-control" id ="useByDateString" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
+			<br>
 
             Select Produce Type:
             <select class="dropdown-header" name="produce.id">
