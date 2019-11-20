@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nomadicgardens.dao.PlotDAO;
-import com.skilldistillery.nomadicgardens.entities.Item;
 import com.skilldistillery.nomadicgardens.entities.Plot;
 
 @Controller
@@ -67,6 +66,32 @@ public class PlotController {
 		plot = dao.update(oldId, plot);
 		mv.addObject("plot", plot);
 		mv.setViewName("userProfile");
+		
+		return mv;
+	}
+	@RequestMapping(path = "claimPlot.do", method = RequestMethod.POST)
+	public ModelAndView claimPlot(@RequestParam("oldPlotId") int oldId, @RequestParam("userId") int userId) {
+		ModelAndView mv = new ModelAndView();
+//		int userId = Integer.parseInt(userInput);
+		
+		Plot plot = dao.findById(oldId);
+		plot = dao.claimPlot(oldId, userId);
+		
+//		mv.addObject("plot", plot);
+		mv.setViewName("redirect:findGardenById.do?gardenId=" + plot.getGarden().getId());
+		
+		return mv;
+	}
+	@RequestMapping(path = "unclaimPlot.do", method = RequestMethod.POST)
+	public ModelAndView unclaimPlot(@RequestParam("oldPlotId") int oldId) {
+		ModelAndView mv = new ModelAndView();
+		
+		Plot plot = dao.findById(oldId);
+		plot = dao.unclaimPlot(oldId);
+		
+		
+//		mv.addObject("plot", plot);
+		mv.setViewName("redirect:findGardenById.do?gardenId=" + plot.getGarden().getId());
 		
 		return mv;
 	}

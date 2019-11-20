@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.nomadicgardens.entities.Plot;
+import com.skilldistillery.nomadicgardens.entities.User;
 
 @Transactional
 @Service
@@ -46,6 +47,25 @@ public class PlotDAOImpl implements PlotDAO {
 		pl.setSizeSqft(plot.getSizeSqft());
 		pl.setGarden(plot.getGarden());
 
+		em.flush();
+		return pl;
+	}
+	
+	@Override
+	public Plot claimPlot(int plotId, int userId) {
+		Plot pl = em.find(Plot.class, plotId);
+		User user = em.find(User.class, userId);
+		pl.setUser(user);
+		
+		em.flush();
+		return pl;
+	}
+	@Override
+	public Plot unclaimPlot(int id) {
+		Plot pl = em.find(Plot.class, id);
+		
+		pl.setUser(null);
+		
 		em.flush();
 		return pl;
 	}
