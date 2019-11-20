@@ -118,7 +118,7 @@
 																	<form action="createCartItem.do" method="POST" >
 																		<input type="hidden" name = "userId" value=${sessionUser.id }>
 																		
-																		<button value=${ item.id} type="submit" data-uid="1"
+																		<button value=${ i.id} type="submit" data-uid="1"
 																			class="btn btn-default btn-sm" name="itemId"> 
 																			Add to cart:
 																			<span class="glyphicon glyphicon-shopping-cart"></span>
