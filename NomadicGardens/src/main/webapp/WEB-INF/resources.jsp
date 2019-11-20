@@ -21,7 +21,7 @@
               <div class="card-img-overlay d-flex align-items-center justify-content-center flex-column">
                   <h2>Community Gardens</h2>
                   <p>Where people and plants come together</p>
-                  <a href="https://cdn.shopify.com/s/files/1/0145/8808/4272/files/A3905-01.pdf" class="btn">Read More</a>
+                  <a href="https://cdn.shopify.com/s/files/1/0145/8808/4272/files/A3905-01.pdf" class="btn" target="_blank">Read More</a>
 									<hr/>
 							</div>
           </div>
@@ -33,7 +33,7 @@
                   <h2>Grow!</h2>
 
                   <p>Planting Calendar For Denver, CO</p>
-                  <a href="https://www.almanac.com/gardening/planting-calendar/CO/Denver" class="btn">Read More</a>
+                  <a href="https://www.almanac.com/gardening/planting-calendar/CO/Denver" class="btn" target="_blank">Read More</a>
 									<hr/>
 							</div>
           </div>
@@ -43,7 +43,7 @@
               <img class="card-img" src="images/thrivegarden.jpeg" alt="" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h3>15 ways to help your community garden thrive!</h3>
-                  <a href="https://learn.eartheasy.com/articles/15-ways-to-help-your-community-garden-thrive/" class="btn">Thrive!</a>
+                  <a href="https://learn.eartheasy.com/articles/15-ways-to-help-your-community-garden-thrive/" class="btn" target="_blank">Thrive!</a>
               </div>
           </div>
       </div>
@@ -53,7 +53,7 @@
               <img class="card-img" src="images/freshfruit.jpeg" alt="Fresh Fruit" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h3>Fresh Vegetables - How long do fresh vegetables last?</h3>
-                    <a href="http://www.eatbydate.com/vegetables/fresh-vegetables/" class="btn">Stay Fresh!</a>
+                    <a href="http://www.eatbydate.com/vegetables/fresh-vegetables/" class="btn" target="_blank">Stay Fresh!</a>
               </div>
           </div>
       </div>
@@ -63,7 +63,7 @@
               <img class="card-img" src="images/rottenlemons.jpg" alt="Check Spoil" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h3>Check if vegetables are spoiled</h3>
-                    <a href="https://www.wikihow.com/Check-if-Vegetables-Are-Spoiled" class="btn">Spoiled!</a>
+                    <a href="https://www.wikihow.com/Check-if-Vegetables-Are-Spoiled" class="btn" target="_blank">Spoiled!</a>
               </div>
           </div>
       </div>
@@ -72,7 +72,7 @@
               <img class="card-img" src="images/fruittray.jpg" alt="Calender" style="width:300px;height:400px;">
               <div class="card-img-overlay">
                   <h3>Garden Planting Calendar</h3>
-                  <a href="https://www.growinggardens.org/assets/colorado%20local%20planting%20calendar.doc" class="btn" >Click Here!</a>
+                  <a href="https://www.growinggardens.org/assets/colorado%20local%20planting%20calendar.doc" class="btn" target="_blank">Click Here!</a>
               </div>
           </div>
       </div>
