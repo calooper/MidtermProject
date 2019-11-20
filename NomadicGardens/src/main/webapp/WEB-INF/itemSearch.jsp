@@ -45,9 +45,8 @@
 								<div class="col-md-10  profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white" >
+											<h2><b>Produce Search</b></h2>
 											<table class="table table-hover table-responsive">
-
-
 												<thead>
 													<tr>
 														<th></th>
