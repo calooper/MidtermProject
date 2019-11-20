@@ -25,7 +25,6 @@
 							<div style="background-color: white">
 								<h2><b>Cart</b></h2>
 								<table class="table table-hover table-responsive">
-
 									<thead>
 										<tr>
 											<th></th>

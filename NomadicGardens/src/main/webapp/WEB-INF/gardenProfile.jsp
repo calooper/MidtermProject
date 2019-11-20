@@ -51,8 +51,9 @@
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
 								<p>Address</p>
+								<a href="http://maps.google.com/?q=${garden.address.street}, ${garden.address.city},${garden.address.state} ${garden.address.zip}">
 								<span>${garden.address.street}</span> <span>${garden.address.city}, ${garden.address.state}
-									${garden.address.zip}</span>
+									${garden.address.zip}</span></a>
 							</div>
 						</div>
 					</div>
