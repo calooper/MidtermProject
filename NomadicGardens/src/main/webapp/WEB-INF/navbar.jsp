@@ -322,7 +322,7 @@
       				<ul class="dropdown-menu">
       					<li><a href="findUserById.do?userId=${sessionUser.id }" class="dropdown-item">Profile</a></li>
       					<li><a href="resources.do" class="dropdown-item">Resources</a></li>
-               			<li><a href="#" class="dropdown-item">Cart</a></li>
+               			<li><a href="cart.jsp" class="dropdown-item">Cart</a></li>
       				</ul>
       			</li>
             <%-- <li class="nav-item"><a href="#" class="nav-link">Cart</a></li> --%>
