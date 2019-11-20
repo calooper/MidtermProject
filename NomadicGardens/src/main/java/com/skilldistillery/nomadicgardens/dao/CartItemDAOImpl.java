@@ -9,6 +9,8 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.nomadicgardens.entities.CartItem;
+import com.skilldistillery.nomadicgardens.entities.Item;
+import com.skilldistillery.nomadicgardens.entities.User;
 
 @Transactional
 @Service
@@ -33,6 +35,15 @@ public class CartItemDAOImpl implements CartItemDAO {
 	@Override
 	public CartItem create(CartItem cartItem) {
 		em.persist(cartItem);
+		em.flush();
+		return cartItem;
+	}
+	@Override
+	public CartItem makeCartItem(CartItem cartItem, User user, Item item) {
+		cartItem.setUser(user);
+		cartItem.setItem(item);
+		em.persist(cartItem);
+		
 		em.flush();
 		return cartItem;
 	}
