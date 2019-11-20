@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Transient;
 
 @Entity
 public class User {
@@ -213,24 +212,20 @@ public class User {
 				+ ", firstName=" + firstName + ", lastName=" + lastName + ", createDate=" + createDate + ", plots="
 				+ plots + ", items=" + items + "]";
 	}
+	
+	
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (active ? 1231 : 1237);
-		result = prime * result + ((address == null) ? 0 : address.hashCode());
-		result = prime * result + ((cartItems == null) ? 0 : cartItems.hashCode());
 		result = prime * result + ((createDate == null) ? 0 : createDate.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + id;
-		result = prime * result + ((imgURL == null) ? 0 : imgURL.hashCode());
 		result = prime * result + ((items == null) ? 0 : items.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
-		result = prime * result + ((plots == null) ? 0 : plots.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
@@ -245,16 +240,6 @@ public class User {
 			return false;
 		User other = (User) obj;
 		if (active != other.active)
-			return false;
-		if (address == null) {
-			if (other.address != null)
-				return false;
-		} else if (!address.equals(other.address))
-			return false;
-		if (cartItems == null) {
-			if (other.cartItems != null)
-				return false;
-		} else if (!cartItems.equals(other.cartItems))
 			return false;
 		if (createDate == null) {
 			if (other.createDate != null)
@@ -273,11 +258,6 @@ public class User {
 			return false;
 		if (id != other.id)
 			return false;
-		if (imgURL == null) {
-			if (other.imgURL != null)
-				return false;
-		} else if (!imgURL.equals(other.imgURL))
-			return false;
 		if (items == null) {
 			if (other.items != null)
 				return false;
@@ -287,21 +267,6 @@ public class User {
 			if (other.lastName != null)
 				return false;
 		} else if (!lastName.equals(other.lastName))
-			return false;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
-		if (phoneNumber == null) {
-			if (other.phoneNumber != null)
-				return false;
-		} else if (!phoneNumber.equals(other.phoneNumber))
-			return false;
-		if (plots == null) {
-			if (other.plots != null)
-				return false;
-		} else if (!plots.equals(other.plots))
 			return false;
 		if (username == null) {
 			if (other.username != null)

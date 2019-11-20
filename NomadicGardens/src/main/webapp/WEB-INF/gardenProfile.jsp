@@ -127,21 +127,22 @@
 																	<td></td>
 																	<td></td>
 																	<td>
-
+<c:if test="${not empty sessionUser}">
 																	<c:if test="${empty p.user}">
 																		<form action="claimPlot.do" method="post">
 																			<input type="hidden" name="oldPlotId" value=${p.id}>
-																			<input type="hidden" name="userId" value=${p.user.id}>
+																			<input type="hidden" name="userId" value=${sessionUser.id}>
 																			<input type="hidden" name="gardenId" value=${garden.id}>
 																			<button type="submit" class="update btn btn-info btn-sm">
 																				<span class="glyphicon glyphicon-pencil"></span>
 																			</button>
 																		</form>
 																	</c:if>
-																	<c:if test="${not empty p.user}">
+
+																	<c:if test="${not empty p.user && p.user.id == sessionUser.id}">
 																		<form action="unclaimPlot.do" method="post">
 																			<input type="hidden" name="oldPlotId" value=${p.id}>
-
+																			<input type="hidden" name="userId" value=${p.user.id}>
 																			<input type="hidden" name="gardenId" value=${garden.id}>
 
 																			<button type="submit" class="update btn btn-info btn-sm">
@@ -149,6 +150,7 @@
 																			</button>
 																		</form>
 																	</c:if>
+</c:if>
 
 
 																	</td>

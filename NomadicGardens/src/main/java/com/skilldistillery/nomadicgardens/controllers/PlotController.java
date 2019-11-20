@@ -72,11 +72,12 @@ public class PlotController {
 	@RequestMapping(path = "claimPlot.do", method = RequestMethod.POST)
 	public ModelAndView claimPlot(@RequestParam("oldPlotId") int oldId, @RequestParam("userId") int userId) {
 		ModelAndView mv = new ModelAndView();
+//		int userId = Integer.parseInt(userInput);
 		
 		Plot plot = dao.findById(oldId);
 		plot = dao.claimPlot(oldId, userId);
 		
-		mv.addObject("plot", plot);
+//		mv.addObject("plot", plot);
 		mv.setViewName("redirect:findGardenById.do?gardenId=" + plot.getGarden().getId());
 		
 		return mv;
@@ -89,7 +90,7 @@ public class PlotController {
 		plot = dao.unclaimPlot(oldId);
 		
 		
-		mv.addObject("plot", plot);
+//		mv.addObject("plot", plot);
 		mv.setViewName("redirect:findGardenById.do?gardenId=" + plot.getGarden().getId());
 		
 		return mv;
