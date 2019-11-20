@@ -160,7 +160,6 @@
 														<th></th>
 														<th></th>
 												
-														<th> Item#</th>
 														<th> Produce</th>
 														<th> Quantity</th>
 														<th> Unit</th>
@@ -192,9 +191,19 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td></td>
-																
-																	<td id="f1">${i.id}</td>
+																	<td><!-- ADD TO CART BUTTON -->
+																	<%-- form action="findAllCartItemsById.do?${sessionUser.id }" method="POST" > --%>
+																		<form action="createCartItem.do" method="POST" >
+																		<input type="hidden" name = "userId" value=${sessionUser.id }>
+																		
+																		<button value=${ i.id} type="submit" data-uid="1"
+																			class="btn btn-default btn-sm" name="itemId"> 
+																			Add to cart:
+																			<span class="glyphicon glyphicon-shopping-cart"></span>
+																		</button>
+																	</form></td>
+																	
+																	
 																	<td id="l1">${i.produce.name}</td>
 																	<td id="m1">${i.quantity}</td>
 																	<td id="m2">${i.unit}</td>
@@ -350,7 +359,7 @@
           <td><input type="hidden" id="m2"></td>
           <td><input type="hidden" id="m2"></td>
           <td><input type="hidden" id="m2"></td>
-          <td><input type="hidden" id="m2"></td>
+         
 
 
 
