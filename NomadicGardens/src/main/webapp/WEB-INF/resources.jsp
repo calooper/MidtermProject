@@ -9,6 +9,8 @@
 
 <body>
 	<jsp:include page="navbar.jsp" />
+	<br>
+		<br>
   <div class="row ml-0 mr-0">
       <div class="col-md-6 pr-0">
           <div class="card">
