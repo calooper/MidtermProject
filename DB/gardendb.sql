@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `cart_item` (
   `user_id` INT NOT NULL,
   `item_id` INT NOT NULL,
   `date_added` DATE NULL,
-  `approved` TINYINT NULL,
+  `approved` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   INDEX `fk_cart_items_user_idx` (`user_id` ASC),
   INDEX `fk_cart_items_item_idx` (`item_id` ASC),
@@ -355,12 +355,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `nomadicGardensDB`;
-INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (1, 1, 1, '2019-11-15', 0);
-INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (2, 2, 2, '2019-11-15', 0);
-INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (3, 3, 3, '2019-11-15', 0);
-INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (4, 2, 4, '2019-11-15', 0);
-INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (5, 4, 5, '2019-11-15', 0);
-INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (6, 5, 6, '2019-11-15', 0);
+INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (1, 1, 1, '2019-11-15', 1);
+INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (2, 2, 2, '2019-11-15', 1);
+INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (3, 3, 3, '2019-11-15', 1);
+INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (4, 2, 4, '2019-11-15', 1);
+INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (5, 4, 5, '2019-11-15', 1);
+INSERT INTO `cart_item` (`id`, `user_id`, `item_id`, `date_added`, `approved`) VALUES (6, 5, 6, '2019-11-15', 1);
 
 COMMIT;
 
