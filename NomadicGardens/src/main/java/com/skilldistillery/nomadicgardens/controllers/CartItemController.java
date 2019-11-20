@@ -92,12 +92,24 @@ public class CartItemController {
 		
 		return mv;
 	}
+	
+	@RequestMapping(path = "removeCartItem.do", method = RequestMethod.POST)
+	public ModelAndView removeCartItem(@RequestParam("cartItem") int id) {
+		ModelAndView mv = new ModelAndView();
+		
+		cartItemDAO.removeFromCart(id);
+		List<CartItem> allItems = cartItemDAO.findAllCartItemsById(id);
+		mv.addObject("allCartItems", allItems);
+		mv.setViewName("cart");
+		
+		return mv;
+	}
 
 	@RequestMapping(path = "destroyCartItem.do", method = RequestMethod.POST)
 	public ModelAndView destroyCartItem(@RequestParam("itemId") int id) {
 		ModelAndView mv = new ModelAndView();
 		cartItemDAO.destroy(id);
-		mv.setViewName("redirect:home.do");
+		mv.setViewName("cart");
 		
 		return mv;
 	}

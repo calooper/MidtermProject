@@ -79,12 +79,12 @@
 														
 														<td>
 															<!-- DELETE BUTTON -->
-															<form action="destroyItem.do" method="POST" name="itemId"
-																value=${ c.item.id}>
-																<button data-target="#delet" value=${ c.item.id}
+															<form action="destroyCartItem.do" method="POST">
+															<input type=“hidden” class=“form-control” name=“cartItem” value=“${c.id}”>
+																<button data-target="#delet" value=${ c.id}
 																	type="submit" data-toggle="modal" data-uid="1"
-																	class="delete btn btn-danger btn-sm" name="itemId"
-																	value=${ c.item.id}>
+																	class="delete btn btn-danger btn-sm" name="cartItem"
+																	value=${ c.id}>
 																	<span class="glyphicon glyphicon-trash"></span>
 																</button>
 															</form>

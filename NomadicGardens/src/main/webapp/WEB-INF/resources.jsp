@@ -62,7 +62,7 @@
           <div class="card">
               <img class="card-img" src="images/rottenlemons.jpg" alt="Check Spoil" style="width:400px;height:400px;">
               <div class="card-img-overlay">
-                  <h3>Check if vegetables are spoiled</h3>
+                  <h3>How to check if produce is spoiled</h3>
                     <a href="https://www.wikihow.com/Check-if-Vegetables-Are-Spoiled" class="btn" target="_blank">Spoiled!</a>
               </div>
           </div>

@@ -67,15 +67,21 @@ public class CartItemDAOImpl implements CartItemDAO {
 		em.flush();
 		return ci;
 	}
-
+	@Override
+	public CartItem removeFromCart(int id) {
+		CartItem ci = em.find(CartItem.class, id);
+		
+		ci.setApproved(false);
+		em.flush();
+		return ci;
+	}
+	
 	@Override
 	public boolean destroy(int id) {
 		boolean successful = true;
 		CartItem ci = em.find(CartItem.class, id);
-
-		em.getTransaction().begin();
 		em.remove(ci);
-		em.flush();
+//		em.flush();
 		return successful;
 	}
 

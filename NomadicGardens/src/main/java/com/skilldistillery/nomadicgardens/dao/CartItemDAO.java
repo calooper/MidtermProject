@@ -14,4 +14,5 @@ public interface CartItemDAO {
 	public CartItem update(int id, CartItem cartItem);
 	public boolean destroy(int id);
 	List<CartItem> findAllCartItemsById(int userId);
+	CartItem removeFromCart(int id);
 }
