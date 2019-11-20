@@ -428,7 +428,7 @@
 			<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
 
             Select Produce Type:
-            <select name="produce.id">
+            <select class="dropdown-header" name="produce.id">
 			  <option value="1">Potato</option>
 			  <option value="2">Corn</option>
 			  <option value="3">Strawberry</option>
