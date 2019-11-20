@@ -31,8 +31,23 @@
 					<div class="row ">
 						<div
 							class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-							<img
-								src="http://nicesnippets.com/demo/1499344631_malecostume.png">
+							
+							
+							<c:choose>
+								 <c:when test="${user.imgURL == null}">
+								     <img style="width: 150px; height: 150px; border-radius: 50%"
+										src="https://i.imgur.com/zVdNnTx.pngs">
+								 </c:when>
+							
+								 <c:otherwise>
+								        <img style="width: 150px; height: 150px; border-radius: 50%"
+										src="${ user.imgURL }">
+								 </c:otherwise>
+							</c:choose>
+							
+							
+							
+							
 						</div>
 						<div
 							class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
@@ -41,8 +56,8 @@
 								<h1 >${user.username }</h1>
 
 
-						<!--  Edit Profiel Button-->
-					<c:if test="${user.id == sessionUser.id}">
+						<!--  Edit Profile Button-->
+					
 							<button type="submit" data-toggle="modal"
 								value=${ i.id} name="itemId"
 								data-target="#editProfile" data-uid="2"
@@ -52,7 +67,6 @@
 								<span class="glyphicon glyphicon-edit" ></span>
 			
 							</button>
-						</c:if>
 
 
 								<!--  Edit Profile Modal Pop-Up-->
@@ -61,11 +75,8 @@
 																				<div class="modal-content">
 
 																					<div class="modal-header">
-																					
-																					
 																						<button type="button" class="close" data-dismiss="modal"></button>
 																						<h4 class="modal-title">Edit Profile</h4>
-																						
 																					</div>
 
 
@@ -73,14 +84,18 @@
 																						<div class="modal-body">
 
 																							<input type="hidden" class="form-control" name="oldUserId" value="${user.id}"  required>
-																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
-																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
-																							<input type="hidden" class="form-control" name="phoneNumber" value="${user.phoneNumber}">
 
-																							<input type="text" class="form-control" name="email"  value="${user.email}" required>
-																							<input type="text" class="form-control" name="firstName"  value="${user.firstName}" required>
-																							<input type="text" class="form-control" name="lastName"  value="${user.lastName}" required>
-																							<input type="text" class="form-control" name="imgURL" value="${user.imgURL}" placeholder="Image URL" >
+																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
+																							
+																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
+
+																							<input type="text" class="form-control" name="email"  placeholder="${user.email}" required>
+
+																							 <input type="text" class="form-control" name="firstName"  placeholder="First Name">
+																							
+																							 <input type="text" class="form-control" name="lastName"  placeholder="Last Name">
+																							 
+																							 <input type="text" class="form-control" name="imgURL"  placeholder="Picture URL">
 
 
 																						</div>
@@ -171,8 +186,8 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th>Edit</th>
-														<th>Delete</th>
+														<th><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Edit</c:if></th>
+														<th><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Delete</c:if></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -193,14 +208,17 @@
 																	<td></td>
 																	<td><!-- ADD TO CART BUTTON -->
 																	<%-- form action="findAllCartItemsById.do?${sessionUser.id }" method="POST" > --%>
+																	
+																	
 																		<form action="createCartItem.do" method="POST" >
 																		<input type="hidden" name = "userId" value=${sessionUser.id }>
-																		
+																	<c:if test="${not empty sessionUser && i.user.id != sessionUser.id && i.available}">
 																		<button value=${ i.id} type="submit" data-uid="1"
 																			class="btn btn-default btn-sm" name="itemId"> 
 																			Add to cart:
 																			<span class="glyphicon glyphicon-shopping-cart"></span>
 																		</button>
+																	</c:if>
 																	</form></td>
 																	
 																	
@@ -222,12 +240,14 @@
 
 																	<!-- EDIT BUTTON -->
 																	<td>
+																	<c:if test="${not empty sessionUser && user.id == sessionUser.id}">
+																	
 																		<button type="button" data-toggle="collapse"
 																			value=${ i.id} name="itemId" aria-expanded="false" aria-controls="collapseExample" data-target="#collapseExample"" 
 																			class="update btn btn-info btn-sm">
 																			<span class="glyphicon glyphicon-pencil"></span>
 																		</button>
-			
+																	</c:if>
 			
 																
 																	<!-- / Collapse buttons -->
@@ -300,12 +320,14 @@
 																	<td>
 																		<!-- DELETE BUTTON -->
  																		<form action="destroyItem.do" method="POST" name="itemId" value=${ i.id}>
+ 																			<c:if test="${not empty sessionUser && user.id == sessionUser.id}">
 																			<button data-target="#delet" value=${ i.id}
 																				type="submit" data-toggle="modal" data-uid="1"
 																				class="delete btn btn-danger btn-sm" name="itemId"
 																				value=${ i.id}>
 																			<span class="glyphicon glyphicon-trash"></span>
 																		</button>
+																		</c:if>
   																		</form>
 																	</td>
 																</tr>
@@ -365,10 +387,14 @@
 
 
           <td>
+           <c:if test="${not empty sessionUser && user.id == sessionUser.id}">
           <td><strong>Add</strong></td>
-          <td><button type="submit" data-toggle="modal" data-target="#edit" data-uid="2" class="add btn btn-primary btn-sm">
+          <td>
+          <button type="submit" data-toggle="modal" data-target="#edit" data-uid="2" class="add btn btn-primary btn-sm">
               <span class="glyphicon glyphicon-plus" value="Submit Button"></span>
-            </button></td>
+            </button>
+            </td>
+            </c:if>
           </td>
         </tr>
       </tbody>
@@ -402,7 +428,7 @@
 			<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
 
             Select Produce Type:
-            <select name="produce.id">
+            <select class="dropdown-header" name="produce.id">
 			  <option value="1">Potato</option>
 			  <option value="2">Corn</option>
 			  <option value="3">Strawberry</option>
