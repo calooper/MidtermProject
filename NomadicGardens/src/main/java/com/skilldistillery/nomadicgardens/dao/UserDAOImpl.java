@@ -30,7 +30,6 @@ public class UserDAOImpl implements UserDAO {
 		List<User> allUsers = em.createQuery(query, User.class).getResultList();
 		return allUsers;
 	}
-	
 
 	@Override
 	public User create(User user) {
@@ -45,20 +44,57 @@ public class UserDAOImpl implements UserDAO {
 	public User update(int id, User user) {
 		User us = em.find(User.class, id);
 
-		us.setUsername(user.getUsername());
-		us.setPassword(user.getPassword());
-		us.setActive(user.getActive());
-		us.setAddress(user.getAddress());
-		us.setImgURL(user.getImgURL());
-		us.setEmail(user.getEmail());
-		us.setPhoneNumber(user.getPhoneNumber());
-		us.setFirstName(user.getFirstName());
-		us.setLastName(user.getLastName());
-		us.setCreateDate(user.getCreateDate());
-		us.setPlots(user.getPlots());
-		us.setCartItems(user.getCartItems());
-		us.setItems(user.getItems());
+		if (user.getUsername() != null) {
+			us.setUsername(user.getUsername());
 
+		}
+		if (user.getPassword() != null) {
+			us.setPassword(user.getPassword());
+
+		}
+
+		if (user.getAddress() != null) {
+			us.setAddress(user.getAddress());
+
+		}
+		if (user.getImgURL() != null) {
+			us.setImgURL(user.getImgURL());
+
+		}
+		if (user.getEmail() != null) {
+			us.setEmail(user.getEmail());
+
+		}
+		if (user.getPhoneNumber() != null) {
+			us.setPhoneNumber(user.getPhoneNumber());
+
+		}
+		if (user.getFirstName() != null) {
+			us.setFirstName(user.getFirstName());
+
+		}
+		if (user.getLastName() != null) {
+			us.setLastName(user.getLastName());
+
+		}
+		if (user.getCreateDate() != null) {
+			us.setCreateDate(user.getCreateDate());
+
+		}
+		if (user.getPlots() != null) {
+			us.setPlots(user.getPlots());
+
+		}
+		if (user.getCartItems() != null) {
+			us.setCartItems(user.getCartItems());
+
+		}
+		if (user.getItems() != null) {
+			us.setItems(user.getItems());
+
+		}
+		
+		us.setActive(true);
 		em.flush();
 		return us;
 	}
@@ -73,14 +109,14 @@ public class UserDAOImpl implements UserDAO {
 		em.flush();
 		return successful;
 	}
-	
-	//ADDITIONS
+
+	// ADDITIONS
 
 	@Override
 	public boolean isUsernameUnique(String username, List<User> users) {
 		boolean isUnique = true;
 		for (User user : users) {
-			if(username.equals(user.getUsername())) {
+			if (username.equals(user.getUsername())) {
 				isUnique = false;
 			}
 		}
@@ -90,9 +126,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User getUserByUsername(String username) {
 		String query = "SELECT us FROM User us WHERE us.username = :username";
-		User user = em.createQuery(query, User.class)
-				.setParameter("username", username)
-				.getResultList().get(0);
+		User user = em.createQuery(query, User.class).setParameter("username", username).getResultList().get(0);
 
 		return user;
 	}
@@ -102,8 +136,8 @@ public class UserDAOImpl implements UserDAO {
 		if (getUserByUsername(u.getUsername()) == null) {
 			return false;
 		}
-		
-		if(getUserByUsername(u.getUsername()).getPassword().equals(u.getPassword())) {
+
+		if (getUserByUsername(u.getUsername()).getPassword().equals(u.getPassword())) {
 			return true;
 		}
 		return false;
