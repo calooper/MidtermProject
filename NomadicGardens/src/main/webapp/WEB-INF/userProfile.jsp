@@ -171,8 +171,8 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th>Edit</th>
-														<th>Delete</th>
+														<th><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Edit</c:if></th>
+														<th><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Delete</c:if></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -193,14 +193,17 @@
 																	<td></td>
 																	<td><!-- ADD TO CART BUTTON -->
 																	<%-- form action="findAllCartItemsById.do?${sessionUser.id }" method="POST" > --%>
+																	
+																	
 																		<form action="createCartItem.do" method="POST" >
 																		<input type="hidden" name = "userId" value=${sessionUser.id }>
-																		
+																	<c:if test="${not empty sessionUser && i.user.id != sessionUser.id && i.available}">
 																		<button value=${ i.id} type="submit" data-uid="1"
 																			class="btn btn-default btn-sm" name="itemId"> 
 																			Add to cart:
 																			<span class="glyphicon glyphicon-shopping-cart"></span>
 																		</button>
+																	</c:if>
 																	</form></td>
 																	
 																	
@@ -222,12 +225,14 @@
 
 																	<!-- EDIT BUTTON -->
 																	<td>
+																	<c:if test="${not empty sessionUser && user.id == sessionUser.id}">
+																	
 																		<button type="button" data-toggle="collapse"
 																			value=${ i.id} name="itemId" aria-expanded="false" aria-controls="collapseExample" data-target="#collapseExample"" 
 																			class="update btn btn-info btn-sm">
 																			<span class="glyphicon glyphicon-pencil"></span>
 																		</button>
-			
+																	</c:if>
 			
 																
 																	<!-- / Collapse buttons -->
@@ -300,12 +305,14 @@
 																	<td>
 																		<!-- DELETE BUTTON -->
  																		<form action="destroyItem.do" method="POST" name="itemId" value=${ i.id}>
+ 																			<c:if test="${not empty sessionUser && user.id == sessionUser.id}">
 																			<button data-target="#delet" value=${ i.id}
 																				type="submit" data-toggle="modal" data-uid="1"
 																				class="delete btn btn-danger btn-sm" name="itemId"
 																				value=${ i.id}>
 																			<span class="glyphicon glyphicon-trash"></span>
 																		</button>
+																		</c:if>
   																		</form>
 																	</td>
 																</tr>
@@ -365,10 +372,14 @@
 
 
           <td>
+           <c:if test="${not empty sessionUser && user.id == sessionUser.id}">
           <td><strong>Add</strong></td>
-          <td><button type="submit" data-toggle="modal" data-target="#edit" data-uid="2" class="add btn btn-primary btn-sm">
+          <td>
+          <button type="submit" data-toggle="modal" data-target="#edit" data-uid="2" class="add btn btn-primary btn-sm">
               <span class="glyphicon glyphicon-plus" value="Submit Button"></span>
-            </button></td>
+            </button>
+            </td>
+            </c:if>
           </td>
         </tr>
       </tbody>
