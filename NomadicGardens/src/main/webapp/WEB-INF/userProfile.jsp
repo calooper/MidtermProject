@@ -31,8 +31,23 @@
 					<div class="row ">
 						<div
 							class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-							<img
-								src="http://nicesnippets.com/demo/1499344631_malecostume.png">
+							
+							
+							<c:choose>
+								 <c:when test="${user.imgURL == null}">
+								     <img style="width: 150px; height: 150px; border-radius: 50%"
+										src="https://i.imgur.com/zVdNnTx.pngs">
+								 </c:when>
+							
+								 <c:otherwise>
+								        <img style="width: 150px; height: 150px; border-radius: 50%"
+										src="${ user.imgURL }">
+								 </c:otherwise>
+							</c:choose>
+							
+							
+							
+							
 						</div>
 						<div
 							class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
@@ -42,7 +57,7 @@
 
 
 						<!--  Edit Profiel Button-->
-					<c:if test="${user.id == sessionUser.id}">
+					
 							<button type="submit" data-toggle="modal"
 								value=${ i.id} name="itemId"
 								data-target="#editProfile" data-uid="2"
@@ -52,7 +67,6 @@
 								<span class="glyphicon glyphicon-edit" ></span>
 			
 							</button>
-						</c:if>
 
 
 								<!--  Edit Profile Modal Pop-Up-->
@@ -61,11 +75,8 @@
 																				<div class="modal-content">
 
 																					<div class="modal-header">
-																					
-																					
 																						<button type="button" class="close" data-dismiss="modal"></button>
 																						<h4 class="modal-title">Edit Profile</h4>
-																						
 																					</div>
 
 
@@ -73,14 +84,16 @@
 																						<div class="modal-body">
 
 																							<input type="hidden" class="form-control" name="oldUserId" value="${user.id}"  required>
-																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
-																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
-																							<input type="hidden" class="form-control" name="phoneNumber" value="${user.phoneNumber}">
 
-																							<input type="text" class="form-control" name="email"  value="${user.email}" required>
-																							<input type="text" class="form-control" name="firstName"  value="${user.firstName}" required>
-																							<input type="text" class="form-control" name="lastName"  value="${user.lastName}" required>
-																							<input type="text" class="form-control" name="imgURL" value="${user.imgURL}" placeholder="Image URL" >
+																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
+																							
+																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
+
+																							<input type="text" class="form-control" name="email"  placeholder="${user.email}" required>
+
+																							 <input type="text" class="form-control" name="firstName"  placeholder="${user.firstName}">
+																							
+																							 <input type="text" class="form-control" name="lastName"  placeholder="${user.lastName}">
 
 
 																						</div>
