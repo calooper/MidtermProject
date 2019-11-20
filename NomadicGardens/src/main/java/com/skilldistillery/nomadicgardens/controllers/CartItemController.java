@@ -10,13 +10,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.nomadicgardens.dao.CartItemDAO;
+import com.skilldistillery.nomadicgardens.dao.ItemDAO;
+import com.skilldistillery.nomadicgardens.dao.UserDAO;
 import com.skilldistillery.nomadicgardens.entities.CartItem;
+import com.skilldistillery.nomadicgardens.entities.Item;
+import com.skilldistillery.nomadicgardens.entities.User;
 
 @Controller
 public class CartItemController {
 
 	@Autowired
-	private CartItemDAO dao;
+	private CartItemDAO cartItemDAO;
+	@Autowired
+	private ItemDAO itemDAO;
+	@Autowired
+	private UserDAO userDAO;
 
 //	@RequestMapping(path = "home.do")
 //	public ModelAndView index() {
@@ -30,7 +38,7 @@ public class CartItemController {
 	public ModelAndView findCartItemById(@RequestParam("itemId") int itemId) {
 		ModelAndView mv = new ModelAndView();
 		
-		CartItem item = dao.findById(itemId);
+		CartItem item = cartItemDAO.findById(itemId);
 		mv.addObject("item", item);
 		mv.setViewName("userProfile");
 		
@@ -41,7 +49,7 @@ public class CartItemController {
 	public ModelAndView findAllCartItems() {
 		ModelAndView mv = new ModelAndView();
 
-		List<CartItem> allItems = dao.findAll();
+		List<CartItem> allItems = cartItemDAO.findAll();
 		mv.addObject("allItems", allItems);
 		mv.setViewName("home");
 		
@@ -49,12 +57,15 @@ public class CartItemController {
 	}
 
 	@RequestMapping(path = "createCartItem.do", method = RequestMethod.POST)
-	public ModelAndView addCartItem(CartItem cartItem) {
+	public ModelAndView createCartItem(CartItem cartItem, @RequestParam("userId")int userId, @RequestParam("itemId") int itemId) {
 		ModelAndView mv = new ModelAndView();
-
-		cartItem = dao.create(cartItem);
+		User user = userDAO.findById(userId);
+		Item item = itemDAO.findById(itemId);
+		
+		cartItem = cartItemDAO.makeCartItem(cartItem, user, item);
+		
 		mv.addObject("cartItem", cartItem);
-		mv.setViewName("userProfile");
+		mv.setViewName("cart");
 		
 		return mv;
 	}
@@ -63,7 +74,7 @@ public class CartItemController {
 	public ModelAndView updateCartItem(@RequestParam("oldItemId") int oldId, CartItem cartItem) {
 		ModelAndView mv = new ModelAndView();
 
-		cartItem = dao.update(oldId, cartItem);
+		cartItem = cartItemDAO.update(oldId, cartItem);
 		mv.addObject("cartItem", cartItem);
 		mv.setViewName("userProfile");
 		
@@ -73,7 +84,7 @@ public class CartItemController {
 	@RequestMapping(path = "destroyCartItem.do", method = RequestMethod.POST)
 	public ModelAndView destroyCartItem(@RequestParam("itemId") int id) {
 		ModelAndView mv = new ModelAndView();
-		dao.destroy(id);
+		cartItemDAO.destroy(id);
 		mv.setViewName("redirect:home.do");
 		
 		return mv;

@@ -45,9 +45,8 @@
 								<div class="col-md-10  profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white" >
+											<h2><b>Produce Search</b></h2>
 											<table class="table table-hover table-responsive">
-
-
 												<thead>
 													<tr>
 														<th></th>
@@ -114,15 +113,16 @@
 -->
 																	</td>
 																	<td>
-																		<!-- DELETE BUTTON -->
-<!--
-																		<button data-target="#delete" value=${ user.id}
-																			type="submit" data-toggle="modal" data-uid="1"
-																			class="delete btn btn-danger btn-sm" name="id"
-																			value=${ user.id}>
-																			<span class="glyphicon glyphicon-trash"></span>
+																		<!-- ADD TO CART BUTTON -->
+																	<form action="createCartItem.do" method="POST" >
+																		<input type="hidden" name = "userId" value=${sessionUser.id }>
+																		
+																		<button value=${ i.id} type="submit" data-uid="1"
+																			class="btn btn-default btn-sm" name="itemId"> 
+																			Add to cart:
+																			<span class="glyphicon glyphicon-shopping-cart"></span>
 																		</button>
--->
+																	</form>
 																	</td>
 
 
