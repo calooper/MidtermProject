@@ -31,6 +31,14 @@ public class CartItemDAOImpl implements CartItemDAO {
 		List<CartItem> allCartItems = em.createQuery(query, CartItem.class).getResultList();
 		return allCartItems;
 	}
+	
+	@Override
+	public List<CartItem> findAllCartItemsById(int userId) {
+		String query = "SELECT ci FROM CartItem ci WHERE ci.user.id = :userId";
+		List<CartItem> allCartItemsById = em.createQuery(query, CartItem.class).setParameter("userId", userId).getResultList();
+		return allCartItemsById;
+	}
+	
 
 	@Override
 	public CartItem create(CartItem cartItem) {

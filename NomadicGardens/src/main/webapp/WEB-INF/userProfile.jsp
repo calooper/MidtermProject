@@ -115,7 +115,7 @@
 								<p>Gardens</p>
 
 								<c:forEach var="g" items="${gardens}">
-								<span>${g.name}</span>
+								<span><a class="button" href="findGardenById.do?gardenId=${g.id }">${g.name}</a></span>
 								</c:forEach>
 
 
