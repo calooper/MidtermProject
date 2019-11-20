@@ -123,7 +123,6 @@
 																	<td></td>
 																	<td></td>
 																</tr>
-
 															</c:otherwise>
 														</c:choose>
 													</c:forEach>
