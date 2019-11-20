@@ -17,7 +17,7 @@
   <div class="row ml-0 mr-0">
       <div class="col-md-6 pr-0">
           <div class="card padding">
-              <img class="card-img" src="images/communitygarden1.jpg" alt="Community Garden" style="width:600px;height:450px;">
+              <img class="card-img" src="images/communitygarden1.jpg" alt="Community Garden" style="width:650px;height:450px;">
               <div class="card-img-overlay d-flex align-items-center justify-content-center flex-column">
                   <h2>Community Gardens</h2>
                   <p>Where people and plants come together</p>
@@ -28,7 +28,7 @@
       </div>
       <div class="col-md-6 pl-0">
           <div class="card">
-              <img class="card-img" src="images/soil.jpeg" alt="Grow" style="width:600px;height:450px;">
+              <img class="card-img" src="images/soil.jpeg" alt="Grow" style="width:6500px;height:450px;">
               <div class="card-img-overlay d-flex align-items-center justify-content-center flex-column">
                   <h2>Grow!</h2>
 
@@ -50,7 +50,7 @@
 
       <div class="col-md-3 pl-0 pr-0">
           <div class="card">
-              <img class="card-img" src="images/freshfruit.jpeg" alt="Fresh Fruit" style="width:300px;height:400px;">
+              <img class="card-img" src="images/freshfruit.jpeg" alt="Fresh Fruit" style="width:400px;height:400px;">
               <div class="card-img-overlay">
                   <h3>Fresh Vegetables - How long do fresh vegetables last?</h3>
                     <a href="http://www.eatbydate.com/vegetables/fresh-vegetables/" class="btn" target="_blank">Stay Fresh!</a>
@@ -60,7 +60,7 @@
 
       <div class="col-md-3 pl-0 pr-0">
           <div class="card">
-              <img class="card-img" src="images/rottenlemons.jpg" alt="Check Spoil" style="width:300px;height:400px;">
+              <img class="card-img" src="images/rottenlemons.jpg" alt="Check Spoil" style="width:400px;height:400px;">
               <div class="card-img-overlay">
                   <h3>Check if vegetables are spoiled</h3>
                     <a href="https://www.wikihow.com/Check-if-Vegetables-Are-Spoiled" class="btn" target="_blank">Spoiled!</a>
