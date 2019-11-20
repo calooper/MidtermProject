@@ -62,9 +62,8 @@
 	<br>
 	<div class="row user-left-part">
     <div class="col-md-9 col-sm-9 col-xs-12 pull-right profile-right-section">
+  
 					<div class="row profile-right-section-row">
-					<h1></h1>
-
 						<div class="col-md-12 profile-header">
 							<div class="row">
 							</div>
@@ -74,6 +73,7 @@
 								<div class="col-md-8 profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white">
+										 <h2><b>Our Community Gardens</b></h2>
 											<table class="table table-hover table-responsive">
 												<thead>
 													<tr>
@@ -103,15 +103,15 @@
 																<br>
 															</c:when>
 															<c:otherwise>
-																<tr id="d1">
+																<tr>
 																	<td></td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td id="f1">${g.id}</td>
-																	<td id="f2">
+																	<td >${g.id}</td>
+																	<td >
 																	<a class="button" href="findGardenById.do?gardenId=${g.id}">${g.name}</a></td>																	
-																	<td id="l1">${g.sizeSqft}</td>
+																	<td>${g.sizeSqft}</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
@@ -126,7 +126,6 @@
 											</table>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>
