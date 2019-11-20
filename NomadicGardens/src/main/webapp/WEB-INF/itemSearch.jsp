@@ -98,7 +98,7 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-                                  <td></td>
+                                 									<td></td>
 																	<td></td>
 
 
@@ -114,17 +114,19 @@
 																	</td>
 																	<td>
 																		<!-- ADD TO CART BUTTON -->
+																		
 																	<form action="createCartItem.do" method="POST" >
 																		<input type="hidden" name = "userId" value=${sessionUser.id }>
 																		
+																		<c:if test="${not empty sessionUser && i.user.id != sessionUser.id && i.available}">
 																		<button value=${ i.id} type="submit" data-uid="1"
 																			class="btn btn-default btn-sm" name="itemId"> 
 																			Add to cart:
 																			<span class="glyphicon glyphicon-shopping-cart"></span>
 																		</button>
+																		</c:if>
 																	</form>
 																	</td>
-
 
 																</tr>
 

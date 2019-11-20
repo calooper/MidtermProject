@@ -74,6 +74,8 @@ public class CartItemController {
 		
 		cartItem = cartItemDAO.makeCartItem(cartItem, user, item);
 		
+		List <CartItem> allItems = user.getCartItems();
+		mv.addObject("allCartItems", allItems);
 		mv.addObject("cartItem", cartItem);
 		mv.setViewName("cart");
 		
