@@ -28,7 +28,7 @@
       </div>
       <div class="col-md-6 pl-0">
           <div class="card">
-              <img class="card-img" src="images/soil.jpeg" alt="Grow" style="width:6500px;height:450px;">
+              <img class="card-img" src="images/soil.jpeg" alt="Grow" style="width:650px;height:450px;">
               <div class="card-img-overlay d-flex align-items-center justify-content-center flex-column">
                   <h2>Grow!</h2>
 
