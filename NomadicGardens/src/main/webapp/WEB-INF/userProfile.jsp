@@ -56,7 +56,7 @@
 								<h1 >${user.username }</h1>
 
 
-						<!--  Edit Profiel Button-->
+						<!--  Edit Profile Button-->
 					
 							<button type="submit" data-toggle="modal"
 								value=${ i.id} name="itemId"
@@ -94,6 +94,8 @@
 																							 <input type="text" class="form-control" name="firstName"  placeholder="${user.firstName}">
 																							
 																							 <input type="text" class="form-control" name="lastName"  placeholder="${user.lastName}">
+																							 
+																							 <input type="text" class="form-control" name="imgURL"  placeholder="Picture URL">
 
 
 																						</div>
