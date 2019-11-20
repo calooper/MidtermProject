@@ -1,5 +1,8 @@
 package com.skilldistillery.nomadicgardens.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,11 +64,20 @@ public class ItemController {
 	}
 
 	@RequestMapping(path = "createItem.do", method = RequestMethod.POST)
-	public ModelAndView addUser(Item item) {
+	public ModelAndView addUser(Item item, String harvestDateString, String useByDateString) {
 		ModelAndView mv = new ModelAndView();
-
-		item = dao.create(item);
 		
+		LocalDate harvestDateFormatted = LocalDate.parse(harvestDateString);
+		LocalDate usedByDateFormatted = LocalDate.parse(useByDateString);
+		
+		
+		
+		
+		item.setHarvestDate(harvestDateFormatted);
+		item.setUseByDate(usedByDateFormatted);
+		
+		item = dao.create(item);
+
 		User user = item.getUser();
 		int userId = item.getUser().getId();
 		List<Item> itemsList = user.getItems();
@@ -80,10 +92,20 @@ public class ItemController {
 	}
 
 	@RequestMapping(path = "updateItem.do", method = RequestMethod.POST)
-	public ModelAndView updateUser(@RequestParam("oldItemId") int oldId, Item item) {
+	public ModelAndView updateUser(@RequestParam("oldItemId") int oldId, Item item, String harvestDateString, String useByDateString) {
 		ModelAndView mv = new ModelAndView();
+		
 
+		
+
+		LocalDate harvestDateFormatted = LocalDate.parse(harvestDateString);
+		LocalDate usedByDateFormatted = LocalDate.parse(useByDateString);
+		
+		item.setHarvestDate(harvestDateFormatted);
+		item.setUseByDate(usedByDateFormatted);
+		
 		item = dao.update(oldId, item);
+		
 		
 		User user = item.getUser();
 		int userId = item.getUser().getId();

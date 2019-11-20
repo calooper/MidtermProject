@@ -41,17 +41,16 @@
 
 
 						<!--  Edit Profiel Button-->
-						<p>Edit Profile </p>
+					
 							<button type="submit" data-toggle="modal"
 								value=${ i.id} name="itemId"
 								data-target="#editProfile" data-uid="2"
 								class="update btn btn-success btn-sm">
-								<span class="glyphicon glyphicon-pencil"></span>
 
+								Edit Profile
+								<span class="glyphicon glyphicon-edit" ></span>
+			
 							</button>
-
-
-
 
 
 								<!--  Edit Profile Modal Pop-Up-->
@@ -71,14 +70,14 @@
 																							<input type="hidden" class="form-control" name="oldUserId" value="${user.id}"  required>
 
 																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
-
+																							
 																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
 
 																							<input type="text" class="form-control" name="email"  placeholder="${user.email}" required>
 
-																							<input type="text" class="form-control" name="lastName"  placeholder="${user.lastName}">
-
-																							<input type="text" class="form-control" name="firstName"  placeholder="${user.firstName}">
+																							 <input type="text" class="form-control" name="firstName"  placeholder="${user.firstName}">
+																							
+																							 <input type="text" class="form-control" name="lastName"  placeholder="${user.lastName}">
 
 
 																						</div>
@@ -124,8 +123,8 @@
 							</div>
 							<div class="col-md-12 user-detail-section2">
 								<div class="border"></div>
-								<p>Email</p>
-								<span>${user.email} </span>
+								<p>Email User</p>
+								<a href="mailto:${user.email}" target="_blank" class="btn btn-info">${user.email}</a>
 							</div>
 						</div>
 					</div>
@@ -157,13 +156,14 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th></th>
-														<th> Item ID</th>
+												
+														<th> Item#</th>
 														<th> Produce</th>
 														<th> Quantity</th>
 														<th> Unit</th>
-														<th></th>
-														<th></th>
+														<th> Harvest Date </th>
+														<th> Use by Date  </th>
+														<th> Available</th>
 														<th></th>
 														<th></th>
 														<th></th>
@@ -185,17 +185,19 @@
 															</c:when>
 															<c:otherwise>
 																<tr id="d1">
+																
 																	<td></td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td></td>
+																
 																	<td id="f1">${i.id}</td>
 																	<td id="l1">${i.produce.name}</td>
 																	<td id="m1">${i.quantity}</td>
 																	<td id="m2">${i.unit}</td>
-																	<td></td>
-																	<td></td>
+																	<td id="m2">${i.harvestDate}</td>
+																	<td id="m2">${i.useByDate} </td>
+																	<td id="m2">${i.available}</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
@@ -225,14 +227,18 @@
 
 																							<input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
 
-																							<input type="hidden" class="form-control" name="oldItemId" value="${i.id}" placeholder="Item Id" required>
+																							<input type="hidden" class="form-control" name="oldItemId" value="${i.id}" placeholder="Item Id" >
 
-																							<input type="text" class="form-control" name="quantity" value="${i.quantity}" placeholder="Quantity" required>
+																							<input type="text" class="form-control" name="quantity" value="${i.quantity}" placeholder="Quantity" >
 
 																							<input type="text" class="form-control" name="unit" value="${i.unit}" placeholder="Unit">
+																							
+																							<input type="date" class="form-control" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date">
+																							
+																							<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date"> 
 
 																							 <input type="radio" name="available" value="true"> Available<br>
-																					 <input type="radio" name="available" value="false"> Not Available<br>
+																					 		<input type="radio" name="available" value="false"> Not Available<br>
 
 
 																						</div>
@@ -347,6 +353,11 @@
             <input type="number" placeholder="Quantity" class="form-control" name="quantity" >
 
             <input type="text" placeholder="Unit" class="form-control" name="unit" >
+
+            
+            <input type="date" class="form-control" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date" required>
+																							
+			<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
 
             Select Produce Type:
             <select name="produce.id">
