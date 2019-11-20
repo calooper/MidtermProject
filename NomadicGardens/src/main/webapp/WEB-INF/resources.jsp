@@ -6,8 +6,6 @@
 <style><%@include file="/WEB-INF/resourcesStyle.css"%></style>
 <link href="resourcesStyle.css" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="resourcesStyle.css">
-<style><%@include file="/WEB-INF/resourcesStyle.css"%></style>
 <title>Community Garden Resources</title>
 </head>
 
