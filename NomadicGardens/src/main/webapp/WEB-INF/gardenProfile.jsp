@@ -127,7 +127,7 @@
 																	<td></td>
 																	<td></td>
 																	<td>
-<c:if test="${not empty sessionUser}">
+																	<c:if test="${not empty sessionUser}">
 																	<c:if test="${empty p.user}">
 																		<form action="claimPlot.do" method="post">
 																			<input type="hidden" name="oldPlotId" value=${p.id}>
@@ -150,7 +150,7 @@
 																			</button>
 																		</form>
 																	</c:if>
-</c:if>
+																	</c:if>
 
 
 																	</td>
