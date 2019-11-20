@@ -121,7 +121,6 @@
 																					name="available" value="false"> Not
 																				Available<br>
 
-
 																			</div>
 
 
@@ -203,17 +202,6 @@
 											<td><input type="hidden" id="m2"></td>
 											<td><input type="hidden" id="m2"></td>
 											<td><input type="hidden" id="m2"></td>
-
-
-
-
-											<td>
-											<td><strong>Add</strong></td>
-											<td><button type="submit" data-toggle="modal"
-													data-target="#edit" data-uid="2"
-													class="add btn btn-primary btn-sm">
-													<span class="glyphicon glyphicon-plus" value="Submit Button"></span>
-												</button></td>
 										</tr>
 									</tbody>
 								</table>
