@@ -91,9 +91,9 @@
 
 																							<input type="text" class="form-control" name="email"  placeholder="${user.email}" required>
 
-																							 <input type="text" class="form-control" name="firstName"  placeholder="${user.firstName}">
+																							 <input type="text" class="form-control" name="firstName"  placeholder="First Name">
 																							
-																							 <input type="text" class="form-control" name="lastName"  placeholder="${user.lastName}">
+																							 <input type="text" class="form-control" name="lastName"  placeholder="Last Name">
 																							 
 																							 <input type="text" class="form-control" name="imgURL"  placeholder="Picture URL">
 
