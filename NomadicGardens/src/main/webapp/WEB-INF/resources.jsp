@@ -2,13 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
+
 <style><%@include file="/WEB-INF/resourcesStyle.css"%></style>
 <link href="resourcesStyle.css" rel="stylesheet" type="text/css">
-=======
+
 <link rel="stylesheet" href="resourcesStyle.css">
 <style><%@include file="/WEB-INF/resourcesStyle.css"%></style>
->>>>>>> 51205624d94c08613d0398921ab82a2dc690377c
 <title>Community Garden Resources</title>
 </head>
 
