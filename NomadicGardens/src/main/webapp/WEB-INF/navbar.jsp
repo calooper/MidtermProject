@@ -293,27 +293,36 @@
 				<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 			</div>
 			<br>
-				
+
 		</form>
-
+		
+		
+		
+			<!-- Collection of nav links, forms, and other content for toggling -->
+<!-- 		<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+			<ul class="nav navbar-nav">
+				<li class="nav-item"><a href="resources.do" class="button">Resources</a></li>
+			</ul> 
+		</div> -->
+		
 		<ul class="nav navbar-nav navbar-right ml-auto">
-		<li><a href="resources.do" class="button">Resources</a></li>
-<%--
-  <c:if test="${sessionScope.user != null }"><a href="account.do">Account</a></c:if>
-	<c:if test="${sessionScope.user != null }"><a href="logout.do">Logout</a></c:if>
-	<c:if test="${sessionScope.sessionUser == null }"> </c:if>
- --%>
- 	
+			<c:if test="${sessionScope.sessionUser == null }">
+				<li class="nav-item">
+				<a href="resources.do" class="button">Resources</a>
+				</li> 
+			</c:if> 
 
-      <c:if test="${sessionScope.sessionUser != null }">
+	
+	<c:if test="${sessionScope.sessionUser != null }">
         <!-- Collection of nav links, forms, and other content for toggling -->
       	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
       		<ul class="nav navbar-nav">
-      			<li class="nav-item dropdown">
+       			<li class="nav-item dropdown">
       				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">User <b class="caret"></b></a>
       				<ul class="dropdown-menu">
       					<li><a href="findUserById.do?userId=${sessionUser.id }" class="dropdown-item">Profile</a></li>
-                <li><a href="#" class="dropdown-item">Cart</a></li>
+      					<li><a href="resources.do" class="dropdown-item">Resources</a></li>
+               			<li><a href="#" class="dropdown-item">Cart</a></li>
       				</ul>
       			</li>
             <%-- <li class="nav-item"><a href="#" class="nav-link">Cart</a></li> --%>
