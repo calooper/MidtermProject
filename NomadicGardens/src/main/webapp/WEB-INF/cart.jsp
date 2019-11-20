@@ -31,13 +31,13 @@
 											<th></th>
 											<th></th>
 
-											<th>Cart #</th>
-											<th>Produce</th>
-											<th>Quantity</th>
+											<th>Cart ID#</th>
+											<th>Produce</th>	
 											<th>Unit</th>
 											<th>Harvest Date</th>
 											<th>Use by Date</th>
 											<th>Available</th>
+											<th>Seller</th>
 											<th></th>
 											<th></th>
 											<th></th>
@@ -48,12 +48,11 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="c" items="${itemsList}">
-
+										<c:forEach var="c" items="${sessionUser.cartItems}">
 											<c:choose>
-												<c:when test="${empty itemsList}">
+												<c:when test="${empty sessionUser.cartItems}">
 													<strong style="padding-left: 35em; color: red">No
-														items from this users garden</strong>
+														items in cart</strong>
 													<br>
 													<br>
 													<br>
@@ -66,12 +65,12 @@
 														<td></td>
 														<td></td>
 														<td id="f1">${c.id}</td>
-														<td id="l1">${c.item.name}</td>
-														<td id="m1">${i.quantity}</td>
-														<td id="m2">${i.unit}</td>
-														<td id="m2">${i.harvestDate}</td>
-														<td id="m2">${i.useByDate}</td>
-														<td id="m2">${i.available}</td>
+														<td id="l1">${c.item.produce.name}</td>
+														<td id="m2">${c.item.unit}</td>
+														<td id="m1">${c.item.harvestDate}</td>
+														<td id="m2">${c.item.useByDate}</td>
+														<td id="m2">${c.item.available}</td>
+														<td id="m2">${c.item.user.name}</td>
 														<td></td>
 														<td></td>
 														<td></td>
@@ -100,21 +99,21 @@
 																			<div class="modal-body">
 
 																				<input type="hidden" class="form-control"
-																					name="user.id" value="${user.id}" required>
+																					name="user.id" value="${c.user.id}" required>
 
 																				<input type="hidden" class="form-control"
-																					name="oldItemId" value="${i.id}"
+																					name="oldItemId" value="${c.item.id}"
 																					placeholder="Item Id"> <input type="text"
 																					class="form-control" name="quantity"
-																					value="${i.quantity}" placeholder="Quantity">
+																					value="${c.item.quantity}" placeholder="Quantity">
 
 																				<input type="text" class="form-control" name="unit"
-																					value="${i.unit}" placeholder="Unit"> <input
+																					value="${c.item.unit}" placeholder="Unit"> <input
 																					type="date" class="form-control"
-																					name="harvestDateString" value="${i.harvestDate}"
+																					name="harvestDateString" value="${c.item.harvestDate}"
 																					placeholder="Harvest Date"> <input
 																					type="date" class="form-control"
-																					name="useByDateString" value="${i.useByDate}"
+																					name="useByDateString" value="${c.item.useByDate}"
 																					placeholder="Use by Date"> <input
 																					type="radio" name="available" value="true">
 																				Available<br> <input type="radio"
@@ -141,11 +140,11 @@
 														<td>
 															<!-- DELETE BUTTON -->
 															<form action="destroyItem.do" method="POST" name="itemId"
-																value=${ i.id}>
-																<button data-target="#delet" value=${ i.id}
+																value=${ c.item.id}>
+																<button data-target="#delet" value=${ c.item.id}
 																	type="submit" data-toggle="modal" data-uid="1"
 																	class="delete btn btn-danger btn-sm" name="itemId"
-																	value=${ i.id}>
+																	value=${ c.item.id}>
 																	<span class="glyphicon glyphicon-trash"></span>
 																</button>
 															</form>
@@ -169,9 +168,9 @@
 
 																<div class="modal-footer">
 																	<form action="destroyItem.do" method="POST"
-																		name="itemId" value=${ i.id}>
+																		name="itemId" value=${ c.item.id}>
 																		<button type="submit" id="del" class="btn btn-danger "
-																			data-dismiss="modal" value=${ i.id}>Delete</button>
+																			data-dismiss="modal" value=${ c.item.id}>Delete</button>
 																	</form>
 																	<button type="button" class="btn btn-default"
 																		data-dismiss="modal">Close</button>
