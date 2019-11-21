@@ -71,7 +71,6 @@ public class CartItemController {
 		ModelAndView mv = new ModelAndView();
 		User user = userDAO.findById(userId);
 		Item item = itemDAO.findById(itemId);
-		
 		cartItem = cartItemDAO.makeCartItem(cartItem, user, item);
 		
 		List <CartItem> allItems = user.getCartItems();
