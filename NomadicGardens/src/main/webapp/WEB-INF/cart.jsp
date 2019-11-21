@@ -57,8 +57,8 @@
 													<br>
 												</c:when>
 												<c:otherwise>
+												<c:if test="${c.approved && c.item.user.id != sessionUser.id}">
 													<tr id="d1">
-
 														<td></td>
 														<td></td>
 														<td></td>
@@ -79,8 +79,8 @@
 														
 														<td>
 															<!-- DELETE BUTTON -->
-															<form action="destroyCartItem.do" method="POST">
-															<input type=“hidden” class=“form-control” name=“cartItem” value=“${c.id}”>
+															<form action="removeCartItem.do" method="POST">
+															<input type=hidden class=“form-control” name=“cartItem” value=“${c.id}”>
 																<button data-target="#delet" value=${ c.id}
 																	type="submit" data-toggle="modal" data-uid="1"
 																	class="delete btn btn-danger btn-sm" name="cartItem"
@@ -90,6 +90,7 @@
 															</form>
 														</td>
 													</tr>
+													</c:if>
 
 													<!-- DELETE POP UP -->
 
