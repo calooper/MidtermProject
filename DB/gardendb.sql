@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` VARCHAR(45) NOT NULL,
   `active` TINYINT NULL DEFAULT 1,
   `address_id` INT NULL,
-  `img_url` VARCHAR(45) NULL,
+  `img_url` VARCHAR(1000) NULL,
   `email` VARCHAR(45) NOT NULL,
   `phone_number` VARCHAR(45) NULL,
   `first_name` VARCHAR(45) NULL,
@@ -113,7 +113,7 @@ DROP TABLE IF EXISTS `produce` ;
 CREATE TABLE IF NOT EXISTS `produce` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
-  `img_url` VARCHAR(45) NULL,
+  `img_url` VARCHAR(1000) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   `harvest_date` DATE NULL,
   `use_by_date` DATE NULL,
   `available` TINYINT NULL DEFAULT 1,
-  `img_url` VARCHAR(45) NULL,
+  `img_url` VARCHAR(1000) NULL,
   `produce_id` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_item_user_idx` (`user_id` ASC),
