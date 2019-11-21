@@ -286,7 +286,7 @@
 																							<input type="date" class="form-control" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date"> 
 																							
 																							
-																							<input id="abc" type="checkbox" checked data-toggle="toggle"  name="available" data-on="Available" data-off="Not Available"  data-width="100%" data-onstyle="success" data-offstyle="danger">
+																							<input id="abc" type="checkbox" checked data-toggle="toggle"   name="available" data-on="Available" data-off="Not Available"  data-width="100%" data-onstyle="success" data-offstyle="danger">
 																							
 																							
 																							<script>
@@ -311,6 +311,8 @@
 
 																						<div class="modal-footer">
 																						<br>
+																			<!-- nbsp for space between buttons -->
+																						&nbsp
 																							<button type="submit"  class="btn btn-warning btn-block" class="form-control">Update</button>
 
 																							
@@ -318,7 +320,6 @@
 
 																					</form> 
 		
-
 																	  	</div>
 																	  </div>
 
@@ -424,24 +425,10 @@
 
         <form action="createItem.do" method="POST">
           <div class="modal-body">
-
-            <input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
-
-            <label for="quantity">Quantity:</label>
-            <input type="number" class="form-control" id="quantity" name="quantity" required>
-			<br>
-            <label for="unit">Unit:</label>
-            <input type="text" class="form-control" id="unit" name="unit" required>
-			<br>
-            <label for="harvestDateString">Harvest Date:</label>
-            <input type="date" class="form-control" id ="harvestDateString" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date" required>
-			<br>
-			<label for="useByDateString">Use By Date:</label>															
-			<input type="date" class="form-control" id ="useByDateString" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
-			<br>
-
-            Select Produce Type:
-            <select class="dropdown-header" name="produce.id">
+          
+          	<div class="block">
+            <label style="display: inline-block; text-align: right" for="quantity">Please Select a type of Produce</label>
+            <select style="display: inline-block" class="dropdown-header" name="produce.id">
 			  <option value="1">Potato</option>
 			  <option value="2">Corn</option>
 			  <option value="3">Strawberry</option>
@@ -460,12 +447,39 @@
 			  <option value="16">Onion</option>
 			  <option value="17">Carrot</option>
 			</select>
+			</div>
+
+		
+            	<input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
+		<div class="block">
+            <label style="display: inline-block; width: 100px; text-align: right" for="quantity">Quantity</label>
+            <input style="display: inline-block; width: 400px" type="number" class="form-control" id="quantity" name="quantity" required>
+       </div>
+			<br>
+		<div class="block">
+            <label style="display: inline-block; width: 100px; text-align: right" for="unit">Unit:</label>
+            <input style="display: inline-block; width: 400px" type="text" class="form-control" id="unit" name="unit" required>
+       </div>
+			<br>
+	   <div class="block">
+            <label style="display: inline-block; width: 100px; text-align: right" for="harvestDateString">Harvest Date:</label>
+            <input  style="display: inline-block; width: 400px" type="date" class="form-control" id ="harvestDateString" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date" required>
+       </div>
+			<br>
+	   <div class="block">
+			<label style="display: inline-block; width: 100px; text-align: right" for="useByDateString">Use By Date:</label>															
+			<input style="display: inline-block; width: 400px" type="date" class="form-control" id ="useByDateString" name="useByDateString" value="${i.useByDate}" placeholder="Use by Date" required> 
+		</div>
+			<br>
+			
+
+      
 
           </div>
 
 
           <div class="modal-footer">
-            <button type="submit" class="btn btn-warning" class="form-control">Update</button>
+            <button type="submit" class="btn btn-info" class="form-control">Update</button>
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
