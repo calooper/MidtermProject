@@ -79,8 +79,9 @@
   </div>
 	<br>
 	<br>
-	<div style="position:relative;padding-top:56.25%;">
-  <iframe src="https://www.youtube.com/watch?v=mDIVpJgjoXQ" frameborder="1" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:90%;"></iframe>
-	</div>
+	<h1>Composting!</h1>
+<div class="padding2">	
+<iframe allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/mDIVpJgjoXQ?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=1120&amp;width=1120" width="1120" height="630" allowtransparency="true" frameborder="0"></iframe>
+</div>
 </body>
 </html>
