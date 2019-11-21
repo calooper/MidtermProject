@@ -176,6 +176,13 @@
 		width: 47%;
 		text-decoration: none;
     }
+    
+    .navbar .nav-link b {
+		font-weight: bold;
+		color: #33cabb;
+	}
+	
+	----------------
 	.navbar .social-btn .btn-primary {
 		background: #507cc0;
 	}
@@ -317,8 +324,9 @@
         <!-- Collection of nav links, forms, and other content for toggling -->
       	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
       		<ul class="nav navbar-nav">
+      		
        			<li class="nav-item dropdown">
-      				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">User <b class="caret"></b></a>
+      				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"> <b>${sessionUser.username }</b> &nbsp User <b class="caret"></b></a>
       				<ul class="dropdown-menu">
       					<li><a href="findUserById.do?userId=${sessionUser.id }" class="dropdown-item">Profile</a></li>
       					<li><a href="resources.do" class="dropdown-item">Resources</a></li>
