@@ -73,7 +73,7 @@
 								<div class="col-md-8 profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white">
-										 <h2><b>Our Community Gardens</b></h2>
+										 <h2><b style="text-align: center; width: 3000px">Our Community Gardens</b></h2>
 											<table class="table table-hover table-responsive">
 												<thead>
 													<tr>
@@ -81,9 +81,9 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th>Garden ID</th>
-														<th>Garden Name</th>
-														<th>Size (Square Feet)</th>
+														<th style="text-align: center; width: 200px">Garden ID</th>
+														<th style="text-align: center; width: 2000px">Garden Name</th>
+														<th style="text-align: center; width: 500px">Size (Square Feet)</th>
 														<th></th>
 														<th></th>
 														<th></th>
@@ -155,7 +155,7 @@
                             <label class="sr-only" for="contact-message">Message</label>
                             <textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
                         </div>
-                        <button type="submit" href="mailto: colt.a.looper-1@ou.edu" class="btn btn-primary">Send message</button>
+                        <button style="text-align: center; line-height: 35px;" type="button" class="btn btn-primary">Send message</button>
                     </form>
                 </div>
             </div>
