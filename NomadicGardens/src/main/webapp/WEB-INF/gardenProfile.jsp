@@ -135,7 +135,7 @@
 																			<input type="hidden" name="userId" value=${sessionUser.id}>
 																			<input type="hidden" name="gardenId" value=${garden.id}>
 																			<button type="submit" class="update btn btn-info btn-sm">
-																				<span class="glyphicon glyphicon-pencil"></span>
+																				<span class="glyphicon glyphicon-plus"></span>
 																			</button>
 																		</form>
 																	</c:if>
@@ -146,7 +146,7 @@
 																			<input type="hidden" name="userId" value=${p.user.id}>
 																			<input type="hidden" name="gardenId" value=${garden.id}>
 
-																			<button type="submit" class="update btn btn-info btn-sm">
+																			<button type="submit" class="update btn btn-danger btn-sm">
 																				<span class="glyphicon glyphicon-trash"></span>
 																			</button>
 																		</form>
