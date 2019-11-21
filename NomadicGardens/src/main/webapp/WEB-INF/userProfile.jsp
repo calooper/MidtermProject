@@ -16,7 +16,6 @@
 </head>
 <body>
 
-
 	<jsp:include page="navbar.jsp" />
 
 	<!-- start of template -->
@@ -44,9 +43,6 @@
 										src="${ user.imgURL }">
 								 </c:otherwise>
 							</c:choose>
-							
-							
-							
 							
 						</div>
 						<div
@@ -114,15 +110,6 @@
 																			</div>
 																		</div>
 
-
-
-
-
-
-
-
-
-
 						</div>
 						<div class="row user-detail-row">
 							<div class="col-md-12 col-sm-12 user-detail-section2 pull-left">
@@ -138,8 +125,6 @@
 								<span><a class="button" href="findGardenById.do?gardenId=${g.id }">${g.name}</a></span>
 								<hr>
 								</c:forEach>
-
-
 
 							</div>
 							<div class="col-md-12 user-detail-section2">
@@ -256,8 +241,6 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	
-																	
 	
 																	<!-- EDIT BUTTON -->
 																	<td>
@@ -311,10 +294,6 @@
 																							
 																							});
 																							</script>
-																							<!-- <input type="radio" name="available" value="true"> Available<br>
-																					 		<input type="radio" name="available" value="false"> Not Available<br> -->
-
-
 																						</div>
 																						<div>
 																				
@@ -327,17 +306,12 @@
 																						&nbsp
 																							<button type="submit"  class="btn btn-warning btn-block" class="form-control">Update</button>
 
-																							
 																						</div>
 
 																					</form> 
-		
 																	  	</div>
 																	  </div>
 
-
-											
-																		
 																	</td>
 																	<td>
 																		<!-- DELETE BUTTON -->
@@ -517,8 +491,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
-		
-		
-		
+	
 </body>
 </html>

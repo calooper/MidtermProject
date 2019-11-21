@@ -91,10 +91,8 @@ public class ItemDAOImpl implements ItemDAO {
 	public boolean destroy(int id) {
 		boolean successful = true;
 		Item it = em.find(Item.class, id);
-		System.out.println("**************** IN DESTROY ITEM DAO **********************");
 //		em.getTransaction().begin();
 		em.remove(it);
-		System.out.println(" ************ IN DESTROY ITE DAO AFTER REMOVE");
 //		em.flush();
 		return successful;
 	}

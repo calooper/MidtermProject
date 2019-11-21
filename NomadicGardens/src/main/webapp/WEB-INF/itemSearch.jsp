@@ -103,14 +103,6 @@
 
 
 																	<td>
-<!--
-																		<button type="submit" data-toggle="modal"
-																			value=${ user.id} name="campsite"
-																			data-target="#edit2" data-uid="2"
-																			class="update btn btn-info btn-sm">
-																			<span class="glyphicon glyphicon-pencil"></span>
-																		</button>
--->
 																	</td>
 																	<td>
 																		<!-- ADD TO CART BUTTON -->
@@ -151,18 +143,6 @@
           <td><input type="hidden" id="m2"></td>
           <td><input type="hidden" id="m2"></td>
           <td><input type="hidden" id="m2"></td>
-
-
-
-<!--
-          <td>
-
-          <td><strong>Add</strong></td>
-          <td><button type="submit" data-toggle="modal" data-target="#edit" data-uid="2" class="add btn btn-primary btn-sm">
-              <span class="glyphicon glyphicon-plus" value="Submit Button"></span>
-            </button></td>
-          </td>
--->
         </tr>
       </tbody>
     </table>
@@ -265,14 +245,6 @@
   		</div>
   	</div>
   </div>
-
-
-
-
-
-
-
-
 
 										</div>
 									</div>
