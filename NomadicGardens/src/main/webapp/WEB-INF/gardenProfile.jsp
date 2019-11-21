@@ -45,7 +45,7 @@
 							</div>
 							<div class="col-md-12 col-sm-12 user-detail-section2 pull-right">
 								<div class="border"></div>
-								<p>Size</p>
+								<p>Size (in sq. ft.)</p>
 								<span>${garden.sizeSqft}</span>
 							</div>
 							<div class="col-md-12 user-detail-section2">
@@ -85,9 +85,9 @@
 														<th></th>
 														<th></th>
 														<th></th>
-														<th>Plot ID</th>
+														<th></th>
 														<th>Plot Number</th>
-														<th>Size (Square Feet)</th>
+														<th>Size (in sq. ft.)</th>
 														<th>User</th>
 														<th></th>
 														<th></th>
@@ -115,7 +115,7 @@
 																	<td></td>
 																	<td></td>
 																	<td></td>
-																	<td id="f1">${p.id}</td>
+																	<td id="f1"></td>
 																	<td id="f2">${p.plotNumber}</td>
 																	<td id="l1">${p.sizeSqft}</td>
 																	<td id="m1">

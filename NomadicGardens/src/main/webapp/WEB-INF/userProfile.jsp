@@ -136,6 +136,7 @@
 
 								<c:forEach var="g" items="${gardens}">
 								<span><a class="button" href="findGardenById.do?gardenId=${g.id }">${g.name}</a></span>
+								<hr>
 								</c:forEach>
 
 
@@ -164,7 +165,7 @@
 						</div>
 						<div class="col-md-12">
 							<div class="row">
-								<div class="col-md-10  profile-tag-section text-center">
+								<div class="col-md-12  profile-tag-section text-center">
 									<div class="row">
 										<div style="background-color: white" >
 											<table class="table table-hover table-responsive">
@@ -177,19 +178,19 @@
 														<th></th>
 														<th></th>
 												
-														<th> Produce</th>
-														<th> Quantity</th>
-														<th> Unit</th>
-														<th> Harvest Date </th>
-														<th> Use by Date  </th>
-														<th> Available</th>
+														<th style="text-align: center; width: 200px">Produce</th>
+														<th style="text-align: center; width: 200px">Quantity</th>
+														<th style="text-align: center; width: 200px">Unit</th>
+														<th style="text-align: center; width: 600px">Harvest Date</th>
+														<th style="text-align: center; width: 600px">Use by Date</th>
+														<th style="text-align: center; width: 200px">Available</th>
 														<th></th>
 														<th></th>
 														<th></th>
 														<th></th>
 														<th></th>
-														<th><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Edit</c:if></th>
-														<th><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Delete</c:if></th>
+														<th style="text-align: center; width: 400px"><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Edit</c:if></th>
+														<th style="text-align: center; width: 400px"><c:if test="${not empty sessionUser && user.id == sessionUser.id}">Delete</c:if></th>
 													</tr>
 												</thead>
 												<tbody>
