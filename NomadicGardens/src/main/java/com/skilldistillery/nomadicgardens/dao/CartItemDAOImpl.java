@@ -1,5 +1,6 @@
 package com.skilldistillery.nomadicgardens.dao;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -50,6 +51,8 @@ public class CartItemDAOImpl implements CartItemDAO {
 	public CartItem makeCartItem(CartItem cartItem, User user, Item item) {
 		cartItem.setUser(user);
 		cartItem.setItem(item);
+		cartItem.setApproved(true);
+		cartItem.setDateAdded(LocalDate.now());
 		em.persist(cartItem);
 		
 		em.flush();
