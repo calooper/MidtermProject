@@ -184,6 +184,10 @@
 														<th style="text-align: center; width: 600px">Harvest Date</th>
 														<th style="text-align: center; width: 600px">Use by Date</th>
 														<th style="text-align: center; width: 200px">Available</th>
+														<c:if test="${not empty sessionUser && i.user.id == sessionUser.id && !i.available}">
+														<th>Cart Owner</th>
+														<th>Email</th>
+														</c:if>
 														<th></th>
 														<th></th>
 														<th></th>
@@ -238,6 +242,12 @@
 																	&#10060
 																	</c:if>
 																	</td>
+																	<c:if test="${not empty sessionUser && i.user.id == sessionUser.id && !i.available}">
+																	<td>
+																	<a class="button" href="findUserById.do?userId=${i.cartItems[0].user.id}">${i.cartItems.user.username}</a>
+																	</td>
+																	<td><a href="mailto:${i.cartItems[0].user.email}" target="_blank" class="btn btn-info">${i.cartItems[0].user.email}</a></td>
+																	</c:if>
 																	<td></td>
 																	<td></td>
 																	<td></td>
@@ -245,9 +255,7 @@
 																	<td></td>
 																	
 																	
-																	
-																	
-
+	
 																	<!-- EDIT BUTTON -->
 																	<td>
 																	<c:if test="${not empty sessionUser && user.id == sessionUser.id}">
