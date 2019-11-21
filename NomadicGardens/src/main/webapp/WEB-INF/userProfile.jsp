@@ -87,15 +87,15 @@
 
 																							<input type="hidden" class="form-control" name="oldUserId" value="${user.id}"  required>
 
-																							<input type="hidden" class="form-control" name="password" value="${user.password}"  required>
+																							<input type="hidden" class="form-control" name="password" value="${user.password}"  pattern="[^0-9]+" required>
 																							
-																							<input type="hidden" class="form-control" name="username" value="${user.username}"  required>
+																							<input type="hidden" class="form-control" name="username" value="${user.username}" pattern="[^0-9]+"  required>
 
-																							<input type="text" class="form-control" name="email"  placeholder="${user.email}" required>
+																							<input type="email" class="form-control" name="email"  placeholder="${user.email}" required>
 
-																							 <input type="text" class="form-control" name="firstName"  placeholder="First Name">
+																							 <input type="text" class="form-control" name="firstName"  placeholder="First Name" pattern="[^0-9]+" required>
 																							
-																							 <input type="text" class="form-control" name="lastName"  placeholder="Last Name">
+																							 <input type="text" class="form-control" name="lastName"  placeholder="Last Name" pattern="[^0-9]+" required>
 																							 
 																							 <input type="text" class="form-control" name="imgURL"  placeholder="Picture URL">
 
@@ -278,9 +278,9 @@
 																							<input type="hidden" class="form-control" name="oldItemId" value="${i.id}" placeholder="Item Id" >
 																							</div>
 																							
-																							<input type="text" class="form-control" name="quantity" value="${i.quantity}" placeholder="Quantity" >
+																							<input type="text" class="form-control" name="quantity" value="${i.quantity}" placeholder="Quantity" pattern="^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$" required>
 
-																							<input type="text" class="form-control" name="unit" value="${i.unit}" placeholder="Unit">
+																							<input type="text" class="form-control" name="unit" value="${i.unit}" placeholder="Unit" pattern="[^0-9]+" required>
 																							
 																							<input type="date" class="form-control" name="harvestDateString" value="${i.harvestDate}" placeholder="Harvest Date">
 																							
@@ -454,12 +454,12 @@
             	<input type="hidden" class="form-control" name="user.id" value="${user.id}"  required>
 		<div class="block">
             <label style="display: inline-block; width: 100px; text-align: right" for="quantity">Quantity</label>
-            <input style="display: inline-block; width: 400px" type="number" class="form-control" id="quantity" name="quantity" required>
+            <input style="display: inline-block; width: 400px" type="number" class="form-control" id="quantity" name="quantity" pattern="^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$" required>
        </div>
 			<br>
 		<div class="block">
             <label style="display: inline-block; width: 100px; text-align: right" for="unit">Unit:</label>
-            <input style="display: inline-block; width: 400px" type="text" class="form-control" id="unit" name="unit" required>
+            <input style="display: inline-block; width: 400px" type="text" class="form-control" id="unit" name="unit" pattern="[^0-9]+" required>
        </div>
 			<br>
 	   <div class="block">
@@ -492,18 +492,6 @@
 
   <!-- Edit a site pop-up menu  -->
 
-
-
-
-
-
-
-
-
-
-
-
-
 										</div>
 									</div>
 								</div>
@@ -513,49 +501,7 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="editform" class="collapse">
-                    <form action="updateGame.do" method="POST" modelAttribute="game">
-                        <div class="form-group">
-                              <input type="hidden" name="oldGameId" value="${game.id }">
-                                <label >Title: </label><input type="text" name="title"value="${game.title }" required> <br />
-                                <label>Developer: </label> <input type="text" name="developer" value="${game.developer }"> <br />
-                                <label>Publisher: </label> <input type="text" name="publisher" value="${game.publisher }"> <br />
-                                <label>Description: </label> <input type="text" size="60" name="description" value="${game.description }"> <br />
-                                <label>Select ESRB Rating:</label>
-                                <select name="esrbRating">
-                                    <option value="RP">RP</option>
-                                    <option value="eC">eC</option>
-                                    <option value="E">E10+</option>
-                                    <option value="T">T</option>
-                                    <option value="M">M</option>
-                                    <option value="AO">AO</option>
-                                </select> <br />
-                                <label>Metacritic Score: </label> <input type="text" name="metacriticScore" value="${game.metacriticScore }"pattern="^[1-9][0-9]?$|^100$" required> <br />
-                                <label>Release Date: </label> <input type="text" name="releaseDate" value="${game.releaseDate }"pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" required> <br />
-                                <label>Cover Art URL: </label> <input type="text" name="boxartURL" value="${game.boxartURL }"> <br />
-                                <input type="submit" value="Update Game Info">
-                                </div>
-                            </form>
-                    </div>
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
