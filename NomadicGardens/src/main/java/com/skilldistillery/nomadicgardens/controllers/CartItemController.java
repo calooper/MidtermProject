@@ -97,10 +97,14 @@ public class CartItemController {
 	public ModelAndView removeCartItem(@RequestParam("cartItem") int id) {
 		ModelAndView mv = new ModelAndView();
 		
-		cartItemDAO.removeFromCart(id);
+		CartItem ci = cartItemDAO.removeFromCart(id);
+		int userId = ci.getUser().getId();
 		List<CartItem> allItems = cartItemDAO.findAllCartItemsById(id);
+		
+		
 		mv.addObject("allCartItems", allItems);
-		mv.setViewName("cart");
+		mv.setViewName("redirect:findAllCartItemsById.do?userId=" + userId);
+//		mv.setViewName("cart");
 		
 		return mv;
 	}
