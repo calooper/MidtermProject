@@ -3,29 +3,33 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 
+<!-- ========== LINK REFERENCES ========== -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-<!-- Local Style sheets -->
+
+<!-- ========== LOCAL STYLE REFERENCES ========== -->
 <style><%@include file="/WEB-INF/homeStyle.css"%></style>
 <style><%@include file="/WEB-INF/main.js"%></style>
 
-<!--  External styling-->
+<!-- ========== SCRIPT REFERENCES ========== -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/wow.min.js"></script>
 
 <meta charset="UTF-8">
 <title>Nomadic Gardens</title>
+
 </head>
 
 <body>
+
+	<!-- ========== NAV BAR ========== -->
 
 	<jsp:include page="navbar.jsp" />
 
@@ -42,27 +46,20 @@
         <h1>Nomadic Gardens</h1>
         <h3>Community. Food. Health.</h3>
         <br>
-
-
         <br>
-        <div class="col-lg-6 col-lg-offset-3">
-
-
+        	<div class="col-lg-6 col-lg-offset-3">
         </div>
       </div>
     </div>
-    <!-- /container -->
   </div>
-
-
 	<br>
+	   <!-- ========== MAP ========== -->
 
 	  <jsp:include page="map.jsp" />
 
 	<br>
 	<div class="row user-left-part">
     <div class="col-md-9 col-sm-9 col-xs-12 pull-right profile-right-section">
-  
 					<div class="row profile-right-section-row">
 						<div class="col-md-12 profile-header">
 							<div class="row">
@@ -130,15 +127,13 @@
 							</div>
 						</div>
 					</div>
-					</div>
-					</div>
+				</div>
+			</div>
 
-	<!-- Footer -->
+	<!-- ========== FOOTER FORM ========== -->
 <footer class="footer-container">
-
     <div class="container">
         <div class="row">
-
             <div class="col-md-6 footer-left">
                 <h3>Contact us</h3>
                 <div class="contact-form">
@@ -159,7 +154,6 @@
                     </form>
                 </div>
             </div>
-
             <div class="col-md-5 offset-md-1 footer-right">
                 <h3>Follow us</h3>
                 <div class="footer-social">
@@ -174,23 +168,19 @@
         </div>
     </div>
 
-    <div class="footer-bottom">
+     <div class="footer-bottom">
         <a class="scroll-link" href="home.do"><i class="fas fa-chevron-up"></i></a>
     </div>
-
+    
+    
 </footer>
 
- <form action="findUserById.do" method="GET">
+<%--  <form action="findUserById.do" method="GET">
       <input type="number"   placeholder="Search by ID..." name="userId">
       <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-
-
-
-
-
-
-
-
+ </form> --%>
+ 
+ 
+ 
 </body>
 </html>
