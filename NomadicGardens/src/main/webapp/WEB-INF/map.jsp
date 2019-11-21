@@ -12,6 +12,21 @@
 	height: 400px; /* The height is 400 pixels */
 	width: 100%; /* The width is the width of the web page */
 }
+
+
+.title {
+  color: red;
+  background-color: transparent;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+  border: 0;
+}
+
+
+
 </style>
 
 
@@ -42,13 +57,17 @@
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 12, center: DUBridgeCommunityGarden});
   // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: SyracuseCommunityGarden, map: map, label: "Syracuse"});
-  var marker2 = new google.maps.Marker({position: SamuelCommunityGarden, map: map, label: "Samuel"});
-  var marker3 = new google.maps.Marker({position: MooseMeadowsCommunityGarden, map: map, label: "Moose Meadows"});
-  var marker4 = new google.maps.Marker({position: FirstPlymouthChurchCommunityGarden, map: map, label: "Plymouth Church"});
-  var marker5 = new google.maps.Marker({position: EnglewoodCommunityGarden, map: map, label: "Englewood"});
-  var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map, label: "DU Bridge"});
+  var marker = new google.maps.Marker({position: SyracuseCommunityGarden, map: map,  title: 'Syracuse', icon: {url:"https://i.imgur.com/0m3wA71.png", scaledSize: new google.maps.Size(70, 70)}});
+  var marker2 = new google.maps.Marker({position: SamuelCommunityGarden, map: map, title: "Samuel", icon: {url:"https://i.imgur.com/0m3wA71.png", scaledSize: new google.maps.Size(70, 70)}});
+  var marker3 = new google.maps.Marker({position: MooseMeadowsCommunityGarden, map: map, title: "Moose Meadows", icon: {url:"https://i.imgur.com/0m3wA71.png", scaledSize: new google.maps.Size(70, 70)}});
+  var marker4 = new google.maps.Marker({position: FirstPlymouthChurchCommunityGarden, map: map, title: "Plymouth Church", icon: {url:"https://i.imgur.com/0m3wA71.png", scaledSize: new google.maps.Size(70, 70)}});
+  var marker5 = new google.maps.Marker({position: EnglewoodCommunityGarden, map: map, title: "Englewood Community Garden", icon: {url:"https://i.imgur.com/0m3wA71.png", scaledSize: new google.maps.Size(70, 70)}});
+  var marker6 = new google.maps.Marker({position: DUBridgeCommunityGarden, map: map, title: "DU Bridge ", icon: {url:"https://i.imgur.com/0m3wA71.png", scaledSize: new google.maps.Size(70, 70)}});
 
+  
+  
+
+  
   
   	marker.addListener('click', function() {
 		/* window.location.href = 'gardenProfile.jsp' */
