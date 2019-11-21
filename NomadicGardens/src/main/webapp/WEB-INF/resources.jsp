@@ -50,7 +50,7 @@
 
       <div class="col-md-3 pl-0 pr-0">
           <div class="card">
-              <img class="card-img" src="images/freshfruit.jpeg" alt="Fresh Fruit" style="width:400px;height:400px;">
+              <img class="card-img" src="images/freshfruit.jpeg" alt="Fresh Fruit" style="width:350px;height:400px;">
               <div class="card-img-overlay">
                   <h3>Fresh Vegetables - How long do fresh vegetables last?</h3>
                     <a href="http://www.eatbydate.com/vegetables/fresh-vegetables/" class="btn" target="_blank">Stay Fresh!</a>
@@ -60,7 +60,7 @@
 
       <div class="col-md-3 pl-0 pr-0">
           <div class="card">
-              <img class="card-img" src="images/rottenlemons.jpg" alt="Check Spoil" style="width:400px;height:400px;">
+              <img class="card-img" src="images/rottenlemons.jpg" alt="Check Spoil" style="width:350px;height:400px;">
               <div class="card-img-overlay">
                   <h3>How to check if produce is spoiled</h3>
                     <a href="https://www.wikihow.com/Check-if-Vegetables-Are-Spoiled" class="btn" target="_blank">Spoiled!</a>
