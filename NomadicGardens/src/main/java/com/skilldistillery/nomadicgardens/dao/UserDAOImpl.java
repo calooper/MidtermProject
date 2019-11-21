@@ -57,7 +57,7 @@ public class UserDAOImpl implements UserDAO {
 			us.setAddress(user.getAddress());
 
 		}
-		if (user.getImgURL() != null) {
+		if (user.getImgURL() != null && user.getImgURL() != "") {
 			us.setImgURL(user.getImgURL());
 
 		}
