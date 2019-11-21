@@ -31,8 +31,8 @@
 											<th></th>
 											<th></th>
 											<th></th>
-											<th>Cart ID#</th>
 											<th>Produce</th>	
+											<th>Quantity</th>
 											<th>Unit</th>
 											<th>Harvest Date</th>
 											<th>Use by Date</th>
@@ -63,8 +63,8 @@
 														<td></td>
 														<td></td>
 														<td></td>
-														<td id="f1">${c.id}</td>
 														<td id="l1">${c.item.produce.name}</td>
+														<td id="f1">${c.item.quantity}</td>
 														<td id="m2">${c.item.unit}</td>
 														<td id="m1">${c.item.harvestDate}</td>
 														<td id="m2">${c.item.useByDate}</td>
