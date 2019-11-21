@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.nomadicgardens.entities.CartItem;
 import com.skilldistillery.nomadicgardens.entities.Item;
 
 @Transactional

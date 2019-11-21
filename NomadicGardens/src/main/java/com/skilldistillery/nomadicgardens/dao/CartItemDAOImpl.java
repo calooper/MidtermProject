@@ -49,6 +49,8 @@ public class CartItemDAOImpl implements CartItemDAO {
 	}
 	@Override
 	public CartItem makeCartItem(CartItem cartItem, User user, Item item) {
+		item = em.find(Item.class, item.getId());
+		item.setAvailable(false);
 		cartItem.setUser(user);
 		cartItem.setItem(item);
 		cartItem.setApproved(true);
