@@ -229,7 +229,14 @@
 																	<td id="m2">${i.unit}</td>
 																	<td id="m2">${i.harvestDate}</td>
 																	<td id="m2">${i.useByDate} </td>
-																	<td id="m2">${i.available}</td>
+																	<td id="m2">
+																	<c:if test="${i.available}">
+																	&#9989
+																	</c:if>
+																	<c:if test="${!i.available}">
+																	&#10060
+																	</c:if>
+																	</td>
 																	<td></td>
 																	<td></td>
 																	<td></td>
