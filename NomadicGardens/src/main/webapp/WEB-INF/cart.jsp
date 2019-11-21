@@ -57,8 +57,8 @@
 													<br>
 												</c:when>
 												<c:otherwise>
+												<c:if test="${c.approved && c.item.user.id != sessionUser.id}">
 													<tr id="d1">
-
 														<td></td>
 														<td></td>
 														<td></td>
@@ -90,6 +90,7 @@
 															</form>
 														</td>
 													</tr>
+													</c:if>
 
 													<!-- DELETE POP UP -->
 
