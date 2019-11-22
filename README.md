@@ -23,4 +23,4 @@ Upon landing at the home page, a non logged-in user can view all of the gardens 
 To create a profile click the 'Sign up' button.
 
 ![Alt text](userSignUp.png)
-<img src="https://github.com/favicon.ico" width="48">
+<img src="https://github.com/favicon.ico" width="18">
