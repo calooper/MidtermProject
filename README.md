@@ -55,7 +55,7 @@ A user can claim/add produce to their cart. To do this, click the add to cart bu
 
 To persist the users data, we used JPA MySQL. We designed a database with seven tables to handle the operations and storing of information. Below is the EER Diagram representing our database.
 
-<img src="cartScreenShot.png" width="700">
+<img src="schemeScreenShot.png" width="700">
 
 
 ### Technologies and Methodologies Used
