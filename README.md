@@ -74,6 +74,8 @@ To persist the users data, we used JPA MySQL. We designed a database with seven 
 * MAMP
 * Gradle
 * Bootstrap
+* AWS
+* Apache Tomcat
 ```
 
 ### Lessons Learned 
