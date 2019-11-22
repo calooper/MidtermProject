@@ -46,10 +46,16 @@ A user can find produce that they are interested in by searching produce by keyw
 
 ### Claiming/Adding produce to Your Cart
 
-<img src="produceSearch.png" width="700">
+A user can claim/add produce to their cart. To do this, click the add to cart button. Once the item is added to your cart, it populates on your cart page & the item becomes unavailable to other users. This feature was added so that the platform wasn't just an application to manage plots and gardens, but also a bartering/trade platform.
+
+<img src="cartScreenShot.png" width="700">
+
 
 ### Implementation
-************ SQL DIAGRAM *****************
+
+To persist the users data, we used JPA MySQL. We designed a database with seven tables to handle the operations and storing of information. Below is the EER Diagram representing our database.
+
+<img src="cartScreenShot.png" width="700">
 
 
 ### Technologies and Methodologies Used
