@@ -23,4 +23,4 @@ Upon landing at the home page, a non logged-in user can view all of the gardens 
 To create a profile click the 'Sign up' button.
 
 
-<img src="userSignUp.png" width="18">
+<img src="userSignUp.png" width="38">
