@@ -22,5 +22,10 @@ Upon landing at the home page, a non logged-in user can view all of the gardens 
 
 To create a profile click the 'Sign up' button.
 
+<img src="userSignUp.png" width="400">
 
-<img src="userSignUp.png" width="38">
+#### User Profile Page
+
+
+
+Once a user has created a profile, he/she can then go in and browse gardens for an open plot to farm! If the user finds a plot that suits them, click the 'claim plot' button. 
