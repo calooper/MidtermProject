@@ -45,7 +45,9 @@ A user can find produce that they are interested in by searching produce by keyw
 
 
 ### Implementation
-ERDiagram.png
+************ SQL DIAGRAM *****************
+
+
 ### Technologies and Methodologies Used
 * Java
 * Spring MVC
@@ -63,4 +65,8 @@ ERDiagram.png
 ### Lessons Learned 
 
 Overall, the project went as well as we hoped. We believe that the planning phase (schema design, wire-framing, etc.) largely contributed to the success of the project. We certainly believe that it is essential to have a well-planned design before implementing any code. Once we had our schema forward-engineered, we found that the JUnit tests were crucial to ensuring we had a solid foundation before continuing on to the phase. We found it tremendously worthwhile to double check with each team member to make sure there weren’t multiple member working on the same file – which prevented merge conflicts on GitHub. We learned that having clear and well-defined objectives that could be completed in isolated 
-divisions of labor made the flow of work seem much more manageable. Each defined user story was completed in sequential order before moving on to the next goal. ## Stretch GoalsWe were able to complete a few of our stretch goals - including each registered user having a cart that contains selected items to buy from other sellers’ profiles. This particular stretch goal added user-friendly functionality that will help facilitate an easier experience for anyone wanting to buy vegetables from another user. Another stretch goal that we were able to add is the ability for each registered user to claim vacant plots from a garden. If given an extra day in our sprint, we would have incorporated a rating system for each buyer and user. Reviews, of course, help protect buyers and sellers from engaging in less-than-satisfactory exchanges. Having said feature in our site would help ensure a positive experience for each user. 
+divisions of labor made the flow of work seem much more manageable. Each defined user story was completed in sequential order before moving on to the next goal. 
+
+## Stretch Goals
+
+We were able to complete a few of our stretch goals - including each registered user having a cart that contains selected items to buy from other sellers’ profiles. This particular stretch goal added user-friendly functionality that will help facilitate an easier experience for anyone wanting to buy vegetables from another user. Another stretch goal that we were able to add is the ability for each registered user to claim vacant plots from a garden. If given an extra day in our sprint, we would have incorporated a rating system for each buyer and user. Reviews, of course, help protect buyers and sellers from engaging in less-than-satisfactory exchanges. Having said feature in our site would help ensure a positive experience for each user. 
